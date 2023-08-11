@@ -33,7 +33,6 @@ html{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
     background: rgba(255, 238, 0, 0.644);
     z-index: 1;
 }
@@ -125,29 +124,60 @@ html{
 }
 
 #members {
+    position: relative;
     width: 100%;
     height: 1010px;
     background-image: linear-gradient(rgba(0,0,0,0),rgba(0, 0, 0, 0)),url(../image/template.jpg);
     background-size: cover;
     background-position: cover;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;
+    overflow: scroll; 
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+
+#members::-webkit-scrollbar{
+    display: none;
+}
+
+.content-title{
+    position: relative;
+    margin: auto;
+    top: 50px;
+    background-color: rgba(255, 238, 0, 0.863);
+    border-radius: 30px;
+    padding: 10px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    width: 300px;
 }
 
 .content-members {
-    background-color: rgba(0, 0, 0, 0.63);
-    border-radius: 30px;
-    padding: 20px;
+    position: relative;
+    margin: 15px;
+    background-color: rgba(255, 238, 0, 0.863);
+    border-radius: 40px;
+    padding: 10px;
     text-align: center;
-    color: white;
-    width: 800px;
-    position:relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    color: rgb(0, 0, 0);
+    width: 500px;
 }
+
+.flex-container {
+    top: 90px;
+    justify-content: center;
+    position: relative;
+    list-style: none;
+    display: flex;
+}
+
+.wrap { 
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}  
+
 
 .content-members h3 {
     font-size: 24px;
@@ -164,37 +194,17 @@ html{
     height: 1010px;
     background-image: linear-gradient(rgba(0,0,0,0),rgba(0, 0, 0, 0.5)),url(../image/template.jpg);
     background-size: cover;
-    background-position: cover;
 }
 
-.content-socials {
-    background-color: rgba(0, 0, 0, 0.63);
-    border-radius: 30px;
-    padding: 20px;
-    text-align: center;
-    color: white;
-    width: 800px;
-    position:relative;
+#socials .content-container{
+    position: relative;
+    width: 100%;
+    height: 500px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
 }
-
-.content-socials h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.content-socials p {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-
 
 button{
     color: rgb(0, 0, 0);
