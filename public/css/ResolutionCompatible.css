@@ -12,7 +12,7 @@
 /* Small screens, non-retina */
 @media only screen and (max-width: 699px) {
     .content {
-        top: 25%; /* Adjust this value as needed */
+        top: 50%; /* Adjust this value as needed */
     }
 
     .navbar img {
@@ -28,7 +28,7 @@
        only screen and (min-resolution: 192dpi) and (max-width: 699px),
        only screen and (min-resolution: 2dppx) and (max-width: 699px) {
     .content {
-        top: 25%; /* Adjust this value as needed */
+        top: 50%; /* Adjust this value as needed */
     }
 
     .navbar img {
@@ -39,9 +39,8 @@
 /* Medium screens, non-retina */
 @media only screen and (min-width: 700px) and (max-width: 1299px) {
     .content {
-        top: 25%; /* Adjust this value as needed */
+        top: 50%; /* Adjust this value as needed */
     }
-    
 
 }
 
@@ -53,16 +52,14 @@
        only screen and (min-resolution: 192dpi) and (min-width: 700px) and (max-width: 1299px),
        only screen and (min-resolution: 2dppx) and (min-width: 700px) and (max-width: 1299px) {
     .content {
-        top: 25%; /* Adjust this value as needed */
+        top: 50%; /* Adjust this value as needed */
     }
 
 }
 
 /* Large screens, non-retina */
 @media only screen and (min-width: 1300px) {
-    .content {
-        top: 25%; /* Adjust this value as needed */
-    }
+
 }
 
 /* Large screens, retina */
@@ -72,7 +69,5 @@
        only screen and (min-device-pixel-ratio: 2) and (min-width: 1300px),
        only screen and (min-resolution: 192dpi) and (min-width: 1300px),
        only screen and (min-resolution: 2dppx) and (min-width: 1300px) {
-    .content {
-        top: 25%; /* Adjust this value as needed */
-    }
+
 }
