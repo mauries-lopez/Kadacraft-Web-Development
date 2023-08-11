@@ -23,10 +23,9 @@ html{
 .banner {
     width: 100%;
     height: 1010px;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.692), rgba(0, 0, 0, 0)),
-                      url(../image/kadacraft_background1.png);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.692), rgba(0, 0, 0, 0)),url(../image/kadacraft_background1.png);
     background-size: cover;
-    background-position: calc(50% + 45px) 20px;
+    background-position: calc(50% + 45px) 0px;
 }
 
 .navbar{
@@ -45,7 +44,7 @@ html{
 .navbar ul li{
     list-style: none;
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 1em;
     position: relative;
     right: 20%;
 }
@@ -72,18 +71,6 @@ html{
     width: 100%;
     background: rgb(0, 0, 0);
 }
-
-@media (max-width: 900px){
-    .navbar ul li{
-        display: inline-block;
-        text-align: center;
-    }
-
-    .navbar img{
-        display: none;
-    }
-}
-
 
 .content{
     width: 100%;
@@ -195,7 +182,6 @@ html{
     color: rgba(255, 238, 0, 0.863);
     transition: 0.5s;
     border: 3px solid rgba(255, 238, 0, 0.863);
-    z-index: 1;
 }
 
 .content-members img{
