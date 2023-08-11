@@ -73,6 +73,18 @@ html{
     background: rgb(0, 0, 0);
 }
 
+@media (max-width: 900px){
+    .navbar ul li{
+        display: inline-block;
+        text-align: center;
+    }
+
+    .navbar img{
+        display: none;
+    }
+}
+
+
 .content{
     width: 100%;
     position: absolute;
