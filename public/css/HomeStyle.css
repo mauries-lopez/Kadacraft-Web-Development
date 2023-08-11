@@ -37,6 +37,7 @@ html{
     align-items: center;
     justify-content: space-between;
     background: rgb(255, 238, 0);
+    border-bottom: 3px solid rgb(0, 0, 0);
     position: fixed;
     z-index: 1;
 }
@@ -46,7 +47,7 @@ html{
     display: inline-block;
     margin: 0 20px;
     position: relative;
-    right: 100px;
+    right: 20%;
 }
 
 .navbar ul li a{
@@ -136,10 +137,11 @@ html{
     background-position: center;
     flex-direction: row;
     align-items: center;
-    margin: auto;
-    overflow: scroll; 
-    -ms-overflow-style: none; 
+    justify-content: center;
+    overflow-y: scroll;
     scrollbar-width: none;
+    -ms-overflow-style: none;
+
 }
 
 #members::-webkit-scrollbar{
@@ -149,9 +151,10 @@ html{
 .content-title{
     position: relative;
     margin: auto;
-    top: 50px;
+    top: 10%;
     background-color: rgba(255, 238, 0, 0.863);
     border-radius: 30px;
+    border: 3px solid rgb(0, 0, 0);
     padding: 10px;
     text-align: center;
     color: rgb(0, 0, 0);
@@ -159,6 +162,7 @@ html{
 }
 
 .content-members {
+    height: 70%;
     position: relative;
     margin: 15px;
     background-color: rgba(255, 238, 0, 0.863);
@@ -166,30 +170,30 @@ html{
     padding: 10px;
     text-align: center;
     color: rgb(0, 0, 0);
-    width: 500px;
+    width: 80%;
     transition: 0.5s;
     border: 3px solid rgb(0, 0, 0);
 }
 
 .content-members:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
     background-color: rgba(0, 0, 0, 0.582);
     border-radius: 40px;
-    padding: 10px;
     text-align: center;
     color: rgba(255, 238, 0, 0.863);
-    width: 500px;
     transition: 0.5s;
     border: 3px solid rgba(255, 238, 0, 0.863);
+    z-index: 1;
 }
 
 .content-members img{
+    width: 50%;
     border-radius: 50%;
     border: 3px solid rgb(0, 0, 0);
 }
 
 .flex-container {
-    top: 90px;
+    top: 15%;
     justify-content: center;
     position: relative;
     list-style: none;
@@ -201,14 +205,8 @@ html{
     flex-wrap: wrap;
 }  
 
-
 .content-members h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.content-members p {
-    font-size: 18px;
+    font-size: 130%;
     margin-bottom: 10px;
 }
 
