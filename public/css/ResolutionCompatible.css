@@ -12,7 +12,23 @@
 /* Small screens, non-retina */
 @media only screen and (max-width: 699px) {
     .content {
-        top: 50%; /* Adjust this value as needed */
+        top: 30%; /* Adjust this value as needed */
+    }
+
+    .navbar {
+        text-align: center;
+        justify-content: center;
+        padding: 50px;
+    }
+
+    .navbar ul li {
+        text-align: center;
+        left: -5%;
+        margin: 1em;
+    }
+
+    .navbar ul li a{
+        font-size: 2em;
     }
 
     .navbar img {
@@ -28,9 +44,25 @@
        only screen and (min-resolution: 192dpi) and (max-width: 699px),
        only screen and (min-resolution: 2dppx) and (max-width: 699px) {
     .content {
-        top: 50%; /* Adjust this value as needed */
+        top: 30%; /* Adjust this value as needed */
     }
-
+    
+    .navbar {
+        text-align: center;
+        justify-content: center;
+        padding: 50px;
+    }
+    
+    .navbar ul li {
+        text-align: center;
+        left: -5%;
+        margin: 1em;
+    }
+    
+    .navbar ul li a{
+        font-size: 2em;
+    }
+    
     .navbar img {
         display: none;
     }
@@ -39,7 +71,27 @@
 /* Medium screens, non-retina */
 @media only screen and (min-width: 700px) and (max-width: 1299px) {
     .content {
-        top: 50%; /* Adjust this value as needed */
+        top: 30%; /* Adjust this value as needed */
+    }
+
+    .navbar {
+        text-align: center;
+        justify-content: center;
+        padding: 50px;
+    }
+
+    .navbar ul li {
+        text-align: center;
+        left: -5%;
+        margin: 1em;
+    }
+
+    .navbar ul li a{
+        font-size: 2em;
+    }
+
+    .navbar img {
+        display: none;
     }
 
 }
@@ -51,23 +103,29 @@
        only screen and (min-device-pixel-ratio: 2) and (min-width: 700px) and (max-width: 1299px),
        only screen and (min-resolution: 192dpi) and (min-width: 700px) and (max-width: 1299px),
        only screen and (min-resolution: 2dppx) and (min-width: 700px) and (max-width: 1299px) {
+    
     .content {
-        top: 50%; /* Adjust this value as needed */
+        top: 30%; /* Adjust this value as needed */
     }
 
-}
+    .navbar {
+        text-align: center;
+        justify-content: center;
+        padding: 50px;
+    }
 
-/* Large screens, non-retina */
-@media only screen and (min-width: 1300px) {
+    .navbar ul li {
+        text-align: center;
+        left: -5%;
+        margin: 1em;
+    }
 
-}
+    .navbar ul li a{
+        font-size: 2em;
+    }
 
-/* Large screens, retina */
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1300px),
-       only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 1300px),
-       only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 1300px),
-       only screen and (min-device-pixel-ratio: 2) and (min-width: 1300px),
-       only screen and (min-resolution: 192dpi) and (min-width: 1300px),
-       only screen and (min-resolution: 2dppx) and (min-width: 1300px) {
+    .navbar img {
+        display: none;
+    }
 
 }
