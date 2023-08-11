@@ -1,0 +1,9 @@
+@font-face{
+    font-family: Minecraft;
+    src: url(../font/Minecrafter_3.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Lexend;
+    src: url(../font/Lexend-VariableFont_wght.ttf) format("truetype");
+}

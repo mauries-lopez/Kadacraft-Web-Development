@@ -4,16 +4,6 @@
     font-family: Minecraft;
 }
 
-@font-face{
-    font-family: Minecraft;
-    src: url(../font/Minecrafter_3.ttf);
-}
-
-@font-face {
-    font-family: Lexend;
-    src: url(../font/Lexend-VariableFont_wght.ttf);
-}
-
 
 body {
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
