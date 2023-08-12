@@ -7,18 +7,26 @@
         <link rel="stylesheet" href="../public/css/ResolutionCompatible.css" defer> 
         <link type="text/css" rel="stylesheet" href="../public/css/Font.css">
         <link rel="icon" type="image/png" href="../public/image/kadacraft_weblogo.png">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../public/js/Home.js"></script>
         <!-- <script src="../public/js/api.js"></script> -->
     </head>
 
     <body>
         <div class = "banner" id="top"> 
             <div class="navbar">
-                <a href="#"> <img src="../public/image/kadacraft_logo.png" style="position: relative; height: 3em; width: 100%; left: 6em; cursor: pointer;"> </a>
+                <a class="facebook-btn" style="position:relative; left: 5em; cursor: pointer;" title="Facebook Group"><img src="../public/image/facebook_logo.png" class="facebook-img" id="facebook-links"></a>
+                <div id="tooltip" style="position: relative; display: flex;">
+                    <div id="tooltip-text" style="display: none"> 
+                        <a href="https://www.facebook.com/groups/KadaCraft" id="button-1" target="_blank"> <button> </button> </a>
+                        <a href="https://www.facebook.com/KadaCraftSMP" id="button-2" target="_blank">  <button> </button> </a>
+                    </div>
+                    <a href="#"> <img src="../public/image/kadacraft_logo.png" style="position: relative; height: 3em; width: 100%; left: 10em; cursor: pointer;"> </a>
+                </div>        
                 <ul>
                     <li><a href="#about" style="color: black; font-family: Minecraft; letter-spacing: 0.05em;" > About Us </a></li>
                     <li><a href="#members" style="color: black; font-family: Minecraft; letter-spacing: 0.05em;"> Members </a></li>
-                    <li><a href="#socials" style="color: black; font-family: Minecraft; letter-spacing: 0.05em;"> Socials </a></li>
-                    <li><a href="#" style="color: black; font-family: Minecraft; letter-spacing: 0.05em;"> Worlds </a></li>       
+                    <li><a href="world.html" style="color: black; font-family: Minecraft; letter-spacing: 0.05em;"> Worlds </a></li>       
                 </ul>
             </div>
 
@@ -27,8 +35,8 @@
                 <a href="#"> <img src="../public/image/kadacraft_logo.png" style="position: relative; cursor: pointer; width: 25em; margin-top: 3%;"> </a>
                 <p style="color: black; font-family: Lexend; font-weight: bold; font-size: 1em; ">  Kadacraft is a roleplaying SMP that is considered the number 1 Minecraft server in the Philippines powered by Apex Hosting. Wherein Numerous Minecraft Enthusiasts are joined together to build, have fun and share stories. </p>
                 <div>
-                    <a href="#about" > <button type="button" style="color: black; font-family: Minecraft; letter-spacing: 0.05em; font-size: 1em; "> <span></span> About Us </button> </a> 
-                    <a href="#members"> <button type="button" style="color: black; font-family: Minecraft; letter-spacing: 0.05em; font-size: 1em; "> <span></span> Members </button> </a>
+                    <a href="#about" style="text-decoration: none;"> <button type="button" style="color: black; font-family: Minecraft; letter-spacing: 0.05em; font-size: 1em; "> <span></span> About Us </button> </a> 
+                    <a href="#members" style="text-decoration: none;"> <button type="button" style="color: black; font-family: Minecraft; letter-spacing: 0.05em; font-size: 1em; "> <span></span> Members </button> </a>
                 </div>
             </div>
         </div>
@@ -41,8 +49,9 @@
         </div>    
         
         <div id="members">
+            
             <div class="content-title">
-                <h3>Members</h3>
+                <button style="border: 0; width: 100%; height: 3em;" id="member_button"> <h3 id="member_title"> Members ></h3> </button>
             </div>
 
             <ul class="flex-container wrap">
@@ -251,36 +260,8 @@
 
         </div>
 
-        <div id="socials">
-            <div class="content-container">
-                
-                <div class="content-title" style="width: 400px;">
-                    <h3>Socials</h3>
-                </div>
-    
-                <ul class="flex-container wrap">
-                    <li>
-                        <a href="https://www.facebook.com/KadaCraftSMP" target="_blank" style="text-decoration: none;">
-                            <div class="content-members" style="width: 10em; height: 15em; ">
-                                <img src="../public/image/facebook_logo.png" style="height: 150px;  margin-top: 30px; filter: invert(); border: none; border-radius: 0;"> 
-                                <p style="margin-top: 5px;"> Facebook Page </p>
-                            </div>
-                            
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/groups/KadaCraft" target="_blank" style="text-decoration: none;">
-                            <div class="content-members" style="width: 10em; height: 15em; ">
-                                <img src="../public/image/facebook_logo.png" style="height: 150px;  margin-top: 30px; filter: invert(); border: none; border-radius: 0;"> 
-                                <p style="margin-top: 5px;"> Facebook Group </p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>    
+        <script src="../public/js/Home.js"></script>
 
-            </div>
-            
-        </div>
 
     </body>
 </html>
