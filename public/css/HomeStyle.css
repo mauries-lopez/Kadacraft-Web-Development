@@ -335,25 +335,5 @@ button:hover{
     background-color: #ffffff;
 }
 
-/*
-.member-img{
-    position: absolute;
-    width: 10em;
-    height: 10em;
-    transition: 0.5s;
-}
 
-#atmospheric-img{
-    position: absolute;
-    width: 10em;
-    height: 10em;
-    transition: 0.5s;
-    left: 100px;
-}
-
-.member-img:hover{
-    transform: scale(1.2);
-    z-index: 1;
-}
-*/
 

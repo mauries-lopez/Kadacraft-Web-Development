@@ -1,0 +1,28 @@
+.character-container{
+    position: relative;
+    width: 80%;
+    height: 80%;
+    top: 14%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.character-container .character-model{
+    position: absolute;
+    width: 21%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    clip-path: inset(10px 50px 15px 25px);
+}
+
+.member-img{
+    position: absolute;
+    transition: 0.5s;
+}
+
+.member-img:hover{
+    transform: scale(1.3);
+}
