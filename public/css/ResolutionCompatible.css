@@ -34,6 +34,7 @@
     .navbar img {
         display: none;
     }
+
 }
 
 /* Small screens, retina */
@@ -66,6 +67,7 @@
     .navbar img {
         display: none;
     }
+
 }
 
 /* Medium screens, non-retina */
@@ -127,5 +129,7 @@
     .navbar img {
         display: none;
     }
+
+
 
 }

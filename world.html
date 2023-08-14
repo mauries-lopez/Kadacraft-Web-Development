@@ -17,11 +17,7 @@
     <body>
         
         <div class = "banner" id="top"> 
-
-            <video src="../public/video/Worlds.mp4" style="width: 100%; position: absolute; pointer-events: none;" autoplay muted loop playsinline>
-                <source src="../public/video/Worlds.mp4" type="video/mp4">
-            </video>
-
+        
             <div class="navbar">
                 <a class="facebook-btn" style="position:relative; left: 5em; cursor: pointer;" title="Facebook Group"><img src="../public/image/facebook_logo.png" class="facebook-img" id="facebook-links"></a>
                 <div id="tooltip" style="position: relative; display: flex;">
@@ -36,8 +32,15 @@
                 </ul>
             </div>
             
-            <div class="content-title" style="position: absolute; left: 44%; width: 10%; height: 2em;margin-top: 4em; color: white; border: 3px solid white; background-color: transparent;">
-                <h3 id="member_title" style="position: relative; width: 100%; height: 3em; text-align: center; transform: translate(1%, -3%); font-size: 2em;" > Seasons </h3> 
+            <div class="content-title" style="position: absolute; left: 44%; width: 10%; height: 2em; margin-top: 4em; color: white; border: 3px solid white; background-color: transparent; display: block; z-index: 1;">
+                <h1 id="member_title" style="position: relative; height: 3em; text-align: center; transform: translate(1%, -3%); width: 100%;"> Seasons </h1>
+            </div>
+            
+
+            <div class="video-wrapper">
+                <video src="../public/video/Worlds.mp4" style="width: 100%; position: absolute; pointer-events: none; background-size: cover; background-position: center;" autoplay muted loop playsinline>
+                    <source src="../public/video/Worlds.mp4" type="video/mp4">
+                </video>
             </div>
 
             <div id="container">    
@@ -58,12 +61,12 @@
 
                 <div onclick="location.href='https://drive.google.com/file/d/1UuIYC5o4mUoje6wnNLpfUD1s9MOM0r64/view?usp=drive_link';" style="cursor: pointer;" class="images-rotation world-box" data-images='["../public/image/season4/kadacraftS4_1.png", "../public/image/season4/kadacraftS4_2.png", "../public/image/season4/kadacraftS4_3.png", "../public/image/season4/kadacraftS4_4.png", "../public/image/season4/kadacraftS4_5.png", "../public/image/season4/kadacraftS4_6.png"]' style="position: relative;">
                     <img src="../public/image/season4/kadacraftS4-best.png" alt="" style="position: relative; width: 100%; height: 105%; object-fit: cover; left: 50%; top: 50%; transform: translate(-50%, -50%); ">
-                    <h1 style="position: relative; top: 50%; left: 50%; transform: translate(-50%, -226%); z-index: 2; text-shadow: 5px 5px #000000;">4</h1>
+                    <h1 style="position: relative; top: 50%; left: 50%; transform: translate(-50%, -233%); z-index: 2; text-shadow: 5px 5px #000000;">4</h1>
                 </div>
 
                 <div onclick="location.href='https://www.mediafire.com/file/9u1k34wta8a3z14/KadaCraft_Season_Four.rar/file';" style="cursor: pointer;" class="images-rotation world-box" data-images='["../public/image/season4.1/kadacraftS4.1_1.png", "../public/image/season4.1/kadacraftS4.1_2.png", "../public/image/season4.1/kadacraftS4.1_3.png", "../public/image/season4.1/kadacraftS4.1_4.png", "../public/image/season4.1/kadacraftS4.1_5.png", "../public/image/season4.1/kadacraftS4.1_6.png"]' style="position: relative;">
                     <img src="../public/image/season4.1/kadacraftS4.1-best.png" alt="" style="position: relative; width: 100%; height: 105%; object-fit: cover; left: 50%; top: 50%; transform: translate(-50%, -50%);">
-                    <h1 style="position: relative; top: 50%; left: 50%; transform: translate(-50%, -226%); z-index: 2; text-shadow: 5px 5px #000000;">4.1</h1>
+                    <h1 style="position: relative; top: 50%; left: 50%; transform: translate(-50%, -233%); z-index: 2; text-shadow: 5px 5px #000000;">4.1</h1>
                 </div>
                 
             </div>
