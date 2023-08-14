@@ -339,4 +339,47 @@ button:hover{
     background: rgb(196, 183, 0);
 }
 
+#philippines-island{
+    position: absolute;
+    top: 15%;
+    left: 65%;
+    height: 80%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.781);
+    border-radius: 5em;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    filter: drop-shadow(0 0 1rem rgb(0, 0, 0));
+}
+
+#philippines-island #luzon{
+    position: absolute;
+    height: 570px;
+    width: 340px;
+    left: 10%;
+    top: 2%;
+}
+
+#philippines-island #visayas{
+    position: absolute;
+    height: 160px;
+    width: 200px;
+    bottom: 36%;
+    left: 48%;
+}
+
+#philippines-island #mindanao{
+    position: absolute;
+    height: 300px;
+    width: 400px;
+    bottom: 8%;
+    left: 24%;
+}
+
+
+
+
 

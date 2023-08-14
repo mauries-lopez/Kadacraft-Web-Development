@@ -9,7 +9,7 @@
 
 #character-box {
     position: relative;
-    background: rgba(255, 255, 255, 0.61);
+    background: rgba(0, 0, 0, 0.781);
     border-radius: 5em;
     height: 50em;
     width: 52%;
@@ -19,6 +19,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
+    filter: drop-shadow(0 0 1rem rgb(0, 0, 0));
 }
 
 #first-row{
