@@ -30,8 +30,11 @@ $(document).ready(function() {
           var img = $('<img src="../public/image/avery.jpg" alt="Image">');
           img.addClass('hover-image');
           $('#place-member').append(img);
+          $('#place-member').css('position', 'absolute');
+          $('#place-member').css('left', '0');
+          $('#place-member').css('top', '0');
           $('#place-member').css('z-index', '50');
-          $('#place-member').css('transform', 'translate(30%, 600%)');
+          $('#place-member').css('transform', 'translate(480%, 600%)');
 
       },
       function() {
@@ -62,9 +65,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/az1010.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(30%, 600%)');
+        $('#place-member').css('transform', 'translate(480%, 600%)');
 
     },
     function() {
@@ -95,9 +100,11 @@ $(document).ready(function() {
           var img = $('<img src="../public/image/beebuyog.jpg" alt="Image">');
           img.addClass('hover-image');
           $('#place-member').append(img);
+          $('#place-member').css('position', 'absolute');
+          $('#place-member').css('left', '0');
+          $('#place-member').css('top', '0');
           $('#place-member').css('z-index', '50');
-          $('#place-member').css('transition', '0.5s');
-          $('#place-member').css('transform', 'translate(28%, 650%)');
+          $('#place-member').css('transform', 'translate(430%, 650%)');
 
       },
       function() {
@@ -152,9 +159,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/kyahrye.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(30%, 585%)');
+        $('#place-member').css('transform', 'translate(480%, 585%)');
 
       },
       function() {
@@ -185,9 +194,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/claridori.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(32%, 670%)');
+        $('#place-member').css('transform', 'translate(500%, 670%)');
 
       },
       function() {
@@ -266,9 +277,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/jzgrit.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(30%, 600%)');
+        $('#place-member').css('transform', 'translate(480%, 600%)');
 
     },
     function() {
@@ -299,10 +312,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/kenplayz.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(26%, 450%)');
-
+        $('#place-member').css('transform', 'translate(426%, 450%)');
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
@@ -332,9 +346,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/kingfb.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(32%, 570%)');
+        $('#place-member').css('transform', 'translate(520%, 570%)');
 
       },
       function() {
@@ -390,9 +406,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/kristianph.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(23%, 480%)');
+        $('#place-member').css('transform', 'translate(380%, 480%)');
 
       },
       function() {
@@ -423,9 +441,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/ladysue.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(32%, 570%)');
+        $('#place-member').css('transform', 'translate(520%, 570%)');
 
       },
       function() {
@@ -456,9 +476,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/makikun.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(30%, 600%)');
+        $('#place-member').css('transform', 'translate(480%, 600%)');
 
     },
     function() {
@@ -489,9 +511,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/mchero.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(32%, 570%)');
+        $('#place-member').css('transform', 'translate(520%, 570%)');
 
       },
       function() {
@@ -522,9 +546,11 @@ $(document).ready(function() {
           var img = $('<img src="../public/image/mythdariffer.jpg" alt="Image">');
           img.addClass('hover-image');
           $('#place-member').append(img);
+          $('#place-member').css('position', 'absolute');
+          $('#place-member').css('left', '0');
+          $('#place-member').css('top', '0');
           $('#place-member').css('z-index', '50');
-          $('#place-member').css('transition', '0.5s');
-          $('#place-member').css('transform', 'translate(42%, 1030%)');
+          $('#place-member').css('transform', 'translate(670%, 1030%)');
       },
       function() {
           $('#visayas').css('transform', 'translate(110%, 230%) scale(1)');
@@ -554,9 +580,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/obri.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(38%, 650%)');
+        $('#place-member').css('transform', 'translate(600%, 650%)');
 
       },
       function() {
@@ -587,9 +615,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/robraks.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(38%, 650%)');
+        $('#place-member').css('transform', 'translate(600%, 650%)');
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
@@ -619,9 +649,12 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/slytheminer.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(31%, 530%)');
+        $('#place-member').css('transform', 'translate(480%, 530%)');
+        //$('#place-member').css('transform', 'translate(31%, 530%)');
 
       },
       function() {
@@ -652,9 +685,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/starsere.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(30%, 600%)');
+        $('#place-member').css('transform', 'translate(480%, 600%)');
 
     },
     function() {
@@ -685,9 +720,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/sthreed.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(28%, 480%)');
+        $('#place-member').css('transform', 'translate(428%, 480%)');
 
       },
       function() {
@@ -718,9 +755,12 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/tenderjoncy.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(23%, 480%)');
+        $('#place-member').css('transform', 'translate(380%, 480%)');
+
 
       },
       function() {
@@ -775,9 +815,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/witch.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(32%, 585%)');
+        $('#place-member').css('transform', 'translate(495%, 585%)');
 
       },
       function() {
@@ -808,9 +850,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/zerifae.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(32%, 670%)');
+        $('#place-member').css('transform', 'translate(500%, 670%)');
 
       },
       function() {
@@ -841,9 +885,11 @@ $(document).ready(function() {
         var img = $('<img src="../public/image/zircmcgamer.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
+        $('#place-member').css('position', 'absolute');
+        $('#place-member').css('left', '0');
+        $('#place-member').css('top', '0');
         $('#place-member').css('z-index', '50');
-        $('#place-member').css('transition', '0.5s');
-        $('#place-member').css('transform', 'translate(33%, 590%)');
+        $('#place-member').css('transform', 'translate(520%, 590%)');
 
       },
       function() {
