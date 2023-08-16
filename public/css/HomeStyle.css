@@ -26,6 +26,7 @@ html{
     background-image: linear-gradient(rgba(255, 255, 255, 0.692), rgba(0, 0, 0, 0)),url(../image/kadacraft_background1.png);
     background-size: cover;
     background-position: calc(50% + 45px) 0px;
+    background-attachment: fixed;
 }
 
 .navbar{
