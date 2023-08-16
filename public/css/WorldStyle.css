@@ -5,6 +5,7 @@
     overflow: hidden;
     text-align: center;
     display: flex;
+    background-attachment: fixed;
 }
 
 body #container, .content-title{
