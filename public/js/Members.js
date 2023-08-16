@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  $('#place-member').css('transition', '0.5s');
+
     /* NAVIGATION */
     $('#avery-link').click(function() {
       window.open('https://www.facebook.com', '_blank');
@@ -28,6 +30,8 @@ $(document).ready(function() {
           var img = $('<img src="../public/image/avery.jpg" alt="Image">');
           img.addClass('hover-image');
           $('#place-member').append(img);
+          $('#place-member').css('z-index', '50');
+          $('#place-member').css('transform', 'translate(30%, 600%)');
 
       },
       function() {
@@ -40,26 +44,35 @@ $(document).ready(function() {
 
     $('#1O1O-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
-      },
-      function() {
-          $('#luzon').css('transform', 'scale(1)');
-          $('#visayas').css('filter', 'brightness(100%)');
-          $('#mindanao').css('filter', 'brightness(100%)');
-      }
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/az1010.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(30%, 600%)');
+
+    },
+    function() {
+        $('#luzon').css('transform', 'scale(1)');
+        $('#visayas').css('filter', 'brightness(100%)');
+        $('#mindanao').css('filter', 'brightness(100%)');
+        $('.hover-image').remove();
+    }
     );
 
     $('#Bee-link').hover(
@@ -78,11 +91,20 @@ $(document).ready(function() {
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
           });
+
+          var img = $('<img src="../public/image/beebuyog.jpg" alt="Image">');
+          img.addClass('hover-image');
+          $('#place-member').append(img);
+          $('#place-member').css('z-index', '50');
+          $('#place-member').css('transition', '0.5s');
+          $('#place-member').css('transform', 'translate(28%, 650%)');
+
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
           $('#visayas').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
 
@@ -112,49 +134,67 @@ $(document).ready(function() {
 
     $('#KyahRye-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/kyahrye.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(30%, 585%)');
+
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
           $('#visayas').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
 
     $('#Clari-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/claridori.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(32%, 670%)');
+
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
           $('#visayas').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
 
@@ -208,92 +248,120 @@ $(document).ready(function() {
 
     $('#Jz-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
-      },
-      function() {
-          $('#luzon').css('transform', 'scale(1)');
-          $('#visayas').css('filter', 'brightness(100%)');
-          $('#mindanao').css('filter', 'brightness(100%)');
-      }
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/jzgrit.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(30%, 600%)');
+
+    },
+    function() {
+        $('#luzon').css('transform', 'scale(1)');
+        $('#visayas').css('filter', 'brightness(100%)');
+        $('#mindanao').css('filter', 'brightness(100%)');
+        $('.hover-image').remove();
+    }
     );
 
     $('#Ken-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/kenplayz.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(26%, 450%)');
+
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
           $('#visayas').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
 
     $('#King-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/kingfb.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(32%, 570%)');
+
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
           $('#visayas').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
 
     $('#Klarenz-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
@@ -304,97 +372,133 @@ $(document).ready(function() {
 
     $('#Kris-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/kristianph.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(23%, 480%)');
+
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
           $('#visayas').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
 
     $('#Ladysue-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/ladysue.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(32%, 570%)');
+
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
           $('#visayas').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
 
     $('#MakiKun-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
-      },
-      function() {
-          $('#luzon').css('transform', 'scale(1)');
-          $('#visayas').css('filter', 'brightness(100%)');
-          $('#mindanao').css('filter', 'brightness(100%)');
-      }
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/makikun.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(30%, 600%)');
+
+    },
+    function() {
+        $('#luzon').css('transform', 'scale(1)');
+        $('#visayas').css('filter', 'brightness(100%)');
+        $('#mindanao').css('filter', 'brightness(100%)');
+        $('.hover-image').remove();
+    }
     );
 
     $('#McHero-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/mchero.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(32%, 570%)');
+
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
           $('#visayas').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
 
@@ -414,155 +518,216 @@ $(document).ready(function() {
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
           });
+
+          var img = $('<img src="../public/image/mythdariffer.jpg" alt="Image">');
+          img.addClass('hover-image');
+          $('#place-member').append(img);
+          $('#place-member').css('z-index', '50');
+          $('#place-member').css('transition', '0.5s');
+          $('#place-member').css('transform', 'translate(42%, 1030%)');
       },
       function() {
           $('#visayas').css('transform', 'translate(110%, 230%) scale(1)');
           $('#luzon').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
 
     $('#Obri-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/obri.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(38%, 650%)');
+
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
           $('#visayas').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
 
     $('#Rob-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/robraks.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(38%, 650%)');
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
           $('#visayas').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
 
     $('#Sly-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/slytheminer.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(31%, 530%)');
+
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
           $('#visayas').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
 
     $('#Starsere-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
-      },
-      function() {
-          $('#luzon').css('transform', 'scale(1)');
-          $('#visayas').css('filter', 'brightness(100%)');
-          $('#mindanao').css('filter', 'brightness(100%)');
-      }
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/starsere.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(30%, 600%)');
+
+    },
+    function() {
+        $('#luzon').css('transform', 'scale(1)');
+        $('#visayas').css('filter', 'brightness(100%)');
+        $('#mindanao').css('filter', 'brightness(100%)');
+        $('.hover-image').remove();
+    }
     );
 
     $('#Sthreed-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/sthreed.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(28%, 480%)');
+
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
           $('#visayas').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
 
     $('#TenderJoncy-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/tenderjoncy.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(23%, 480%)');
+
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
           $('#visayas').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
 
@@ -592,78 +757,102 @@ $(document).ready(function() {
 
     $('#Witch-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/witch.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(32%, 585%)');
+
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
           $('#visayas').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
 
     $('#Zeri-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/zerifae.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(32%, 670%)');
+
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
           $('#visayas').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
 
     $('#Zirc-link').hover(
       function() {
-          $('#luzon').css({
-              'transform': 'scale(1.05)',
-              'position': 'absolute',
-              'z-index': '10',
-              'transition': 'all 0.5s ease-in-out'
-          });
-          $('#visayas').css({
-              'filter': 'brightness(25%)',
-              'transition': 'all 0.5s ease-in-out',
-          });
-          $('#mindanao').css({
+        $('#luzon').css({
+            'transform': 'scale(1.05)',
+            'position': 'absolute',
+            'z-index': '10',
+            'transition': 'all 0.5s ease-in-out'
+        });
+        $('#visayas').css({
             'filter': 'brightness(25%)',
             'transition': 'all 0.5s ease-in-out',
-          });
+        });
+        $('#mindanao').css({
+          'filter': 'brightness(25%)',
+          'transition': 'all 0.5s ease-in-out',
+        });
+
+        var img = $('<img src="../public/image/zircmcgamer.jpg" alt="Image">');
+        img.addClass('hover-image');
+        $('#place-member').append(img);
+        $('#place-member').css('z-index', '50');
+        $('#place-member').css('transition', '0.5s');
+        $('#place-member').css('transform', 'translate(33%, 590%)');
+
       },
       function() {
           $('#luzon').css('transform', 'scale(1)');
           $('#visayas').css('filter', 'brightness(100%)');
           $('#mindanao').css('filter', 'brightness(100%)');
+          $('.hover-image').remove();
       }
     );
-
-    
-    
 
 });
   
