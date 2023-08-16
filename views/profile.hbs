@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> KadaCraft </title> 
+        <link rel="stylesheet" href="../css/HomeStyle.css"> 
+        <link rel="stylesheet" href="../css/Character.css"> 
+        <link rel="stylesheet" href="../css/ResolutionCompatible.css" defer> 
+        <link type="text/css" rel="stylesheet" href="../css/Font.css">
+        <link rel="icon" type="image/png" href="../image/kadacraft_weblogo.png">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../js/Home.js"></script>
+        <script src="../js/Members.js"></script>
+        <script src="../js/api.js"></script>
+    </head>
+
+    <body>
+
+        <script>
+
+            window.onload = function() {
+                var channelName = "{{channelName}}"
+                var channelID = "{{channelID}}"
+                getChannelAPI(channelName, channelID);
+            }
+
+        </script>
+
+        <div class = "banner" id="top"> 
+            <div class="navbar">
+                <a class="facebook-btn" style="position:relative; left: 5em; cursor: pointer;" title="Facebook Group"><img src="../image/facebook_logo.png" class="facebook-img" id="facebook-links"></a>
+                <div id="tooltip" style="position: relative; display: flex;">
+                    <div id="tooltip-text" style="display: none"> 
+                        <a href="https://www.facebook.com/groups/KadaCraft" id="button-1" target="_blank"> <button> </button> </a>
+                        <a href="https://www.facebook.com/KadaCraftSMP" id="button-2" target="_blank">  <button> </button> </a>
+                    </div>
+                    <a href="/"> <img src="../image/kadacraft_logo.png" style="position: relative; height: 3em; width: 100%; left: 4.05em; cursor: pointer;"> </a>
+                </div>        
+                <ul>
+                    <li style="right: 70px;" ><a href="/" style="color: black; font-family: Minecraft; letter-spacing: 0.05em;" > Home </a></li>
+                    <li style="right: 70px;"><a href="/world" style="color: black; font-family: Minecraft; letter-spacing: 0.05em;"> Worlds </a></li>       
+                </ul>
+            </div>
+
+
+            <div id="ytVideo-container">
+                
+                <div class="ytVideo" id="ytThumbnail">
+                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
+                    <div id="right-content"> 
+                        <div id="ytTitle"> <p > Video Title </p>  </div>
+                        <div id="ytAuthor"> <p > Video Author </p>  </div>
+                        <div id="ytIcons">
+                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
+                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
+                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="ytVideo" id="ytThumbnail">
+                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
+                    <div id="right-content"> 
+                        <div id="ytTitle"> <p > Video Title </p>  </div>
+                        <div id="ytAuthor"> <p > Video Author </p>  </div>
+                        <div id="ytIcons">
+                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
+                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
+                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="ytVideo" id="ytThumbnail">
+                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
+                    <div id="right-content"> 
+                        <div id="ytTitle"> <p > Video Title </p>  </div>
+                        <div id="ytAuthor"> <p > Video Author </p>  </div>
+                        <div id="ytIcons">
+                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
+                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
+                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="ytVideo" id="ytThumbnail">
+                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
+                    <div id="right-content"> 
+                        <div id="ytTitle"> <p > Video Title </p>  </div>
+                        <div id="ytAuthor"> <p > Video Author </p>  </div>
+                        <div id="ytIcons">
+                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
+                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
+                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
+                        </div>
+                    </div> 
+                </div>
+                
+                <div class="ytVideo" id="ytThumbnail">
+                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
+                    <div id="right-content"> 
+                        <div id="ytTitle"> <p > Video Title </p>  </div>
+                        <div id="ytAuthor"> <p > Video Author </p>  </div>
+                        <div id="ytIcons">
+                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
+                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
+                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="ytVideo" id="ytThumbnail">
+                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
+                    <div id="right-content"> 
+                        <div id="ytTitle"> <p > Video Title </p>  </div>
+                        <div id="ytAuthor"> <p > Video Author </p>  </div>
+                        <div id="ytIcons">
+                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
+                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
+                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
+                        </div>
+                    </div> 
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </body>
+</html>

@@ -75,24 +75,27 @@ html{
 
 @keyframes slideInLeft{
     from{
-        transform: translateX(-100%);
+        transform: translateX(-100%) scale(0);
         opacity: 0;
     }
     to{
-        transform: translateX(-100);
+        transform: translateX(-100) scale(1);
         opacity: 1;
     }
 }
 
 .content{
-    width: 100%;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    color: white;
+    bottom: 150em; 
+    left: 0; 
+    top: 0;
+    transform: translate(25%, 25em);  
+    height: 30%;
+    width: 30%; 
+    z-index: 3;
+    text-align: left;
 
-    animation: slideInLeft 1s ease-in both;
+    animation: slideInLeft 1.5s;
 }
 
 .content h1{
@@ -106,6 +109,116 @@ html{
     line-height: 25px;
 }
 
+#ytVideo-container{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 70%;
+    transform: translate(210%, 12em);
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.ytVideo{
+    position: relative;
+    margin: 20px;
+    border-radius: 50px;
+    width: 95%;
+    height: 20%;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    transition: 0.5s;
+}
+
+.ytVideo:hover{
+    transform: scale(1.2);
+}
+
+.ytVideo #ytPic{
+    position: relative;
+    align-items: center;
+    width: 35%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: translate(10%, 2%);
+}
+
+.ytVideo #ytPic img{
+    width: 7em;
+    border-radius: 200px;
+    position: relative;
+    z-index: 1;
+    border: 5px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+#ytThumbnail{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.219), rgba(0, 0, 0, 0.692)),url(../image/kadacraft_background1.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    transform: translate(0%, -10%);
+    border: 5px solid rgb(0, 0, 0);
+}
+
+.ytVideo #right-content{
+    position: relative;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#right-content #ytTitle{
+    font-size: 1.5em;
+    position: relative;
+    color: white;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+#right-content #ytTitle p{
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis 
+}
+
+#right-content #ytAuthor{
+    font-size: 1em;
+    position: relative;
+    color: white;
+    top: 0;
+    left: 0;
+}
+
+#right-content #ytIcons{
+    position: relative;
+    width: 80%;
+    color: white;
+    top: 0;
+    left: 0;
+    display: flex; 
+    align-items: center;
+}
+
+#ytIcons .yt-icon{
+    margin: 10px;
+    width: 30px;
+    height: auto;
+    filter: invert(100%);
+}
 
 
 #about{
@@ -375,6 +488,25 @@ button:hover{
     top: 0;
     left: 0;
     transform: translate(24%, 150%);
+}
+
+.island-selected{
+    transform: scale(1.05);
+    transition: all 0.5s ease-in-out;
+    z-index: 10;
+    position: absolute;
+}
+
+.island-unselected{
+    transform: scale(1);
+    filter: brightness(25%);
+    transition: all 0.5s ease-in-out;
+}
+
+.island-normal{
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+    filter: brightness(100%);
 }
 
 .hover-image{

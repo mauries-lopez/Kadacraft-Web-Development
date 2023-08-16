@@ -31,7 +31,7 @@ window.onload = function(){
             title.textContent = "Atmospheric";
             
             var img = document.createElement("img");
-            img.src = "../public/image/atmospheric.png";
+            img.src = "../image/atmospheric.png";
             img.style.width = "100px";
             img.style.borderRadius = "50%";
     

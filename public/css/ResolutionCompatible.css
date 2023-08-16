@@ -11,9 +11,6 @@
 
 /* Small screens, non-retina */
 @media only screen and (max-width: 699px) {
-    .content {
-        top: 30%; /* Adjust this value as needed */
-    }
 
     .navbar {
         text-align: center;
@@ -44,10 +41,7 @@
        only screen and (min-device-pixel-ratio: 2) and (max-width: 699px),
        only screen and (min-resolution: 192dpi) and (max-width: 699px),
        only screen and (min-resolution: 2dppx) and (max-width: 699px) {
-    .content {
-        top: 30%; /* Adjust this value as needed */
-    }
-    
+
     .navbar {
         text-align: center;
         justify-content: center;
@@ -72,9 +66,6 @@
 
 /* Medium screens, non-retina */
 @media only screen and (min-width: 700px) and (max-width: 1299px) {
-    .content {
-        top: 30%; /* Adjust this value as needed */
-    }
 
     .navbar {
         text-align: center;
@@ -106,9 +97,6 @@
        only screen and (min-resolution: 192dpi) and (min-width: 700px) and (max-width: 1299px),
        only screen and (min-resolution: 2dppx) and (min-width: 700px) and (max-width: 1299px) {
     
-    .content {
-        top: 30%; /* Adjust this value as needed */
-    }
 
     .navbar {
         text-align: center;
