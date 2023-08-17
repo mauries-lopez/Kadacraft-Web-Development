@@ -1,7 +1,7 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: Minecraft;
+    font-family: "Minecraft", sans-serif;
     font-weight: bold;
 }
 
@@ -9,27 +9,27 @@
 body {
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
-    overflow-y: scroll; 
+    overflow-y: scroll;
 }
 
 body::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
 .banner {
     width: 100%;
     height: 1010px;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.692), rgba(0, 0, 0, 0)),url(../image/kadacraft_background1.png);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.692), rgba(0, 0, 0, 0)), url("/image/kadacraft_background1.png");
     background-size: cover;
-    background-position: calc(50% + 45px) 0px;
+    background-position: calc(50% + 45px) 0;
     background-attachment: fixed;
 }
 
-.navbar{
+.navbar {
     width: 100%;
     margin: auto;
     padding: 10px;
@@ -51,7 +51,7 @@ html{
 
 .navbar ul li a {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: #000;
     text-transform: uppercase;
     transition: 0.5s;
     margin: 0.8em;
@@ -74,43 +74,43 @@ html{
     background: rgb(0, 0, 0);
 }
 
-@keyframes slideInLeft{
-    from{
+@keyframes slideInLeft {
+    from {
         transform: translateX(-100%) scale(0);
         opacity: 0;
     }
-    to{
-        transform: translateX(-100) scale(1);
+    to {
+        transform: translateX(-100%) scale(1);
         opacity: 1;
     }
 }
 
-.content{
+.content {
     position: absolute;
-    bottom: 150em; 
-    left: 0; 
+    bottom: 150em;
+    left: 0;
     top: 0;
-    transform: translate(25%, 25em);  
+    transform: translate(25%, 25em);
     height: 30%;
-    width: 30%; 
+    width: 30%;
     z-index: 3;
     text-align: left;
 
     animation: slideInLeft 1.5s;
 }
 
-.content h1{
+.content h1 {
     font-size: 70px;
     text-transform: uppercase;
 }
 
-.content p{
+.content p {
     margin: 20px auto;
     font-weight: 100;
     line-height: 25px;
 }
 
-#ytVideo-container{
+#ytVideo-container {
     position: relative;
     top: 0;
     left: 0;
@@ -125,7 +125,7 @@ html{
     overflow-x: hidden;
 }
 
-.ytVideo{
+.ytVideo {
     position: relative;
     margin: 20px;
     border-radius: 50px;
@@ -137,11 +137,11 @@ html{
     transition: 0.5s;
 }
 
-.ytVideo:hover{
+.ytVideo:hover {
     transform: scale(1.2);
 }
 
-.ytVideo #ytPic{
+.ytVideo #ytPic {
     position: relative;
     align-items: center;
     width: 35%;
@@ -151,28 +151,28 @@ html{
     transform: translate(10%, 2%);
 }
 
-.ytVideo #ytPic img{
+.ytVideo #ytPic img {
     width: 7em;
     border-radius: 200px;
     position: relative;
     z-index: 1;
     border: 5px solid rgb(255, 255, 255);
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
-#ytThumbnail{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.219), rgba(0, 0, 0, 0.692)),url(../image/kadacraft_background1.png);
+#ytThumbnail {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.219), rgba(0, 0, 0, 0.692)), url("/image/kadacraft_background1.png");
     background-size: cover;
     background-position: center;
     position: relative;
     left: 0;
     top: 0;
     z-index: 0;
-    transform: translate(0%, -10%);
-    border: 5px solid rgb(0, 0, 0);
+    transform: translate(0, -10%);
+    border: 5px solid #000;
 }
 
-.ytVideo #right-content{
+.ytVideo #right-content {
     position: relative;
     width: 65%;
     display: flex;
@@ -180,7 +180,7 @@ html{
     justify-content: center;
 }
 
-#right-content #ytTitle{
+#right-content #ytTitle {
     font-size: 1.5em;
     position: relative;
     color: white;
@@ -189,14 +189,14 @@ html{
     overflow: hidden;
 }
 
-#right-content #ytTitle p{
+#right-content #ytTitle p {
     position: relative;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis 
+    text-overflow: ellipsis
 }
 
-#right-content #ytAuthor{
+#right-content #ytAuthor {
     font-size: 1em;
     position: relative;
     color: white;
@@ -204,28 +204,27 @@ html{
     left: 0;
 }
 
-#right-content #ytIcons{
+#right-content #ytIcons {
     position: relative;
     width: 80%;
     color: white;
     top: 0;
     left: 0;
-    display: flex; 
+    display: flex;
     align-items: center;
 }
 
-#ytIcons .yt-icon{
+#ytIcons .yt-icon {
     margin: 10px;
     width: 30px;
     height: auto;
     filter: invert(100%);
 }
 
-
-#about{
+#about {
     width: 100%;
     height: 1010px;
-    background-image: linear-gradient(rgba(0,0,0,0),rgba(0, 0, 0, 0)),url(../image/kadacraft_background0.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/image/kadacraft_background0.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -238,7 +237,7 @@ html{
     text-align: center;
     color: white;
     width: 50%;
-    position:relative;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -262,7 +261,7 @@ html{
     position: relative;
     width: 100%;
     height: 1010px;
-    background-image: linear-gradient(rgba(255, 255, 255, 0),rgba(0, 0, 0, 0)),url(../image/kadacraft_background2.png);
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0)), url("/image/kadacraft_background2.png");
     background-size: cover;
     background-position: center;
     flex-direction: row;
@@ -271,11 +270,11 @@ html{
     background-attachment: fixed;
 }
 
-#members::-webkit-scrollbar{
+#members::-webkit-scrollbar {
     display: none;
 }
 
-.content-title{
+.content-title {
     position: relative;
     margin: auto;
     top: 10%;
@@ -289,7 +288,7 @@ html{
     display: none;
 }
 
-#member-container{
+#member-container {
     display: none;
 }
 
@@ -301,10 +300,10 @@ html{
     border-radius: 40px;
     padding: 10px;
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: #000;
     width: 80%;
     transition: 0.5s;
-    border: 3px solid rgb(0, 0, 0);
+    border: 3px solid #000;
 }
 
 .content-members:hover {
@@ -317,10 +316,10 @@ html{
     border: 3px solid rgba(255, 238, 0, 0.863);
 }
 
-.content-members img{
+.content-members img {
     width: 50%;
     border-radius: 50%;
-    border: 3px solid rgb(0, 0, 0);
+    border: 3px solid #000;
 }
 
 .flex-container {
@@ -331,10 +330,10 @@ html{
     display: none;
 }
 
-.wrap { 
+.wrap {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
-}  
+}
 
 .content-members h3 {
     font-size: 130%;
@@ -342,8 +341,8 @@ html{
 }
 
 
-button{
-    color: rgb(0, 0, 0);
+button {
+    color: #000;
     width: 200px;
     height: 50px;
     border-radius: 25px;
@@ -353,37 +352,39 @@ button{
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    transition: color 0.2s ease-in-out;
 }
 
-span{
+button span {
     background: rgba(255, 238, 0, 0.863);
     height: 100%;
-    width: 0%;
+    width: 0;
     border-radius: 25px;
     position: absolute;
     left: 0;
     bottom: 0;
     z-index: -1;
-    transition: 0.5s;
+    transition: width 0.75s cubic-bezier(0.25, 0.75, 0, 1);
 }
 
-button:hover span{
+button:hover span {
     width: 100%;
+    transition: width 0.75s cubic-bezier(0.25, 0.75, 0, 1);
 }
 
-button:hover{
-    color: rgb(255, 255, 255);
-    border: none;
+button:hover {
+    color: #FFF;
+    transition: color 0.375s ease-in-out;
 }
 
-.facebook-img{
-    position: relative; 
-    width: 100%; 
-    height: 2em; 
+.facebook-img {
+    position: relative;
+    width: 100%;
+    height: 2em;
     transition: 0.5s;
 }
 
-.facebook-img:hover{
+.facebook-img:hover {
     filter: invert(100%);
     transform: scale(1.2);
 }
@@ -396,8 +397,8 @@ button:hover{
     width: 30%;
     height: 160%;
     background-color: rgba(255, 238, 0, 0.877);
-    border: 3px solid rgb(0, 0, 0);
-    color: #000000;
+    border: 3px solid #000;
+    color: #000;
     text-align: center;
     border-radius: 15px;
 
@@ -425,34 +426,34 @@ button:hover{
     width: 90%;
     transition: 0.3s;
     border: none;
-    cursor: pointer; 
-    text-decoration: none; 
+    cursor: pointer;
+    text-decoration: none;
     color: black;
 }
 
 #button-1:hover, #button-2:hover {
-    background-color: #ffffff;
+    background-color: #FFF;
 }
 
 ::-webkit-scrollbar {
     width: 1em;
 }
-  
+
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px rgb(0, 0, 0); 
+    box-shadow: inset 0 0 5px #000;
     border-radius: 10px;
 }
-   
+
 ::-webkit-scrollbar-thumb {
     background: rgb(255, 238, 0);
     border-radius: 10px;
 }
-  
+
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(196, 183, 0);
 }
 
-#philippines-island{
+#philippines-island {
     position: absolute;
     top: 15%;
     left: 65%;
@@ -466,14 +467,14 @@ button:hover{
     white-space: nowrap;
 }
 
-#philippines-island #luzon{
+#philippines-island #luzon {
     position: absolute;
     height: 570px;
     width: 340px;
     top: 2%;
 }
 
-#philippines-island #visayas{
+#philippines-island #visayas {
     position: absolute;
     height: 160px;
     width: 200px;
@@ -483,7 +484,7 @@ button:hover{
     transform: translate(110%, 230%);
 }
 
-#philippines-island #mindanao{
+#philippines-island #mindanao {
     position: absolute;
     height: 300px;
     width: 400px;
@@ -493,26 +494,26 @@ button:hover{
     transform: translate(24%, 150%);
 }
 
-.island-selected{
+.island-selected {
     transform: scale(1.05);
     transition: all 0.5s ease-in-out;
     z-index: 10;
     position: absolute;
 }
 
-.island-unselected{
+.island-unselected {
     transform: scale(1);
     filter: brightness(25%);
     transition: all 0.5s ease-in-out;
 }
 
-.island-normal{
+.island-normal {
     transform: scale(1);
     transition: all 0.5s ease-in-out;
     filter: brightness(100%);
 }
 
-.hover-image{
+.hover-image {
     height: 30px;
     width: 30px;
     border-radius: 5em;

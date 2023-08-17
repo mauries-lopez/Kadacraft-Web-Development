@@ -19,7 +19,7 @@
     white-space: nowrap;
 }
 
-#first-row{
+#first-row {
     position: relative;
     height: 50%;
     width: 100%;
@@ -29,7 +29,7 @@
     z-index: 10;
 }
 
-#second-row{
+#second-row {
     position: relative;
     left: 2em;
     bottom: 35%;
@@ -41,7 +41,7 @@
     z-index: 20;
 }
 
-#third-row{
+#third-row {
     position: relative;
     left: 3em;
     bottom: 70%;
@@ -53,7 +53,7 @@
     z-index: 20;
 }
 
-#fourth-row{
+#fourth-row {
     position: relative;
     left: 3em;
     bottom: 105%;
@@ -65,7 +65,7 @@
     z-index: 20;
 }
 
-#fifth-row{
+#fifth-row {
     position: relative;
     bottom: 140%;
     height: 50%;
@@ -88,12 +88,12 @@
 }
 
 
-.character-model:hover{
+.character-model:hover {
     transform: scale(1.07);
     filter: contrast(1.5);
 }
 
-#place-member{
+#place-member {
     position: absolute;
     left: 0;
     top: 0;
