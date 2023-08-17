@@ -355,7 +355,7 @@ button {
     transition: color 0.2s ease-in-out;
 }
 
-span {
+button span {
     background: rgba(255, 238, 0, 0.863);
     height: 100%;
     width: 0;
