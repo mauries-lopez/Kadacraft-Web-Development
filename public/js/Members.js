@@ -32,7 +32,7 @@ $(document).ready(function() {
             $('#mindanao').removeClass('island-unselected').addClass('island-selected');
         }
 
-        var img = $('<img src="../image/'+name+'.jpg" alt="Image">');
+        var img = $('<img src="/image/'+name+'.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
         $('#place-member').css('transform', 'translate('+coordX+'%, '+coordY+'%)');

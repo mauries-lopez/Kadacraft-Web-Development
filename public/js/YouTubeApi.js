@@ -137,7 +137,7 @@ function createVideoElements(playlistID){
             var ytPicDiv = document.createElement('div');
             ytPicDiv.id = 'ytPic';
             var ytImage = document.createElement('img');
-            ytImage.src = '../image/'+channelName+'.jpg'; //CHANGE PROFILE PICTURE
+            ytImage.src = '/image/'+channelName+'.jpg'; //CHANGE PROFILE PICTURE
             ytPicDiv.appendChild(ytImage);
 
             // Create the inner div for the right content
