@@ -167,7 +167,7 @@ function createVideoElements(playlistID){
             for (var i = 0; i < 3; i++) {
                 var iconImg = document.createElement('img');
                 iconImg.className = 'yt-icon';
-                iconImg.src = `../public/image/small-icon/${iconLabels[i]}-icon.png`;
+                iconImg.src = `/image/small-icon/${iconLabels[i]}-icon.png`;
 
                 var iconCount = document.createElement('p');
                 iconCount.textContent = '100'; //CHANGE COUNT
