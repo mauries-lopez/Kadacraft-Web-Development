@@ -29,10 +29,10 @@ $(document).ready(function() {
         } else if (island == 'mindanao') {
             $('#luzon').removeClass('island-selected island-normal').addClass('island-unselected');
             $('#visayas').removeClass('island-selected island-normal').addClass('island-unselected');
-            $('#mindanao').removeClass('island-unselected').addClass('island-selected');
+            $('#mindanao').addClass('island-selected');
         }
 
-        var img = $('<img src="/image/'+name+'.jpg" alt="Image">');
+        var img = $('<img src="../image/yt-profile/'+name+'.jpg" alt="Image">');
         img.addClass('hover-image');
         $('#place-member').append(img);
         $('#place-member').css('transform', 'translate('+coordX+'%, '+coordY+'%)');
