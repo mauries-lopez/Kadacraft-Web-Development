@@ -112,26 +112,24 @@ function createVideoElements(playlistID){
         return result.json();
     }).then((data) => {
 
+        console.log(data);
         var videos = data.items;
 
-        for ( videos of videos) {
+        for ( let video of videos ) {
 
-            var channelName = checkChannelName(videos.snippet.channelTitle);
-
-            // Make the videos be ordered by published date (newest first)
+            var channelName = checkChannelName(video.snippet.channelTitle);
             
-
             // Create the main container div
             var ytVideoDiv = document.createElement('div');
             ytVideoDiv.onclick = (function(videoId) {
                 return function() {
-                    window.location.href = `https://www.youtube.com/watch?v=${videos.snippet.resourceId.videoId}`;
+                    window.location.href = `https://www.youtube.com/watch?v=${videoId}`;
                 };
-            })(videos.id.videoId);
+            })(video.snippet.resourceId.videoId);
             ytVideoDiv.style.cursor = 'pointer';
             ytVideoDiv.className = 'ytVideo';
             ytVideoDiv.id = 'ytThumbnail';
-            ytVideoDiv.style.backgroundImage = `linear-gradient(rgba(0,0,0,0),rgba(0, 0, 0, 0.8)),url(${videos.snippet.thumbnails.high.url})`;
+            ytVideoDiv.style.backgroundImage = `linear-gradient(rgba(0,0,0,0),rgba(0, 0, 0, 0.8)),url(${video.snippet.thumbnails.high.url})`;
 
             // Create the inner div for the image
             var ytPicDiv = document.createElement('div');
@@ -148,14 +146,14 @@ function createVideoElements(playlistID){
             var ytTitleDiv = document.createElement('div');
             ytTitleDiv.id = 'ytTitle';
             var ytTitle = document.createElement('p');
-            ytTitle.textContent = videos.snippet.title; // CHANGE VIDEO TITLE
+            ytTitle.textContent = video.snippet.title; // CHANGE VIDEO TITLE
             ytTitleDiv.appendChild(ytTitle);
 
             // Create the div for the video author
             var ytAuthorDiv = document.createElement('div');
             ytAuthorDiv.id = 'ytAuthor';
             var ytAuthor = document.createElement('p');
-            ytAuthor.textContent = videos.snippet.channelTitle; // CHANGE VIDEO AUTHOR
+            ytAuthor.textContent = video.snippet.channelTitle; // CHANGE VIDEO AUTHOR
             ytAuthorDiv.appendChild(ytAuthor);
 
             // Create the div for the icons and counts
@@ -167,7 +165,7 @@ function createVideoElements(playlistID){
             for (var i = 0; i < 3; i++) {
                 var iconImg = document.createElement('img');
                 iconImg.className = 'yt-icon';
-                iconImg.src = `../public/image/small-icon/${iconLabels[i]}-icon.png`;
+                iconImg.src = `../image/small-icon/${iconLabels[i]}-icon.png`;
 
                 var iconCount = document.createElement('p');
                 iconCount.textContent = '100'; //CHANGE COUNT
