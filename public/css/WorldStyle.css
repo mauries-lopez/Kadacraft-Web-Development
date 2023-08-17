@@ -1,46 +1,94 @@
 .banner {
     width: 100%;
     height: 100%;
-    position: fixed;
     overflow: hidden;
     text-align: center;
-    display: flex;
     background-attachment: fixed;
-}
-
-body #container, .content-title {
-    animation: slideInLeft 3s ease-in both;
-}
-
-#container {
-    width: 70%;
-    height: 60%;
-    position: relative;
-    top: 30%;
-    left: 15%;
-    line-height: 0;
-
+    background-image: none;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    padding-top: 4rem;
+    gap: 3rem;
     align-items: center;
 }
 
+#world .content-title {
+    color: white;
+    border: 3px solid white;
+    background-color: transparent;
+    display: block;
+    z-index: 1;
+    padding: 0.5rem 3rem;
+    margin-top: 3rem;
+}
+
+#container {
+    width: 85%;
+    height: 60%;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
 .world-box {
-    margin: 0.5em;
     width: 100%;
     height: 100%;
     background: white;
     overflow: hidden;
-    transition: 1s;
+    transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s, border-color 0.5s ease;
     border: 10px solid #FFF;
-    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    transform: scaleX(0);
+    animation: scaleX 1s cubic-bezier(0.25, 0.75, 0, 1) forwards;
+}
+
+.world-box:nth-child(2), .world-box:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+.world-box:first-child, .world-box:last-child {
+    animation-delay: 0.3s;
+}
+
+.world-box:first-child {
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+
+.world-box:last-child {
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+.world-box::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease;
+}
+
+.world-box:hover::after {
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 #container .world-box h1 {
     line-height: 5em;
     color: white;
-    margin-top: 1em;
+    text-shadow: 5px 5px #3F3F3F;
     font-size: 5em;
     text-transform: uppercase;
     font-weight: 300;
@@ -48,42 +96,60 @@ body #container, .content-title {
     word-break: break-all;
     word-wrap: break-word;
     white-space: pre-wrap;
+    z-index: 2;
+    transition: color 0.3s ease;
 }
 
 #container .world-box img {
-    position: relative;
-    width: 30%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     bottom: 2em;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 #container .world-box:hover {
-    width: 500%;
+    /*width: 500%;*/
+    flex: 5;
     border: 10px solid rgb(255, 238, 0);
     z-index: 1;
+    transition: flex 1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+}
+
+#container .world-box:hover h1 {
+    color: rgb(255, 238, 0);
 }
 
 
 video {
+    width: 100%;
+    height: 100vh;
     object-fit: cover;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    height: 101%;
-    width: 100%;
+    bottom: 0;
+    right: 0;
+    /*height: 101%;
+    width: 100%;*/
 }
 
 .video-wrapper {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     overflow: hidden;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    z-index: -1;
 }
 
-
-
+@keyframes scaleX {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(100%); }
+}
