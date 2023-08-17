@@ -47,17 +47,17 @@
         justify-content: center;
         padding: 10px;
     }
-    
+
     .navbar ul li {
         text-align: center;
         left: -5%;
         margin: 1em;
     }
-    
+
     .navbar ul li a{
         font-size: 2em;
     }
-    
+
     .navbar img {
         display: none;
     }
@@ -96,7 +96,7 @@
        only screen and (min-device-pixel-ratio: 2) and (min-width: 700px) and (max-width: 1299px),
        only screen and (min-resolution: 192dpi) and (min-width: 700px) and (max-width: 1299px),
        only screen and (min-resolution: 2dppx) and (min-width: 700px) and (max-width: 1299px) {
-    
+
 
     .navbar {
         text-align: center;
@@ -117,7 +117,5 @@
     .navbar img {
         display: none;
     }
-
-
 
 }
