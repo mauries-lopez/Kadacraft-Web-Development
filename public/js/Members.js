@@ -19,7 +19,6 @@ $(document).ready(function() {
         var coordY = $(this).data("coord-y");
 
         if (island == 'luzon') {
-          console.log('luzon');
           $('#luzon').removeClass('island-normal').addClass('island-selected');
           $('#visayas').removeClass('island-selected island-normal').addClass('island-unselected');
           $('#mindanao').removeClass('island-selected island-normal').addClass('island-unselected');

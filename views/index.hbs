@@ -11,10 +11,15 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="../js/Home.js"></script>
         <script src="../js/Members.js"></script>
-        <script src="../js/api.js"></script>
+        <script src="../js/YouTubeApi.js"></script>
     </head>
 
     <body>
+
+         <script>
+            //getChannelVideos();
+            checkCache();
+        </script>
 
         <div class = "banner" id="top"> 
             <div class="navbar">
@@ -46,18 +51,7 @@
 
             <div id="ytVideo-container">
 
-                <div class="ytVideo" id="ytThumbnail">
-                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
-                    <div id="right-content"> 
-                        <div id="ytTitle"> <p > Video Title </p>  </div>
-                        <div id="ytAuthor"> <p > Video Author </p>  </div>
-                        <div id="ytIcons">
-                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
-                        </div>
-                    </div> 
-                </div>
+                <!--
 
                 <div class="ytVideo" id="ytThumbnail">
                     <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
@@ -110,6 +104,22 @@
                         </div>
                     </div> 
                 </div>
+
+                <div class="ytVideo" id="ytThumbnail">
+                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
+                    <div id="right-content"> 
+                        <div id="ytTitle"> <p > Video Title </p>  </div>
+                        <div id="ytAuthor"> <p > Video Author </p>  </div>
+                        <div id="ytIcons">
+                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
+                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
+                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
+                        </div>
+                    </div> 
+                </div>
+
+                -->
+
             </div>
 
         </div>
