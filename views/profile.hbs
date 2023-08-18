@@ -18,11 +18,14 @@
 
         <script>
 
-            window.onload = function() {
-                var channelName = "{{channelName}}"
-                var channelID = "{{channelID}}"
-                getChannelAPI(channelName, channelID);
-            }
+            $(document).ready(function() {
+
+                window.onload = function(){
+                    var channelID = "{{channelID}}"
+                    checkCache(channelID, true);
+                }
+                
+            });
 
         </script>
 
@@ -44,84 +47,6 @@
 
 
             <div id="ytVideo-container">
-                
-                <div class="ytVideo" id="ytThumbnail">
-                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
-                    <div id="right-content"> 
-                        <div id="ytTitle"> <p > Video Title </p>  </div>
-                        <div id="ytAuthor"> <p > Video Author </p>  </div>
-                        <div id="ytIcons">
-                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
-                        </div>
-                    </div> 
-                </div>
-
-                <div class="ytVideo" id="ytThumbnail">
-                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
-                    <div id="right-content"> 
-                        <div id="ytTitle"> <p > Video Title </p>  </div>
-                        <div id="ytAuthor"> <p > Video Author </p>  </div>
-                        <div id="ytIcons">
-                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
-                        </div>
-                    </div> 
-                </div>
-
-                <div class="ytVideo" id="ytThumbnail">
-                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
-                    <div id="right-content"> 
-                        <div id="ytTitle"> <p > Video Title </p>  </div>
-                        <div id="ytAuthor"> <p > Video Author </p>  </div>
-                        <div id="ytIcons">
-                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
-                        </div>
-                    </div> 
-                </div>
-
-                <div class="ytVideo" id="ytThumbnail">
-                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
-                    <div id="right-content"> 
-                        <div id="ytTitle"> <p > Video Title </p>  </div>
-                        <div id="ytAuthor"> <p > Video Author </p>  </div>
-                        <div id="ytIcons">
-                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
-                        </div>
-                    </div> 
-                </div>
-                
-                <div class="ytVideo" id="ytThumbnail">
-                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
-                    <div id="right-content"> 
-                        <div id="ytTitle"> <p > Video Title </p>  </div>
-                        <div id="ytAuthor"> <p > Video Author </p>  </div>
-                        <div id="ytIcons">
-                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
-                        </div>
-                    </div> 
-                </div>
-
-                <div class="ytVideo" id="ytThumbnail">
-                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
-                    <div id="right-content"> 
-                        <div id="ytTitle"> <p > Video Title </p>  </div>
-                        <div id="ytAuthor"> <p > Video Author </p>  </div>
-                        <div id="ytIcons">
-                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
-                        </div>
-                    </div> 
-                </div>
 
             </div>
 

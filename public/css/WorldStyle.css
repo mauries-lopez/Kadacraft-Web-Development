@@ -1,6 +1,6 @@
 .banner {
     width: 100%;
-    height: 100%;
+    height: 70vh;
     overflow: hidden;
     text-align: center;
     background-attachment: fixed;
@@ -10,6 +10,12 @@
     padding-top: 4rem;
     gap: 3rem;
     align-items: center;
+}
+
+#world {
+    justify-content: center;
+    align-items: center;
+    height: 90%;
 }
 
 #world .content-title {
@@ -25,11 +31,14 @@
 #container {
     width: 85%;
     height: 60%;
-    line-height: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0%, -5%);
 }
 
 .world-box {
@@ -93,8 +102,6 @@
     text-transform: uppercase;
     font-weight: 300;
     text-align: center;
-    word-break: break-all;
-    word-wrap: break-word;
     white-space: pre-wrap;
     z-index: 2;
     transition: color 0.3s ease;

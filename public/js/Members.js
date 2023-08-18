@@ -18,18 +18,27 @@ $(document).ready(function() {
         var coordX = $(this).data("coord-x");
         var coordY = $(this).data("coord-y");
 
+        $('#luzon').removeClass('island-unselected island-normal island-selected').addClass('island-normal');
+        $('#visayas').removeClass('island-unselected island-normal island-selected').addClass('island-normal');
+        $('#mindanao').removeClass('island-unselected island-normal island-selected').addClass('island-normal');
+        $('#visayas').removeAttr('style');
+        $('#mindanao').removeAttr('style');
+        $('.hover-image').remove();
+
         if (island == 'luzon') {
           $('#luzon').removeClass('island-normal').addClass('island-selected');
           $('#visayas').removeClass('island-selected island-normal').addClass('island-unselected');
           $('#mindanao').removeClass('island-selected island-normal').addClass('island-unselected');
         } else if (island == 'visayas') {
-            $('#luzon').removeClass('island-selected island-normal').addClass('island-unselected');
-            $('#visayas').removeClass('island-unselected').addClass('island-selected');
-            $('#mindanao').removeClass('island-selected island-normal').addClass('island-unselected');
+          $('#luzon').removeClass('island-selected island-normal').addClass('island-unselected');
+          $('#visayas').removeClass('island-normal').addClass('island-selected');
+          $('.island-selected').css('transform', 'translate(110%, 230%) scale(1.1)');
+          $('#mindanao').removeClass('island-selected island-normal').addClass('island-unselected');
         } else if (island == 'mindanao') {
-            $('#luzon').removeClass('island-selected island-normal').addClass('island-unselected');
-            $('#visayas').removeClass('island-selected island-normal').addClass('island-unselected');
-            $('#mindanao').addClass('island-selected');
+          $('#luzon').removeClass('island-selected island-normal').addClass('island-unselected');
+          $('#visayas').removeClass('island-selected island-normal').addClass('island-unselected');
+          $('#mindanao').removeClass('island-normal').addClass('island-selected');
+          $('.island-selected').css('transform', 'translate(24%, 150%) scale(1.05)');
         }
 
         var img = $('<img src="../image/yt-profile/'+name+'.jpg" alt="Image">');
@@ -37,13 +46,7 @@ $(document).ready(function() {
         $('#place-member').append(img);
         $('#place-member').css('transform', 'translate('+coordX+'%, '+coordY+'%)');
       
-      },
-      function(){
-        $('#luzon').removeClass('island-unselected').addClass('island-normal');
-        $('#visayas').removeClass('island-unselected').addClass('island-normal');
-        $('#mindanao').removeClass('island-unselected').addClass('island-normal');
-        $('.hover-image').remove();
-    });
+      });
 
 });
   

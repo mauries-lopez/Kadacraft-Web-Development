@@ -10,10 +10,9 @@ const controller = {
 
     getProfile: function (req, res){
 
-        var channelName = req.query.channelName;
         var channelID = req.query.channelID;
 
-        res.render('profile', {channelName: channelName, channelID: channelID});
+        res.render('profile', {channelID: channelID});
     },
 
     getError: function (req, res) {
