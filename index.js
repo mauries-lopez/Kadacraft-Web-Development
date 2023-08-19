@@ -13,6 +13,8 @@ app.use(express.json());
 
 app.use(express.urlencoded({extended: true}));
 
+hbs.registerPartials(__dirname + '/views/partials');
+
 app.use(express.static('public'));
 
 app.use('/', routes);
