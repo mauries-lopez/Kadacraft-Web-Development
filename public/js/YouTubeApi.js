@@ -2,7 +2,7 @@
 // For Profile Page
 function fetchProfileChannelVideos(channelID){
 
-    var url = "https://youtube.googleapis.com/youtube/v3/channels?part=contentDetails&id="+channelID+"&maxResults=10&key=AIzaSyDLRLFI_5LRxV2eBJErG3m3iVw8GSIBU6E"
+    var url = "https://youtube.googleapis.com/youtube/v3/channels?part=contentDetails&id="+channelID+"&maxResults=10&key=AIzaSyAlOrXuFx12OhKSYAyN1T9I8NSSns4Spxs"
     fetch(url)
     .then((result) => {
         return result.json();
@@ -139,7 +139,7 @@ function fetchProfileChannelVideos(channelID){
 // For Home Page
 async function fetchChannelVideos(){
 
-    var url = "https://youtube.googleapis.com/youtube/v3/channels?part=contentDetails&id=UCvYssWjD3EYiw02k9V2julg&id=UC8w7U97376AfqgbgChFQ0Rg&id=UC3Ir6UQsfdG_5LAebS47tPw&id=UCdfkfwLNSFcoxJfMUELsGFg&id=UCBNqKk9NyzpW1sbRZ2Iqrag&id=UC6tCdiWfn_fg69MM6xEJhlQ&id=UC_ftwy-jI7VRv4BkbSsCnuA&id=UClx91ILccyc0IpzqGZjwhpg&id=UCY-2sNc980SBE4WirNsW5kQ&id=UCY82vc2qc6OpJ2JIc84uwmw&id=UCH1ePS4jaQ_pKjCV3ZoWTNQ&id=UC3Sz8yjiQbQE9_Xq3wUTTog&id=UCOp3dnFJVrEtTtgVF56OeSg&id=UCnPHLZXBAH42XVJlcwTCLlA&id=UCmS4KnV7sX0l-VIyFhZ36yw&id=UCMjP3_mW1_uwgRiLHWj_DQg&id=UCSHb6WyycptSag5u22KQdXA&id=UCzW-TM_w4ntSKbzeT1lcwOQ&id=UChMoFQr8tEisoGXOhw3cdHg&id=UChDF2wRXgNq_RZX0UZrB7Mg&id=UCj9AedTtoCwMUFUDAK_STPQ&id=UC2ukXRx1LNiGayO_HQ_bKmA&id=UCSWIKRQ3S3CW7c3S6VPe63Q&id=UCng1BP8fhudP2WfI_JaJFZw&id=UCaC6Exn0uANeUJNqd0QggNw&id=UCIHLEsaC8fCu9EWhKJzLNCQ&maxResults=1&key=AIzaSyDLRLFI_5LRxV2eBJErG3m3iVw8GSIBU6E";
+    var url = "https://youtube.googleapis.com/youtube/v3/channels?part=contentDetails&id=UCvYssWjD3EYiw02k9V2julg&id=UC8w7U97376AfqgbgChFQ0Rg&id=UC3Ir6UQsfdG_5LAebS47tPw&id=UCdfkfwLNSFcoxJfMUELsGFg&id=UCBNqKk9NyzpW1sbRZ2Iqrag&id=UC6tCdiWfn_fg69MM6xEJhlQ&id=UC_ftwy-jI7VRv4BkbSsCnuA&id=UClx91ILccyc0IpzqGZjwhpg&id=UCY-2sNc980SBE4WirNsW5kQ&id=UCY82vc2qc6OpJ2JIc84uwmw&id=UCH1ePS4jaQ_pKjCV3ZoWTNQ&id=UC3Sz8yjiQbQE9_Xq3wUTTog&id=UCOp3dnFJVrEtTtgVF56OeSg&id=UCnPHLZXBAH42XVJlcwTCLlA&id=UCmS4KnV7sX0l-VIyFhZ36yw&id=UCMjP3_mW1_uwgRiLHWj_DQg&id=UCSHb6WyycptSag5u22KQdXA&id=UCzW-TM_w4ntSKbzeT1lcwOQ&id=UChMoFQr8tEisoGXOhw3cdHg&id=UChDF2wRXgNq_RZX0UZrB7Mg&id=UCj9AedTtoCwMUFUDAK_STPQ&id=UC2ukXRx1LNiGayO_HQ_bKmA&id=UCSWIKRQ3S3CW7c3S6VPe63Q&id=UCng1BP8fhudP2WfI_JaJFZw&id=UCaC6Exn0uANeUJNqd0QggNw&id=UCIHLEsaC8fCu9EWhKJzLNCQ&maxResults=1&key=AIzaSyAlOrXuFx12OhKSYAyN1T9I8NSSns4Spxs";
     var response = await fetch(url);
     var data = await response.json();
     return data;
@@ -149,7 +149,7 @@ async function fetchChannelVideos(){
 // For Getting all videos from the upload playlist of each YouTube Channel
 async function fetchPlaylistVideos(dataID,vidCount){
 
-    var url = "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults="+vidCount+"&playlistId="+dataID+"&key=AIzaSyDLRLFI_5LRxV2eBJErG3m3iVw8GSIBU6E";
+    var url = "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults="+vidCount+"&playlistId="+dataID+"&key=AIzaSyAlOrXuFx12OhKSYAyN1T9I8NSSns4Spxs";
     var response = await fetch(url);
     var video = await response.json();
     return video;
@@ -302,7 +302,7 @@ function checkCache(channelID, fromProfile ) {
     if ( fromProfile == true) {
         fetchProfileChannelVideos(channelID);
     }
-    
+
     /*
     const currentTimeStamp = new Date().getHours();
 
@@ -368,6 +368,8 @@ function checkChannelName(channelTitle){
             return "McHero";
         case "Ladysue Alberto":
             return "LadySue";
+        case "kyahrye":
+            return "KyahRye";
         default:
             return channelTitle;
     }

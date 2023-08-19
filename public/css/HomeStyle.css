@@ -149,9 +149,6 @@ html {
     transition: 0.5s;
 }
 
-.ytVideo:hover {
-    transform: scale(1.2);
-}
 
 .ytVideo #ytPic {
     position: relative;
@@ -182,6 +179,10 @@ html {
     z-index: 0;
     transform: translate(0, -10%);
     border: 5px solid #000;
+}
+
+#ytThumbnail:hover{
+    transform: scale(1.2);
 }
 
 .ytVideo #right-content {
