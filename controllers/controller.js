@@ -324,40 +324,26 @@ function checkCache(cacheLifespan, isCacheExpired) {
 
 // Helper Function for checking correct channel name
 function checkChannelName(channelTitle){
-    switch(channelTitle){
-        case "Avery McIvory":
-            return "AveryMcIvory";
-        case "1O1O":
-            return "AZ1O1O";
-        case "StarserePlays":
-            return "Starsere";
-        case "Zeri Fae":
-            return "ZeriFae";
-        case "Kraftian PH":
-            return "KristianPH";
-        case "Edicius 8-bit":
-            return "Edicius8-Bit";
-        case "Ken Playz":
-            return "KenPlayz";
-        case "WITCH CARNELIAN":
-            return "WitchCarnelian";
-        case "Sthreed YT":
-            return "Sthreed";
-        case "JZ GRIT":
-            return "JZGrit";
-        case "maki kun":
-            return "MakiKun";
-        case "King FB":
-            return "KingFB";
-        case "Mc Hero":
-            return "McHero";
-        case "Ladysue Alberto":
-            return "LadySue";
-        case "kyahrye":
-            return "KyahRye";
-        default:
-            return channelTitle;
-    }
+    const channelNameMap = new Map();
+
+    channelNameMap.set("Avery McIvory", "AveryMcIvory");
+    channelNameMap.set("1O1O", "AZ1O1O");
+    channelNameMap.set("StarserePlays", "Starsere");
+    channelNameMap.set("Zeri Fae", "ZeriFae");
+    channelNameMap.set("Kraftian PH", "KristianPH");
+    channelNameMap.set("Edicius 8-bit", "Edicius8-Bit");
+    channelNameMap.set("Ken Playz", "KenPlayz");
+    channelNameMap.set("WITCH CARNELIAN", "WitchCarnelian");
+    channelNameMap.set("Sthreed YT", "Sthreed");
+    channelNameMap.set("JZ GRIT", "JZGrit");
+    channelNameMap.set("maki kun", "MakiKun");
+    channelNameMap.set("King FB", "KingFB");
+    channelNameMap.set("Mc Hero", "McHero");
+    channelNameMap.set("Ladysue Alberto", "LadySue");
+    channelNameMap.set("kyahrye", "KyahRye");
+
+    if (channelNameMap.has(channelTitle)) return channelNameMap.get(channelTitle);
+    return channelTitle;
 }
 
 // Helper Function for getting likes, views, and comments counts
