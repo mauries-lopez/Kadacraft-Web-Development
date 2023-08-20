@@ -147,6 +147,7 @@ html {
     display: flex;
     flex-direction: row;
     transition: 0.5s;
+    text-decoration: none;
 }
 
 
