@@ -66,7 +66,7 @@ html {
     left: 50%; /* Center the underline */
     transform: translateX(-50%);
     bottom: -0.5em;
-    transition: 0.5s;
+    transition: width 0.5s cubic-bezier(0.25, 0.75, 0, 1), background 0.2s ease;
 }
 
 .navbar ul li:hover::after {
@@ -88,11 +88,11 @@ html {
 
 @keyframes slideInLeft2 {
     from {
-        transform: translate(0%, 25em);
+        transform: translateX(-25%);
         opacity: 0;
     }
-    to{
-        transform: translate(25%, 25em);
+    to {
+        transform: translateX(0);
         opacity: 1;
     }
 }
@@ -107,8 +107,26 @@ html {
     width: 30%;
     z-index: 3;
     text-align: left;
+}
 
-    animation: slideInLeft2 1.5s ease-in-out;
+.content > #welcome-text {
+    color: black;
+    font-family: Minecraft, sans-serif;
+    letter-spacing: 0.05em;
+    font-size: 1em;
+
+    opacity: 0;
+    animation: slideInLeft2 1.5s cubic-bezier(0.25, 0.75, 0, 1) forwards;
+}
+
+.content .logo {
+    position: relative;
+    cursor: pointer;
+    width: 25em;
+    margin-top: 3%;
+
+    opacity: 0;
+    animation: slideInLeft2 1.5s cubic-bezier(0.25, 0.75, 0, 1) 0.15s forwards;
 }
 
 .content h1 {
@@ -120,6 +138,14 @@ html {
     margin: 20px auto;
     font-weight: 100;
     line-height: 25px;
+
+    opacity: 0;
+    animation: slideInLeft2 1.5s cubic-bezier(0.25, 0.75, 0, 1) 0.3s forwards;
+}
+
+.content > #home-buttons {
+    opacity: 0;
+    animation: slideInLeft2 1.5s cubic-bezier(0.25, 0.75, 0, 1) 0.5s forwards;
 }
 
 #ytVideo-container {
