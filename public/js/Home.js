@@ -1,5 +1,8 @@
 window.onload = function(){
 
+    var channelName = "{{channelName}}";
+    var channelID = "{{channelID}}"
+
     $("#member_button").click(function(){
 
         if ( $("#member_title").text() == "< Web Developer" ) {

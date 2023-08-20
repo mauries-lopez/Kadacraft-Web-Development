@@ -1,0 +1,227 @@
+#contents-container{
+    position: relative; 
+    width: 100%;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    left: 0%;
+    top: 9%;
+    transform: translate(0%, 0%);
+    text-align: center;
+}
+
+#playerDetails-container{
+    position: relative;
+    background: rgba(0, 0, 0, 0.705);
+    width: 45%;
+    height: 80%;
+    z-index: -1;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    border: 5px solid rgb(255, 238, 0);
+    box-shadow: 0px 0px 8px 10px #00000073;
+}
+
+#playerDetails-container #top{
+    position: relative;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#channelName{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+#channelName p{
+    position: relative;
+    font-size: 3.5em;
+    white-space: nowrap;
+    margin-left: 10%;
+    color: rgb(255, 238, 0);
+    text-shadow: 5px 5px 0px #000000;
+}
+
+#channelSocials{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+#channelSocials img{
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    filter: saturate(500%);
+}
+
+#member-render{
+    position: relative; 
+    height: 90%; 
+    width: 600px;
+    -webkit-animation: breathing 5s ease-out infinite normal;
+    animation: breathing 5s ease-out infinite normal;
+}
+
+#playerDetails-container #mid{
+    position: relative;
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+}
+
+#mid .mid-rows{
+    position: relative;
+    width: 100%;
+    height: 35%;
+    align-items: center;
+    justify-content: left;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    bottom: 3%;
+}
+
+.mid-rows .stat-name{
+    position: relative;
+    width: 57%;
+    text-align: right;
+    font-size: 2em;
+    left: 5%;
+    color: rgb(255, 238, 0);
+    text-shadow: 5px 5px 0px #000000;
+}
+
+.mid-rows .stats-bar{
+    position: relative;
+    height: 70%;
+    width: 90%;
+    border: 5px solid white;
+    border-radius: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 5px 5px #00000073;
+}
+
+.stats-bar .progress-bar{
+    position: relative;
+    height: 100%;
+    background: rgb(255, 238, 0);
+    border-radius: 50px;
+    line-height: 3em;
+    color: black;
+    font-weight: bold;
+    z-index: -1;
+}
+
+#bottom {
+    position: relative;
+    width: 90%;
+    height: 55%;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+#bottom #description{
+    color: white;
+    height: 60%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#description p{
+    position: relative;
+    font-size: 1.2em;
+}
+
+#bottom #builds-img{
+    position: relative;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    object-fit: fill;
+    background-position: center;
+    background-size: cover;
+    border-radius: 90px;
+    border: 5px solid white;
+    bottom: 5%;
+}
+
+
+
+/* ANIMATION/S */
+@-webkit-keyframes breathing {
+   0% {
+     -webkit-transform: scale(0.9);
+     transform: scale(0.9);
+   }
+ 
+   25% {
+     -webkit-transform: scale(1);
+     transform: scale(1);
+   }
+ 
+   60% {
+     -webkit-transform: scale(0.9);
+     transform: scale(0.9);
+   }
+ 
+   100% {
+     -webkit-transform: scale(0.9);
+     transform: scale(0.9);
+   }
+ }
+ 
+ @keyframes breathing {
+   0% {
+     -webkit-transform: scale(0.9);
+     -ms-transform: scale(0.9);
+     transform: scale(0.9);
+   }
+ 
+   25% {
+     -webkit-transform: scale(1);
+     -ms-transform: scale(1);
+     transform: scale(1);
+   }
+ 
+   60% {
+     -webkit-transform: scale(0.9);
+     -ms-transform: scale(0.9);
+     transform: scale(0.9);
+   }
+ 
+   100% {
+     -webkit-transform: scale(0.9);
+     -ms-transform: scale(0.9);
+     transform: scale(0.9);
+   }
+ }
+
+  

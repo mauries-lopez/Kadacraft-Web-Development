@@ -298,7 +298,6 @@ function runFetch(){
 // Checking for cache 
 function checkCache(channelID, fromProfile ) {
 
-
     /*
     const currentTimeStamp = new Date().getHours();
 

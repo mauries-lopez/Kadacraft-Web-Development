@@ -3,6 +3,7 @@
 <html>
     <head>
         <title> KadaCraft </title> 
+        <link rel="stylesheet" href="../css/Profile.css">
         <link rel="stylesheet" href="../css/HomeStyle.css"> 
         <link rel="stylesheet" href="../css/Character.css"> 
         <link rel="stylesheet" href="../css/ResolutionCompatible.css" defer> 
@@ -10,7 +11,7 @@
         <link rel="icon" type="image/png" href="../image/kadacraft_weblogo.png">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="../js/Home.js"></script>
-        <script src="../js/Members.js"></script>
+        <script src="../js/Profile.js" defer></script>
         <!--<script src="../js/YouTubeApi.js"></script>-->
     </head>
 
@@ -19,21 +20,24 @@
         <script>
 
             $(document).ready(function() {
+                var channelName = "{{channelName}}";
+                checkStats(channelName);
 
-                window.onload = function(){
-                    var channelID = "{{channelID}}"
-                    checkCache(channelID, true);
-                }
-                
-            });
+                $("#member-render").on("click", function() {
+                    console.log("Easter Egg! The website was made by Atmospheric and Lloyd.");
+                })
+
+                $("#builds-img").css("background-image", "url('../image/season4.1/kadacraftS4.1_1.png')");
+            })
+            
 
         </script>
 
-        <div class = "banner" id="top"> 
+        <div class="banner" id="top" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('../image/members/backgrounds/{{channelName}}.png');"> 
             <div class="navbar">
                 <a class="facebook-btn" style="position:relative; left: 5em; cursor: pointer;" title="Facebook Group"><img src="../image/facebook_logo.png" class="facebook-img" id="facebook-links"></a>
                 <div id="tooltip" style="position: relative; display: flex;">
-                    <div id="tooltip-text" style="display: none"> 
+                    <div id="tooltip-text" style="display: none; transform: translate(-42em, 5em);"> 
                         <a href="https://www.facebook.com/groups/KadaCraft" id="button-1" target="_blank"> <button> </button> </a>
                         <a href="https://www.facebook.com/KadaCraftSMP" id="button-2" target="_blank">  <button> </button> </a>
                     </div>
@@ -45,12 +49,148 @@
                 </ul>
             </div>
 
+            <div id="contents-container">
+    
+                <div id="ytVideo-container" style="left: 0; top: 0; transform: translate(0%,0%); width: 45%; text-align: left; left: 2%;">
 
-            <div id="ytVideo-container">
+                    <div class="ytVideo" id="ytThumbnail" style="cursor: pointer; background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(&quot;https://i.ytimg.com/vi/esrBAETw6-I/hqdefault.jpg&quot;);">
+                        <div id="ytPic"><img src="../image/yt-profile/KristianPH.jpg"></div>
+                        <div id="right-content">
+                            <div id="ytTitle"> <p>Minecraft (KiliKili SMP) #8 | GUMAWA KAMI NG LASON</p></div>
+                            <div id="ytAuthor"><p>Kraftian PH</p></div>
+                            <div id="ytIcons">
+                                <img class="yt-icon" src="../image/small-icon/view-icon.png">
+                                <p>36340</p>
+                                <img class="yt-icon" src="../image/small-icon/like-icon.png">
+                                <p>1189</p>
+                                <img class="yt-icon" src="../image/small-icon/comment-icon.png">
+                                <p>54</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ytVideo" id="ytThumbnail" style="cursor: pointer; background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(&quot;https://i.ytimg.com/vi/esrBAETw6-I/hqdefault.jpg&quot;);">
+                        <div id="ytPic"><img src="../image/yt-profile/KristianPH.jpg"></div>
+                        <div id="right-content">
+                            <div id="ytTitle"> <p>Minecraft (KiliKili SMP) #8 | GUMAWA KAMI NG LASON</p></div>
+                            <div id="ytAuthor"><p>Kraftian PH</p></div>
+                            <div id="ytIcons">
+                                <img class="yt-icon" src="../image/small-icon/view-icon.png">
+                                <p>36340</p>
+                                <img class="yt-icon" src="../image/small-icon/like-icon.png">
+                                <p>1189</p>
+                                <img class="yt-icon" src="../image/small-icon/comment-icon.png">
+                                <p>54</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ytVideo" id="ytThumbnail" style="cursor: pointer; background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(&quot;https://i.ytimg.com/vi/esrBAETw6-I/hqdefault.jpg&quot;);">
+                        <div id="ytPic"><img src="../image/yt-profile/KristianPH.jpg"></div>
+                        <div id="right-content">
+                            <div id="ytTitle"> <p>Minecraft (KiliKili SMP) #8 | GUMAWA KAMI NG LASON</p></div>
+                            <div id="ytAuthor"><p>Kraftian PH</p></div>
+                            <div id="ytIcons">
+                                <img class="yt-icon" src="../image/small-icon/view-icon.png">
+                                <p>36340</p>
+                                <img class="yt-icon" src="../image/small-icon/like-icon.png">
+                                <p>1189</p>
+                                <img class="yt-icon" src="../image/small-icon/comment-icon.png">
+                                <p>54</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ytVideo" id="ytThumbnail" style="cursor: pointer; background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(&quot;https://i.ytimg.com/vi/esrBAETw6-I/hqdefault.jpg&quot;);">
+                        <div id="ytPic"><img src="../image/yt-profile/KristianPH.jpg"></div>
+                        <div id="right-content">
+                            <div id="ytTitle"> <p>Minecraft (KiliKili SMP) #8 | GUMAWA KAMI NG LASON</p></div>
+                            <div id="ytAuthor"><p>Kraftian PH</p></div>
+                            <div id="ytIcons">
+                                <img class="yt-icon" src="../image/small-icon/view-icon.png">
+                                <p>36340</p>
+                                <img class="yt-icon" src="../image/small-icon/like-icon.png">
+                                <p>1189</p>
+                                <img class="yt-icon" src="../image/small-icon/comment-icon.png">
+                                <p>54</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <img id="member-render" src="../image/members/{{channelName}}.png" style="">
+
+                <div id="playerDetails-container">
+
+                    <div id="top">
+
+                        <div id="channelName">
+                            <p>{{channelName}}</p>
+                        </div>
+
+                        <div id="channelSocials">
+                            <a> <img src="../image/small-icon/facebook-icon.png"> </a>
+                            <a> <img src="../image/small-icon/youtube-icon.png"> </a>
+                            <a> <img src="../image/small-icon/twitch-icon.png"> </a>
+                        </div>
+
+                    </div>
+
+
+                    <div id="mid">
+
+                        <div class="mid-rows" > 
+                            <div class="stat-name"> BUILD </div>
+                            <div class="stats-bar"> 
+                                <div class="progress-bar" id="build-percent"> 100% </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mid-rows">
+                            <div class="stat-name"> REDSTONE </div>
+                            <div class="stats-bar"> 
+                                <div class="progress-bar" id="redstone-percent"> 70% </div>
+                            </div>
+                        </div>
+
+                        <div class="mid-rows">
+                            <div class="stat-name"> ROLEPLAYING </div>
+                            <div class="stats-bar"> 
+                                <div class="progress-bar" id="roleplaying-percent"> 40% </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div id="bottom">
+
+                        <div id="description"> 
+                            <p> 
+                                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                                Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
+                                Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
+                            </p> 
+                        </div>
+
+                        <div id="builds-img">
+                            <p id="previous-img" style="position: relative; height: 100%; width: 50%; font-size: 8em; text-align: left; left: 5%; line-height: 1.3em;"> < </p>
+                            <p id="next-img" style="position: relative; height: 100%; width: 50%; font-size: 8em; text-align: right; right: 2%; line-height: 1.3em;" > > </p>
+                        </div>
+
+                    </div>
+                    
+                </div>
 
             </div>
 
-        </div>
+            
+
+            
+    </div>
+
+        
 
 
     </body>
