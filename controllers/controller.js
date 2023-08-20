@@ -202,21 +202,26 @@ function fetchProfileChannelVideos(channelID){
 
 // For Home Page (For all related to Home, it uses 53 QUOTAS per page load) (Call Steps: checkCache -> fetchChannelVideos -> fetchPlaylistVideos -> fetchVideoStats )
 async function fetchChannelVideos(){
+    const filePath = 'caches/channelVideos.json';
     return await new Promise((resolve, reject) => {
-        checkCache(CACHE_LIFESPAN, async function (isCacheExpired) {
-            if (isCacheExpired || !fs.existsSync('caches/channelVideos.json')) {
+        checkCache(CACHE_LIFESPAN, filePath, async function (isCacheExpired) {
+            if (isCacheExpired || !fs.existsSync(filePath)) {
                 let url = "https://youtube.googleapis.com/youtube/v3/channels?part=contentDetails&id=UCvYssWjD3EYiw02k9V2julg&id=UC8w7U97376AfqgbgChFQ0Rg&id=UC3Ir6UQsfdG_5LAebS47tPw&id=UCdfkfwLNSFcoxJfMUELsGFg&id=UCBNqKk9NyzpW1sbRZ2Iqrag&id=UC6tCdiWfn_fg69MM6xEJhlQ&id=UC_ftwy-jI7VRv4BkbSsCnuA&id=UClx91ILccyc0IpzqGZjwhpg&id=UCY-2sNc980SBE4WirNsW5kQ&id=UCY82vc2qc6OpJ2JIc84uwmw&id=UCH1ePS4jaQ_pKjCV3ZoWTNQ&id=UC3Sz8yjiQbQE9_Xq3wUTTog&id=UCOp3dnFJVrEtTtgVF56OeSg&id=UCnPHLZXBAH42XVJlcwTCLlA&id=UCmS4KnV7sX0l-VIyFhZ36yw&id=UCMjP3_mW1_uwgRiLHWj_DQg&id=UCSHb6WyycptSag5u22KQdXA&id=UCzW-TM_w4ntSKbzeT1lcwOQ&id=UChMoFQr8tEisoGXOhw3cdHg&id=UChDF2wRXgNq_RZX0UZrB7Mg&id=UCj9AedTtoCwMUFUDAK_STPQ&id=UC2ukXRx1LNiGayO_HQ_bKmA&id=UCSWIKRQ3S3CW7c3S6VPe63Q&id=UCng1BP8fhudP2WfI_JaJFZw&id=UCaC6Exn0uANeUJNqd0QggNw&id=UCIHLEsaC8fCu9EWhKJzLNCQ&maxResults=1&key=AIzaSyBZ0Cw4kmHvDBCE58v-pvsKy4jNe2uQAYY";
                 let response = await fetch(url);
                 let data = await response.json();
 
-                fs.writeFile('caches/channelVideos.json', JSON.stringify(data), (err) => {
+                let cache = {
+                    timestamp: Date.now() / 1000,
+                    data: data
+                };
+                fs.writeFile(filePath, JSON.stringify(cache), (err) => {
                     if (err) throw err;
                 });
 
                 resolve(data);
             } else {
-                fs.readFile('caches/channelVideos.json', (err, data) => {
-                    resolve(JSON.parse(data));
+                fs.readFile(filePath, (err, data) => {
+                    resolve(JSON.parse(data).data);
                 });
             }
         });
@@ -225,21 +230,26 @@ async function fetchChannelVideos(){
 
 // For Getting all videos from the upload playlist of each YouTube Channel
 async function fetchPlaylistVideos(dataID, vidCount){
+    const filePath = 'caches/playlistVideos-' + dataID + '.json';
     return await new Promise((resolve, reject) => {
-        checkCache(CACHE_LIFESPAN, async function (isCacheExpired) {
-            if (isCacheExpired || !fs.existsSync('caches/playlistVideos-' + dataID + '.json')) {
+        checkCache(CACHE_LIFESPAN, filePath, async function (isCacheExpired) {
+            if (isCacheExpired || !fs.existsSync(filePath)) {
                 let url = "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=" + vidCount + "&playlistId=" + dataID + "&key=AIzaSyBZ0Cw4kmHvDBCE58v-pvsKy4jNe2uQAYY";
                 let response = await fetch(url);
                 let video = await response.json();
 
-                fs.writeFile('caches/playlistVideos-' + dataID + '.json', JSON.stringify(video), (err) => {
+                let cache = {
+                    timestamp: Date.now() / 1000,
+                    data: video
+                };
+                fs.writeFile(filePath, JSON.stringify(cache), (err) => {
                     if (err) throw err;
                 });
 
                 resolve(video);
             } else {
-                fs.readFile('caches/playlistVideos-' + dataID + '.json', (err, data) => {
-                    resolve(JSON.parse(data));
+                fs.readFile(filePath, (err, data) => {
+                    resolve(JSON.parse(data).data);
                 });
             }
         });
@@ -275,48 +285,23 @@ async function runFetch(){
 }
 
 // Checking for caches
-function checkCache(cacheLifespan, isCacheExpired) {
+function checkCache(cacheLifespan, filePath, isCacheExpired) {
     // Convert from seconds to hours (1 hour = 3600 seconds)
     cacheLifespan *= 3600;
 
     // Check if cache file is not found
-    if (!fs.existsSync('caches/cache.json')) {
-        let cache = {
-            timestamp: Date.now() / 1000 // Convert from milliseconds to seconds
-        }
-
-        // Generate a cache file
-        fs.writeFile('caches/cache.json', JSON.stringify(cache), function (err) {
-            if (err) throw err;
-            console.info("[CACHE] Initial caches file saved");
-        });
-
+    if (!fs.existsSync(filePath)) {
         isCacheExpired(true);
         return;
     }
 
     // If cache file is found:
-    fs.readFile('caches/cache.json', function(err, data) {
+    fs.readFile(filePath, function(err, data) {
         // Get saved timestamp from cache file
         let cacheTimestamp = JSON.parse(data).timestamp;
 
         let difference = Date.now() / 1000 - cacheTimestamp;
         isCacheExpired(difference >= cacheLifespan);
-
-        // Cache is expired if the difference is greater than or equal to the cacheLifespan
-        if (difference >= cacheLifespan) {
-            console.info("[CACHE] Cache expired. Generating new caches…");
-
-            let cache = {
-                timestamp: Date.now() / 1000 // Convert from milliseconds to seconds
-            }
-
-            // Generate a new cache file
-            fs.writeFile('caches/cache.json', JSON.stringify(cache), function (err) {
-                if (err) throw err;
-                console.info("[CACHE] New caches file generated");
-            });
-        }
     });
 }
 
@@ -348,21 +333,26 @@ function checkChannelName(channelTitle){
 
 // Helper Function for getting likes, views, and comments counts
 async function fetchVideoStats(videoID){
+    const filePath = 'caches/videoStats' + videoID + '.json';
     return await new Promise((resolve, reject) => {
-        checkCache(CACHE_LIFESPAN, async function (isCacheExpired) {
-            if (isCacheExpired || !fs.existsSync('caches/videoStats' + videoID + '.json')) {
+        checkCache(CACHE_LIFESPAN, filePath, async function (isCacheExpired) {
+            if (isCacheExpired || !fs.existsSync(filePath)) {
                 let url = "https://youtube.googleapis.com/youtube/v3/videos?part=statistics&id=" + videoID + "&key=AIzaSyBZ0Cw4kmHvDBCE58v-pvsKy4jNe2uQAYY";
                 let response = await fetch(url);
                 let data = await response.json();
 
-                fs.writeFile('caches/videoStats' + videoID + '.json', JSON.stringify(data), (err) => {
+                let cache = {
+                    timestamp: Date.now() / 1000,
+                    data: data
+                };
+                fs.writeFile(filePath, JSON.stringify(cache), (err) => {
                     if (err) throw err;
                 });
 
                 resolve(data);
             } else {
-                fs.readFile('caches/videoStats' + videoID + '.json', (err, data) => {
-                    resolve(JSON.parse(data));
+                fs.readFile(filePath, (err, data) => {
+                    resolve(JSON.parse(data).data);
                 });
             }
         });
