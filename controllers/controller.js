@@ -1,11 +1,43 @@
+const fs = require('fs');
+
+const CACHE_LIFESPAN = 3;
+
 const controller = {
 
     getIndex: function (req, res) {
+        let details = {
+            videos: []
+        };
 
-        //fetchChannelVideos();
-        //runFetch();
+        runFetch().then(async videosArray => {
+            for (const videos of videosArray) {
+                let video = videos.items[0];
+                let channelName = checkChannelName(video.snippet.channelTitle);
+                let videoId = video.snippet.resourceId.videoId;
 
-        res.render('index');
+                let viewsCount;
+                let likesCount;
+                let commentsCount;
+
+                let videoStats = await fetchVideoStats(videoId);
+                videoStats.items.forEach(video => {
+                    viewsCount = video.statistics.viewCount;
+                    likesCount = video.statistics.likeCount;
+                    commentsCount = video.statistics.commentCount;
+                })
+
+                details.videos.push({
+                    videoId: videoId,
+                    videoThumbnail: video.snippet.thumbnails.high.url,
+                    channelName: channelName,
+                    videoTitle: video.snippet.title,
+                    viewsCount: viewsCount,
+                    likesCount: likesCount,
+                    commentsCount: commentsCount
+                });
+            }
+            res.render('index', details);
+        });
     },
 
     getWorld: function (req, res) {
@@ -14,7 +46,7 @@ const controller = {
 
     getProfile: function (req, res){
 
-        var channelID = req.query.channelID;
+        let channelID = req.query.channelID;
 
         res.render('profile', {channelID: channelID});
     },
@@ -33,7 +65,7 @@ const controller = {
 
 // For Profile Page (For all related to Profile, it uses 13 QUOTAS per person) (Call Steps: checkCache -> fetchProfileChannelVideos)
 function fetchProfileChannelVideos(channelID){
-    
+
     var url = "https://youtube.googleapis.com/youtube/v3/channels?part=contentDetails&id="+channelID+"&maxResults=10&key=AIzaSyBZ0Cw4kmHvDBCE58v-pvsKy4jNe2uQAYY"
     fetch(url)
     .then((result) => {
@@ -170,105 +202,122 @@ function fetchProfileChannelVideos(channelID){
 
 // For Home Page (For all related to Home, it uses 53 QUOTAS per page load) (Call Steps: checkCache -> fetchChannelVideos -> fetchPlaylistVideos -> fetchVideoStats )
 async function fetchChannelVideos(){
-    var url = "https://youtube.googleapis.com/youtube/v3/channels?part=contentDetails&id=UCvYssWjD3EYiw02k9V2julg&id=UC8w7U97376AfqgbgChFQ0Rg&id=UC3Ir6UQsfdG_5LAebS47tPw&id=UCdfkfwLNSFcoxJfMUELsGFg&id=UCBNqKk9NyzpW1sbRZ2Iqrag&id=UC6tCdiWfn_fg69MM6xEJhlQ&id=UC_ftwy-jI7VRv4BkbSsCnuA&id=UClx91ILccyc0IpzqGZjwhpg&id=UCY-2sNc980SBE4WirNsW5kQ&id=UCY82vc2qc6OpJ2JIc84uwmw&id=UCH1ePS4jaQ_pKjCV3ZoWTNQ&id=UC3Sz8yjiQbQE9_Xq3wUTTog&id=UCOp3dnFJVrEtTtgVF56OeSg&id=UCnPHLZXBAH42XVJlcwTCLlA&id=UCmS4KnV7sX0l-VIyFhZ36yw&id=UCMjP3_mW1_uwgRiLHWj_DQg&id=UCSHb6WyycptSag5u22KQdXA&id=UCzW-TM_w4ntSKbzeT1lcwOQ&id=UChMoFQr8tEisoGXOhw3cdHg&id=UChDF2wRXgNq_RZX0UZrB7Mg&id=UCj9AedTtoCwMUFUDAK_STPQ&id=UC2ukXRx1LNiGayO_HQ_bKmA&id=UCSWIKRQ3S3CW7c3S6VPe63Q&id=UCng1BP8fhudP2WfI_JaJFZw&id=UCaC6Exn0uANeUJNqd0QggNw&id=UCIHLEsaC8fCu9EWhKJzLNCQ&maxResults=1&key=AIzaSyBZ0Cw4kmHvDBCE58v-pvsKy4jNe2uQAYY";
-    var response = await fetch(url);
-    var data = await response.json();
-    return data;
+    return await new Promise((resolve, reject) => {
+        checkCache(CACHE_LIFESPAN, async function (isCacheExpired) {
+            if (isCacheExpired || !fs.existsSync('caches/channelVideos.json')) {
+                let url = "https://youtube.googleapis.com/youtube/v3/channels?part=contentDetails&id=UCvYssWjD3EYiw02k9V2julg&id=UC8w7U97376AfqgbgChFQ0Rg&id=UC3Ir6UQsfdG_5LAebS47tPw&id=UCdfkfwLNSFcoxJfMUELsGFg&id=UCBNqKk9NyzpW1sbRZ2Iqrag&id=UC6tCdiWfn_fg69MM6xEJhlQ&id=UC_ftwy-jI7VRv4BkbSsCnuA&id=UClx91ILccyc0IpzqGZjwhpg&id=UCY-2sNc980SBE4WirNsW5kQ&id=UCY82vc2qc6OpJ2JIc84uwmw&id=UCH1ePS4jaQ_pKjCV3ZoWTNQ&id=UC3Sz8yjiQbQE9_Xq3wUTTog&id=UCOp3dnFJVrEtTtgVF56OeSg&id=UCnPHLZXBAH42XVJlcwTCLlA&id=UCmS4KnV7sX0l-VIyFhZ36yw&id=UCMjP3_mW1_uwgRiLHWj_DQg&id=UCSHb6WyycptSag5u22KQdXA&id=UCzW-TM_w4ntSKbzeT1lcwOQ&id=UChMoFQr8tEisoGXOhw3cdHg&id=UChDF2wRXgNq_RZX0UZrB7Mg&id=UCj9AedTtoCwMUFUDAK_STPQ&id=UC2ukXRx1LNiGayO_HQ_bKmA&id=UCSWIKRQ3S3CW7c3S6VPe63Q&id=UCng1BP8fhudP2WfI_JaJFZw&id=UCaC6Exn0uANeUJNqd0QggNw&id=UCIHLEsaC8fCu9EWhKJzLNCQ&maxResults=1&key=AIzaSyBZ0Cw4kmHvDBCE58v-pvsKy4jNe2uQAYY";
+                let response = await fetch(url);
+                let data = await response.json();
+
+                fs.writeFile('caches/channelVideos.json', JSON.stringify(data), (err) => {
+                    if (err) throw err;
+                });
+
+                resolve(data);
+            } else {
+                fs.readFile('caches/channelVideos.json', (err, data) => {
+                    resolve(JSON.parse(data));
+                });
+            }
+        });
+    });
 }
 
 // For Getting all videos from the upload playlist of each YouTube Channel
-async function fetchPlaylistVideos(dataID,vidCount){
-    
-    var url = "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults="+vidCount+"&playlistId="+dataID+"&key=AIzaSyBZ0Cw4kmHvDBCE58v-pvsKy4jNe2uQAYY";
-    var response = await fetch(url);
-    var video = await response.json();
-    return video;
+async function fetchPlaylistVideos(dataID, vidCount){
+    return await new Promise((resolve, reject) => {
+        checkCache(CACHE_LIFESPAN, async function (isCacheExpired) {
+            if (isCacheExpired || !fs.existsSync('caches/playlistVideos-' + dataID + '.json')) {
+                let url = "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=" + vidCount + "&playlistId=" + dataID + "&key=AIzaSyBZ0Cw4kmHvDBCE58v-pvsKy4jNe2uQAYY";
+                let response = await fetch(url);
+                let video = await response.json();
+
+                fs.writeFile('caches/playlistVideos-' + dataID + '.json', JSON.stringify(video), (err) => {
+                    if (err) throw err;
+                });
+
+                resolve(video);
+            } else {
+                fs.readFile('caches/playlistVideos-' + dataID + '.json', (err, data) => {
+                    resolve(JSON.parse(data));
+                });
+            }
+        });
+    });
 }
 
-function runFetch(){
+async function runFetch(){
+    let channelVideos = await fetchChannelVideos();
+    let videosArray = [];
 
-    fetchChannelVideos()         
-    .then( data => {
-        var fetchPromises = [];
-        if ( data == null ){
-            console.log("Don't fetch playlist videos");
-            return;
-        }else {
-
-            for (var i = 0; i < data.items.length; i++) {
-                var playlistId = data.items[i].contentDetails.relatedPlaylists.uploads;
-                var fetchPromise = fetchPlaylistVideos(playlistId,1);
-                fetchPromises.push(fetchPromise);
-            }
-            Promise.all(fetchPromises)
-            .then(videosArray => {
-                //Sort the videosArray by latest date
-                videosArray.sort(function(a, b){
-                    var dateA = new Date(a.items[0].snippet.publishedAt);
-                    var dateB = new Date(b.items[0].snippet.publishedAt);
-                    //If the dates are equal, sort by time
-                    if(dateA.getTime() == dateB.getTime()){
-                        var timeA = new Date(a.items[0].snippet.publishedAt);
-                        var timeB = new Date(b.items[0].snippet.publishedAt);
-                        return timeB - timeA;
-                    }
-                    return dateB - dateA;
-                });
-                //Display the videos
-                videosArray.forEach(function(videos){
-                    var video = videos.items[0];
-
-                    //Store all videos in Cache Storage
-                    localStorage.setItem(video.snippet.channelId, JSON.stringify(video));
-                
-                });
-                
-            })
-            .catch(error => {
-                console.error("Error:", error);
-            });
-
-        }
-        
-    })
-
-
-}
-
-// Checking for cache 
-function checkCache(channelID, fromProfile ) {
-
-
-    /*
-    const currentTimeStamp = new Date().getHours();
-
-    if (localStorage.getItem("lastTimeStamp") == null && localStorage.getItem("expirationTimeStamp") == null) {
-        localStorage.setItem("lastTimeStamp", currentTimeStamp);
-        localStorage.setItem("expirationTimeStamp", currentTimeStamp + 3);
-        console.log("Fetch, no cache");
-        fetchChannelVideos(); 
-        runFetch();
-        return true;
-
-    } else {
-
-        if (currentTimeStamp <= localStorage.getItem("expirationTimeStamp")) {
-            console.log("Don't fetch");
-            if ( fromProfile == true) {
-                fetchProfileChannelVideos(channelID);
-            }
-        } else {
-            console.log("Fetch, cache expired. Set new timeStamps");
-            localStorage.setItem("lastTimeStamp", currentTimeStamp);
-            localStorage.setItem("expirationTimeStamp", currentTimeStamp + 3);
-            fetchChannelVideos();
-            runFetch();
-            return true;
-        }
-
+    let fetchPromises = [];
+    for (let i = 0; i < channelVideos.items.length; i++) {
+        let playlistId = channelVideos.items[i].contentDetails.relatedPlaylists.uploads;
+        let fetchPromise = fetchPlaylistVideos(playlistId,1);
+        fetchPromises.push(fetchPromise);
     }
-    */
 
+    videosArray = await Promise.all(fetchPromises);
+    //Sort the videosArray by latest date
+    videosArray.sort(function(a, b) {
+        var dateA = new Date(a.items[0].snippet.publishedAt);
+        var dateB = new Date(b.items[0].snippet.publishedAt);
+        //If the dates are equal, sort by time
+        if(dateA.getTime() == dateB.getTime()) {
+            var timeA = new Date(a.items[0].snippet.publishedAt);
+            var timeB = new Date(b.items[0].snippet.publishedAt);
+            return timeB - timeA;
+        }
+        return dateB - dateA;
+    });
+
+    return videosArray;
+}
+
+// Checking for caches
+function checkCache(cacheLifespan, isCacheExpired) {
+    // Convert from seconds to hours (1 hour = 3600 seconds)
+    cacheLifespan *= 3600;
+
+    // Check if cache file is not found
+    if (!fs.existsSync('caches/cache.json')) {
+        let cache = {
+            timestamp: Date.now() / 1000 // Convert from milliseconds to seconds
+        }
+
+        // Generate a cache file
+        fs.writeFile('caches/cache.json', JSON.stringify(cache), function (err) {
+            if (err) throw err;
+            console.info("[CACHE] Initial caches file saved");
+        });
+
+        isCacheExpired(true);
+        return;
+    }
+
+    // If cache file is found:
+    fs.readFile('caches/cache.json', function(err, data) {
+        // Get saved timestamp from cache file
+        let cacheTimestamp = JSON.parse(data).timestamp;
+
+        let difference = Date.now() / 1000 - cacheTimestamp;
+        isCacheExpired(difference >= cacheLifespan);
+
+        // Cache is expired if the difference is greater than or equal to the cacheLifespan
+        if (difference >= cacheLifespan) {
+            console.info("[CACHE] Cache expired. Generating new caches…");
+
+            let cache = {
+                timestamp: Date.now() / 1000 // Convert from milliseconds to seconds
+            }
+
+            // Generate a new cache file
+            fs.writeFile('caches/cache.json', JSON.stringify(cache), function (err) {
+                if (err) throw err;
+                console.info("[CACHE] New caches file generated");
+            });
+        }
+    });
 }
 
 // HELPER FUNCTIONS
@@ -313,12 +362,25 @@ function checkChannelName(channelTitle){
 
 // Helper Function for getting likes, views, and comments counts
 async function fetchVideoStats(videoID){
+    return await new Promise((resolve, reject) => {
+        checkCache(CACHE_LIFESPAN, async function (isCacheExpired) {
+            if (isCacheExpired || !fs.existsSync('caches/videoStats' + videoID + '.json')) {
+                let url = "https://youtube.googleapis.com/youtube/v3/videos?part=statistics&id=" + videoID + "&key=AIzaSyBZ0Cw4kmHvDBCE58v-pvsKy4jNe2uQAYY";
+                let response = await fetch(url);
+                let data = await response.json();
 
-    var url = "https://youtube.googleapis.com/youtube/v3/videos?part=statistics&id="+videoID+"&key=AIzaSyBZ0Cw4kmHvDBCE58v-pvsKy4jNe2uQAYY";
-    var response = await fetch(url);
-    var data = await response.json();
-    return data;
+                fs.writeFile('caches/videoStats' + videoID + '.json', JSON.stringify(data), (err) => {
+                    if (err) throw err;
+                });
 
+                resolve(data);
+            } else {
+                fs.readFile('caches/videoStats' + videoID + '.json', (err, data) => {
+                    resolve(JSON.parse(data));
+                });
+            }
+        });
+    });
 }
 
 module.exports = controller;
