@@ -290,6 +290,11 @@ function checkCache(cacheLifespan, filePath, isCacheExpired) {
     // Convert from seconds to hours (1 hour = 3600 seconds)
     cacheLifespan *= 3600;
 
+    // Check if 'caches' folder exists
+    if (!fs.existsSync('caches')) {
+        fs.mkdirSync('caches');
+    }
+
     // Check if cache file is not found
     if (!fs.existsSync(filePath)) {
         isCacheExpired(true);
