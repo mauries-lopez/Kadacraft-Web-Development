@@ -27,6 +27,7 @@ html {
     background-size: cover;
     background-position: calc(50% + 45px) 0;
     background-attachment: fixed;
+    object-fit: contain;
 }
 
 .navbar {
