@@ -3,92 +3,109 @@ function checkStats(channelName){
     // Build - Redstone - Roleplaying
     switch(channelName){
         case "AveryMcIvory":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "AZ1O1O":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 70, 30, 10);
             break;
         case "BeeBuYog":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "ClariDori":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "Edicius8-Bit":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "Jade":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "JZGrit":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "KenPlayz":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "KingFB":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "Klarens":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "KristianPH":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "KyahRye":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "LadySue":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "MakiKun":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "McHero":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "MythDaRiffer":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "Obri":
-            processStats(60, 10, 39);
+            processStats(null, null, null, 60, 10, 39);
             break;
         case "robraks":
-            processStats(98, 78, 71);
+            processStats(null, null, null, 98, 78, 71);
             break;
         case "SlyTheMiner":
-            processStats(20, 100, 10);
+            processStats(null, null, null, 20, 100, 10);
             break;
         case "Starsere":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "Sthreed":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "TenderJoncy":
-            processStats(30, 30, 30);
+            $("#description-content").text("Not just tender and juicy but also a self proclaimed builder. Always ready for adventure and other fun activities within the server.");
+            processStats('Build', 'Interior', 'Hotdog', 90, 60, 100);
             break;
         case "WetzkieGamer":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "WitchCarnelian":
-            processStats(30, 30, 30);
+            processStats(null, 'Witchcraft', 'Beauty', 50, 100, 90);
             break;
         case "ZeriFae":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
         case "ZircMCGamer":
-            processStats(30, 30, 30);
+            processStats(null, null, null, 30, 30, 30);
             break;
     }
             
 }
 
-function processStats(build, redstone, roleplaying){
-    $("#build-percent").css('width', build+'%');
-    $("#build-percent").text(build+'%');
-    $("#redstone-percent").css('width', redstone+'%');
-    $("#redstone-percent").text(redstone+'%');
-    $("#roleplaying-percent").css('width', roleplaying+'%');
-    $("#roleplaying-percent").text(roleplaying+'%');
+function processStats(firstStat, secondStat, thirdStat, build, redstone, roleplaying){
+
+    if ( firstStat == null ){
+        firstStat = "Build";
+    };
+    if ( secondStat == null ){
+        secondStat = "Redstone";
+    };
+    if ( thirdStat == null ){
+        thirdStat = "Roleplaying";
+    };
+
+    $("#first-stat-name").text(firstStat);
+    $("#second-stat-name").text(secondStat);
+    $("#third-stat-name").text(thirdStat);
+
+    $("#percentBar-1").css('width', build+'%');
+    $("#percentBar-1").text(build+'%');
+    $("#percentBar-2").css('width', redstone+'%');
+    $("#percentBar-2").text(redstone+'%');
+    $("#percentBar-3").css('width', roleplaying+'%');
+    $("#percentBar-3").text(roleplaying+'%');
+
 }

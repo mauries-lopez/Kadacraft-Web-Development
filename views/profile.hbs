@@ -20,6 +20,7 @@
         <script>
 
             $(document).ready(function() {
+
                 var channelName = "{{channelName}}";
                 checkStats(channelName);
 
@@ -27,7 +28,29 @@
                     console.log("Easter Egg! The website was made by Atmospheric and Lloyd.");
                 })
 
-                $("#builds-img").css("background-image", "url('../image/season4.1/kadacraftS4.1_1.png')");
+                var count = 1;
+                var urlLink = "url('../image/members/builds/{{channelName}}/"+count+".png')"
+
+                $("#builds-img").css("background-image", urlLink);
+
+                $('#previous-img').click(function(){
+                    if ( count == 1 ){
+                        count = 4;
+                    } else{
+                        count--;
+                    }
+                    $("#builds-img").css("background-image", "url('../image/members/builds/{{channelName}}/"+count+".png')");
+                })
+
+                $('#next-img').click(function(){
+                    if ( count > 3 ){
+                        count = 1;
+                    } else{
+                        count++;
+                    }
+                    $("#builds-img").css("background-image", "url('../image/members/builds/{{channelName}}/"+count+".png')");
+                })
+
             })
             
 
@@ -78,23 +101,23 @@
                     <div id="mid">
 
                         <div class="mid-rows" > 
-                            <div class="stat-name"> BUILD </div>
+                            <div class="stat-name" id="first-stat-name"> BUILD </div>
                             <div class="stats-bar"> 
-                                <div class="progress-bar" id="build-percent"> 100% </div>
+                                <div class="progress-bar" id="percentBar-1"> 100% </div>
                             </div>
                         </div>
                         
                         <div class="mid-rows">
-                            <div class="stat-name"> REDSTONE </div>
+                            <div class="stat-name" id="second-stat-name"> REDSTONE </div>
                             <div class="stats-bar"> 
-                                <div class="progress-bar" id="redstone-percent"> 70% </div>
+                                <div class="progress-bar" id="percentBar-2"> 100% </div>
                             </div>
                         </div>
 
                         <div class="mid-rows">
-                            <div class="stat-name"> ROLEPLAYING </div>
+                            <div class="stat-name" id="third-stat-name"> ROLEPLAYING </div>
                             <div class="stats-bar"> 
-                                <div class="progress-bar" id="roleplaying-percent"> 40% </div>
+                                <div class="progress-bar" id="percentBar-3"> 100% </div>
                             </div>
                         </div>
 
@@ -104,16 +127,13 @@
                     <div id="bottom">
 
                         <div id="description"> 
-                            <p> 
-                                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                                Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
-                                Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
+                            <p id="description-content"> 
                             </p> 
                         </div>
 
                         <div id="builds-img">
-                            <p id="previous-img" style="position: relative; height: 100%; width: 50%; font-size: 8em; text-align: left; left: 5%; line-height: 1.3em;"> < </p>
-                            <p id="next-img" style="position: relative; height: 100%; width: 50%; font-size: 8em; text-align: right; right: 2%; line-height: 1.3em;" > > </p>
+                            <p class='no-highlight' id="previous-img" style="position: relative; height: 100%; width: 50%; font-size: 8em; text-align: left; left: 5%; line-height: 1.4em; cursor: pointer; "> < </p>
+                            <p class='no-highlight' id="next-img" style="position: relative; height: 100%; width: 50%; font-size: 8em; text-align: right; right: 2%; line-height: 1.4em; cursor: pointer;" > > </p>
                         </div>
 
                     </div>
