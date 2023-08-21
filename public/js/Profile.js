@@ -67,6 +67,7 @@ function checkStats(channelName){
             break;
         case "TenderJoncy":
             $("#description-content").text("Not just tender and juicy but also a self proclaimed builder. Always ready for adventure and other fun activities within the server.");
+            processLinks('https://www.facebook.com/tenderjoncy', 'https://www.youtube.com/channel/UC2ukXRx1LNiGayO_HQ_bKmA', 'https://www.twitch.tv/tenderjoncy_');
             processStats('Build', 'Interior', 'Hotdog', 90, 60, 100);
             break;
         case "WetzkieGamer":
@@ -107,5 +108,19 @@ function processStats(firstStat, secondStat, thirdStat, build, redstone, rolepla
     $("#percentBar-2").text(redstone+'%');
     $("#percentBar-3").css('width', roleplaying+'%');
     $("#percentBar-3").text(roleplaying+'%');
+
+}
+
+function processLinks(facebookLink, youtubeLink, twitch){
+
+
+    $("#facebook-link").attr('href', facebookLink);
+    $("#youtube-link").attr('href', youtubeLink);
+    $("#twitch-link").attr('href', twitch);
+
+    $("#facebook-link").attr('target', "_blank");
+    $("#youtube-link").attr('target', "_blank");
+    $("#twitch-link").attr('target', "_blank");
+
 
 }

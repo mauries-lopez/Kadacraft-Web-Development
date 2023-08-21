@@ -61,6 +61,10 @@
     gap: 5px;
 }
 
+#channelSocials a{
+    text-decoration: none;
+}
+
 #channelSocials img{
     width: 25px;
     height: 25px;
