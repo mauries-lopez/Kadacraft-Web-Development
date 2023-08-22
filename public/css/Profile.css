@@ -28,6 +28,7 @@ body {
     border-radius: 3vw;
     border: 0.3vw solid rgb(255, 238, 0);
     box-shadow: 0 0 0.5vw 0.5vw #00000073;
+    padding: 1rem;
 }
 
 #playerDetails-container #top {
@@ -38,6 +39,7 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 0.5rem;
 }
 
 #channelName {
@@ -56,7 +58,7 @@ body {
     white-space: nowrap;
     margin-left: 10%;
     color: rgb(255, 238, 0);
-    text-shadow: 4px 4px #000000;
+    text-shadow: 4px 4px #3F3F15;
 }
 
 #channelSocials {
@@ -83,19 +85,19 @@ body {
     position: relative; 
     height: 40vw; 
     width: 50vw;
-    -webkit-animation: breathing 5s ease-out infinite normal;
-    animation: breathing 5s ease-out infinite normal;
+    -webkit-animation: breathing 5s cubic-bezier(0.4, 0, 0.2, 1) infinite normal;
+    animation: breathing 5s cubic-bezier(0.4, 0, 0.2, 1) infinite normal;
 }
 
 #playerDetails-container #mid {
     position: relative;
-    width: 31vw;
-    height: 10vw;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+    display: grid;
+    grid-template-columns: 30% 65%;
+    row-gap: 0.7rem;
+    column-gap: 0.7rem;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1.5rem;
 }
 
 #mid .mid-rows {
@@ -110,59 +112,41 @@ body {
     bottom: 3%;
 }
 
-.mid-rows .stat-name {
-    position: relative;
-    width: 20vw;
+#mid .stat-name {
     text-align: right;
     font-size: 1.5vw;
-    left: 5%;
     color: rgb(255, 238, 0);
-    text-shadow: 0.3vw 0.3vw #000000;
+    text-shadow: 2px 2px #3F3F15;
 }
 
-.mid-rows .stats-bar {
-    position: relative;
-    height: 2.35vw;
-    width: 31vw;
+#mid .stats-bar {
     border: 0.3vw solid white;
     border-radius: 10vw;
-    margin-left: 5%;
-    margin-right: 5%;
     text-align: center;
     color: white;
-    align-items: center;
-    justify-content: center;
     box-shadow: 0 0 0.3vw 0.3vw #00000073;
 }
 
 .stats-bar .progress-bar {
-    position: relative;
-    height: 2.35vw;
-    background: rgb(255, 238, 0);
+    background-color: rgb(255, 238, 0);
     border-radius: 10vw;
-    line-height: 2.5vw;
     color: black;
     font-weight: bold;
     z-index: -1;
     font-size: 1vw;
+    padding: 0.25rem 0;
 }
 
 #bottom {
     position: relative;
     width: 28vw;
-    height: 18vw;
-    align-items: center;
-    justify-content: center;
     left: 6%;
     bottom: 0;
 }
 
 #bottom #description {
     color: white;
-    height: 18vh;
     width: 28vw;
-    align-items: center;
-    justify-content: center;
     text-align: center;
 }
 
