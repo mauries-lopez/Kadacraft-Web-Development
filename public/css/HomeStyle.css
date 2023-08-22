@@ -21,26 +21,27 @@ html {
 }
 
 .banner {
-    width: 100%;
-    height: 1010px;
+    width: 100vw;
+    height: 100vh;
     background-image: linear-gradient(rgba(255, 255, 255, 0.692), rgba(0, 0, 0, 0)), url("/image/kadacraft_background1.png");
     background-size: cover;
     background-position: calc(50% + 45px) 0;
     background-attachment: fixed;
-    object-fit: contain;
 }
 
 .navbar {
-    width: 100%;
+    min-width: 100vw;
+    height: 2vw;
     margin: auto;
-    padding: 10px;
+    padding: 0.7vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: rgb(255, 238, 0);
-    border-bottom: 3px solid rgb(0, 0, 0);
+    border-bottom: 0.3vw solid rgb(0, 0, 0);
     position: fixed;
     z-index: 100;
+    overflow: hidden;
 }
 
 .navbar ul li {
@@ -100,12 +101,11 @@ html {
 
 .content {
     position: absolute;
-    bottom: 150em;
-    left: 0;
-    top: 0;
-    transform: translate(25%, 25em);
-    height: 30%;
-    width: 30%;
+    left: 8vw;
+    top: 40vh;
+    /*transform: translate(8vw, 23vw);*/
+    height: 17vw;
+    width: 25vw;
     z-index: 3;
     text-align: left;
 }
@@ -115,7 +115,6 @@ html {
     font-family: Minecraft, sans-serif;
     letter-spacing: 0.05em;
     font-size: 1em;
-
     opacity: 0;
     animation: slideInLeft2 1.5s cubic-bezier(0.25, 0.75, 0, 1) forwards;
 }
@@ -123,23 +122,20 @@ html {
 .content .logo {
     position: relative;
     cursor: pointer;
-    width: 25em;
+    width: 15vw;
     margin-top: 3%;
-
     opacity: 0;
     animation: slideInLeft2 1.5s cubic-bezier(0.25, 0.75, 0, 1) 0.15s forwards;
 }
 
-.content h1 {
-    font-size: 70px;
+.content #welcome-text {
+    font-size: 1vw;
     text-transform: uppercase;
 }
 
-.content p {
-    margin: 20px auto;
-    font-weight: 100;
-    line-height: 25px;
-
+.content #welcome-description {
+    margin: 1vw auto;
+    font-size: 1rem;
     opacity: 0;
     animation: slideInLeft2 1.5s cubic-bezier(0.25, 0.75, 0, 1) 0.3s forwards;
 }
@@ -151,14 +147,13 @@ html {
 
 #ytVideo-container {
     position: relative;
-    top: 0;
-    left: 0;
-    width: 30%;
-    height: 70%;
-    transform: translate(210%, 12em);
+    top: 17vh;
+    left: 65vw;
+    width: 30vw;
+    height: 70vh;
+    /*transform: translate(65vw, 9vw);*/
     display: flex;
     flex-direction: column;
-    border-radius: 50px;
     align-items: center;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -166,14 +161,13 @@ html {
 
 .ytVideo {
     position: relative;
-    margin-top: 20px;
-    border-radius: 50px;
-    width: 95%;
-    height: 20%;
+    margin-top: 1.5vw;
+    border-radius: 20vw;
+    width: 27vw;
+    height: 10vw;
     background: white;
     display: flex;
     flex-direction: row;
-    transition: 0.5s;
     text-decoration: none;
 }
 
@@ -181,49 +175,48 @@ html {
 .ytVideo #ytPic {
     position: relative;
     align-items: center;
-    width: 35%;
-    height: 100%;
+    width: 35vw;
+    height: 7vw;
     left: 0;
     top: 0;
-    transform: translate(10%, 2%);
+    transform: translate(1vw, 0.2vw);
 }
 
 .ytVideo #ytPic img {
-    width: 7em;
-    border-radius: 200px;
+    width: 6vw;
+    border-radius: 200vw;
     position: relative;
     z-index: 1;
-    border: 5px solid rgb(255, 255, 255);
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    border: 0.3vw solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 0.5vw 0px rgba(0, 0, 0, 0.75);
 }
 
 #ytThumbnail {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.219), rgba(0, 0, 0, 0.692)), url("/image/kadacraft_background1.png");
     background-size: cover;
     background-position: center;
     position: relative;
     left: 0;
     top: 0;
     z-index: 0;
-    transform: translate(0, -10%);
-    border: 5px solid #000;
+    border: 0.3vw solid #000;
 }
 
 #ytThumbnail:hover{
     filter: saturate(200%);
-    border: 5px solid rgb(255, 238, 0);
+    border: 0.3vw solid rgb(255, 238, 0);
 }
 
 .ytVideo #right-content {
     position: relative;
-    width: 65%;
+    width: 18vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 #right-content #ytTitle {
-    font-size: 1.5em;
+    width: 18vw;
+    font-size: 1.5rem;
     position: relative;
     color: white;
     top: 0;
@@ -239,7 +232,8 @@ html {
 }
 
 #right-content #ytAuthor {
-    font-size: 1em;
+    width: 18vw;
+    font-size: 1rem;
     position: relative;
     color: white;
     top: 0;
@@ -248,24 +242,26 @@ html {
 
 #right-content #ytIcons {
     position: relative;
-    width: 80%;
+    width: 15vw;
+    height: 1.5vw;
     color: white;
     top: 0;
     left: 0;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 #ytIcons .yt-icon {
-    margin: 10px;
-    width: 30px;
-    height: auto;
+    display: flex;
+    width: 1vw;
+    height: 2vh;
     filter: invert(100%);
 }
 
 #about {
-    width: 100%;
-    height: 1010px;
+    width: 100vw;
+    height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/image/kadacraft_background0.png");
     background-size: cover;
     background-position: center;
@@ -274,15 +270,16 @@ html {
 
 .content-about {
     background-color: rgba(0, 0, 0, 0.63);
-    border-radius: 30px;
-    padding: 20px;
+    border-radius: 2vw;
+    padding: 1vw;
     text-align: center;
     color: white;
-    width: 50%;
+    width: 50vw;
+    height: 20vh;
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 40vh;
+    left: 0vw;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -290,19 +287,19 @@ html {
 }
 
 .content-about h3 {
-    font-size: 24px;
+    font-size: 3rem;
     margin-bottom: 10px;
 }
 
 .content-about p {
-    font-size: 18px;
+    font-size: 1rem;
     margin-bottom: 10px;
 }
 
 #members {
     position: relative;
-    width: 100%;
-    height: 1010px;
+    width: 100vw;
+    height: 100vh;
     background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("/image/season4.1/kadacraftS4.1_4.png");
     background-size: cover;
     background-position: center;
@@ -412,17 +409,18 @@ button span {
 button:hover span {
     width: 100%;
     transition: width 0.75s cubic-bezier(0.25, 0.75, 0, 1);
+    
 }
 
 button:hover {
-    color: #FFF;
+    color: black;
     transition: color 0.375s ease-in-out;
 }
 
 .facebook-img {
     position: relative;
-    width: 100%;
-    height: 2em;
+    width: 1vw;
+    height: 3vh;
     transition: 0.5s;
 }
 
@@ -499,8 +497,8 @@ button:hover {
     position: absolute;
     top: 15%;
     left: 65%;
-    height: 77%;
-    width: 30%;
+    height: 77vh;
+    width: 30vw;
     display: flex;
     flex-direction: column;
     border-radius: 5em;
@@ -511,15 +509,19 @@ button:hover {
 
 #philippines-island #luzon {
     position: absolute;
-    height: 570px;
-    width: 340px;
+    /*height: 570px;
+    width: 340px;*/
+    height: 56vh;
+    width: 18vw;
     top: 2%;
 }
 
 #philippines-island #visayas {
     position: absolute;
-    height: 160px;
-    width: 200px;
+    /*height: 160px;
+    width: 200px;*/
+    height: 16vh;
+    width: 11vw;
     bottom: 36%;
     top: 0;
     left: 0;
@@ -528,8 +530,10 @@ button:hover {
 
 #philippines-island #mindanao {
     position: absolute;
-    height: 300px;
-    width: 400px;
+    /*height: 300px;
+    width: 400px;*/
+    height: 30vh;
+    width: 22vw;
     bottom: 8%;
     top: 0;
     left: 0;
@@ -556,11 +560,11 @@ button:hover {
 }
 
 .hover-image {
-    height: 30px;
-    width: 30px;
+    height: 3vh;
+    width: 1.5vw;
     border-radius: 5em;
     opacity: 1;
-    border: 3px solid black;
+    border: 0.2vw solid black;
 }
 
 

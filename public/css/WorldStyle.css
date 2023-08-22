@@ -20,12 +20,14 @@
 
 #world .content-title {
     color: white;
-    border: 3px solid white;
+    border: 0.2vw solid white;
     background-color: transparent;
     display: block;
     z-index: 1;
     padding: 0.5rem 3rem;
-    margin-top: 3rem;
+    margin-top: 3vh;
+    top: 6vh;
+    left: 0;
 }
 
 #container {
@@ -47,7 +49,7 @@
     background: white;
     overflow: hidden;
     transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s, border-color 0.5s ease;
-    border: 10px solid #FFF;
+    border: 0.5vw solid #FFF;
     position: relative;
     cursor: pointer;
     display: flex;

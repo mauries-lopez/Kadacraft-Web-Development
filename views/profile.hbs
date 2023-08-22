@@ -2,6 +2,7 @@
 
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <title> KadaCraft </title> 
         <link rel="stylesheet" href="../css/Profile.css">
         <link rel="stylesheet" href="../css/HomeStyle.css"> 
@@ -9,7 +10,7 @@
         <link rel="stylesheet" href="../css/ResolutionCompatible.css" defer> 
         <link type="text/css" rel="stylesheet" href="../css/Font.css">
         <link rel="icon" type="image/png" href="../image/kadacraft_weblogo.png">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
         <script src="../js/Home.js"></script>
         <script src="../js/Profile.js" defer></script>
         <!--<script src="../js/YouTubeApi.js"></script>-->
@@ -51,12 +52,20 @@
                     $("#builds-img").css("background-image", "url('../image/members/builds/{{channelName}}/"+count+".png')");
                 })
 
+                if ( channelName == "McHero" ){
+                    $("#member-render").attr("src", "../image/members/"+channelName+"2.png");
+                }else{
+                    $("#member-render").attr("src", "../image/members/"+channelName+".png");
+                }
+                
+
             })
             
 
         </script>
 
-        <div class="banner" id="top" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('../image/members/backgrounds/{{channelName}}.png'); width: 100%; height: 100vh; object-fit: fill; "> 
+        <div class="banner" id="top"> 
+            <img style="width: 100%; height: 100vh; position: fixed; margin: auto; background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('../image/members/backgrounds/{{channelName}}.png');  background-size: cover; background-attachment: fixed;  object-fit: cover; background-position: center;">
             <div class="navbar">
                 <a class="facebook-btn" style="position:relative; left: 5em; cursor: pointer;" title="Facebook Group"><img src="../image/facebook_logo.png" class="facebook-img" id="facebook-links"></a>
                 <div id="tooltip" style="position: relative; display: flex;">
@@ -64,7 +73,7 @@
                         <a href="https://www.facebook.com/groups/KadaCraft" id="button-1" target="_blank"> <button> </button> </a>
                         <a href="https://www.facebook.com/KadaCraftSMP" id="button-2" target="_blank">  <button> </button> </a>
                     </div>
-                    <a href="/"> <img src="../image/kadacraft_logo.png" style="position: relative; height: 3em; width: 100%; left: 4.05em; cursor: pointer;"> </a>
+                    <a href="/"> <img src="../image/kadacraft_logo.png" style="position: relative; width: 15vw; left: 4.05em; cursor: pointer;"> </a>
                 </div>        
                 <ul>
                     <li style="right: 70px;" ><a href="/" style="color: black; font-family: Minecraft; letter-spacing: 0.05em;" > Home </a></li>
@@ -75,24 +84,43 @@
             <div id="contents-container">
     
                 <div id="ytVideo-container" style="left: 0; top: 0; transform: translate(0%,0%); width: 45%; text-align: left; margin-left: 3%;">
+                    
+                    <!--
+                    <a class="ytVideo" id="ytThumbnail" href="https://www.youtube.com/watch?v=QERQBtGB0fc" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0, 0, 0, 0.8)), url(https://i.ytimg.com/vi/QERQBtGB0fc/hqdefault.jpg)">
+                        <div id="ytPic"><img src="../image/yt-profile/KingFB.jpg"></div>
+                        <div id="right-content">
+                            <div id="ytTitle"><p> KadaCraft 5: LIVE - FAN ART REVIEW | Minecraft SMP [Tagalog] </p></div>
+                            <div id="ytAuthor"><p> KingFB </p></div>
+                            <div id="ytIcons">
+                                <img class="yt-icon" src="../image/small-icon/view-icon.png">
+                                <p> 21.7k </p>
+                                <img class="yt-icon" src="../image/small-icon/like-icon.png">
+                                <p> 1.3k </p>
+                                <img class="yt-icon" src="../image/small-icon/comment-icon.png">
+                                <p> 70 </p>
+                            </div>
+                        </div>
+                    </a>
+                    -->
 
                 </div>
 
 
-                <img id="member-render" src="../image/members/{{channelName}}.png" style="">
+                <img id="member-render" style="">
 
                 <div id="playerDetails-container">
 
                     <div id="top">
 
                         <div id="channelName">
-                            <p>{{channelName}}</p>
+                            <p id="channelName-p">{{channelName}}</p>
                         </div>
 
                         <div id="channelSocials">
                             <a id="facebook-link"> <img src="../image/small-icon/facebook-icon.png"> </a>
                             <a id="youtube-link"> <img src="../image/small-icon/youtube-icon.png"> </a>
                             <a id="twitch-link"> <img src="../image/small-icon/twitch-icon.png"> </a>
+                            <a id="tiktok-link"> <img src="../image/small-icon/tiktok-icon.png"> </a>
                         </div>
 
                     </div>
@@ -132,8 +160,8 @@
                         </div>
 
                         <div id="builds-img">
-                            <p class='no-highlight' id="previous-img" style="position: relative; height: 100%; width: 50%; font-size: 8em; text-align: left; left: 5%; line-height: 1.4em; cursor: pointer; "> < </p>
-                            <p class='no-highlight' id="next-img" style="position: relative; height: 100%; width: 50%; font-size: 8em; text-align: right; right: 2%; line-height: 1.4em; cursor: pointer;" > > </p>
+                            <p class='no-highlight' id="previous-img" style="left: 5%; "> < </p>
+                            <p class='no-highlight' id="next-img" style="text-align: right; right: 3%; " > > </p>
                         </div>
 
                     </div>

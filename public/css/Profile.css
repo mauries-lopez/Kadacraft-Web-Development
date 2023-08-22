@@ -1,12 +1,18 @@
+/* use max-width and vh or vw for responsive design */
+body
+{
+    position: fixed;
+}
+
 #contents-container{
     position: relative; 
-    width: 100%;
-    height: 90vh;
+    width: 100vw;
+    height: 100vh;
     align-items: center;
     justify-content: center;
     display: flex;
     left: 0%;
-    top: 9%;
+    top: 4vh;
     transform: translate(0%, 0%);
     text-align: center;
 }
@@ -14,51 +20,54 @@
 #playerDetails-container{
     position: relative;
     background: rgba(0, 0, 0, 0.705);
-    width: 45%;
-    height: 80%;
+    max-width: 31.5vw;
+    height: 80vh;
     z-index: -1;
     margin-right: 3%;
     display: flex;
     flex-direction: column;
-    border-radius: 50px;
-    border: 5px solid rgb(255, 238, 0);
-    box-shadow: 0px 0px 8px 10px #00000073;
+    border-radius: 3vw;
+    border: 0.3vw solid rgb(255, 238, 0);
+    box-shadow: 0vw 0vw 0.5vw 0.5vw #00000073;
 }
 
 #playerDetails-container #top{
     position: relative;
-    width: 100%;
-    height: 15%;
+    width: 50vw;
+    height: 10vh;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 
 #channelName{
     position: relative;
-    width: 100%;
+    width: 17vw;
+    height: 10vh;
     height: auto;
+    justify-content: left;
+    align-items: center;
+    display: flex;
 }
 
 #channelName p{
     position: relative;
-    font-size: 3.5em;
+    font-size: 3rem;
     white-space: nowrap;
     margin-left: 10%;
     color: rgb(255, 238, 0);
-    text-shadow: 5px 5px 0px #000000;
+    text-shadow: 0.3vw 0.3vw 0vw #000000;
 }
 
 #channelSocials{
     position: relative;
-    width: 100%;
-    height: auto;
+    width: 15vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 1vw;
 }
 
 #channelSocials a{
@@ -66,24 +75,23 @@
 }
 
 #channelSocials img{
-    width: 25px;
-    height: 25px;
-    object-fit: cover;
+    width: 1.1vw;
+    height: 1vw;
     filter: saturate(500%);
 }
 
 #member-render{
     position: relative; 
-    height: 90%; 
-    width: 600px;
+    height: 40vw; 
+    width: 50vw;
     -webkit-animation: breathing 5s ease-out infinite normal;
     animation: breathing 5s ease-out infinite normal;
 }
 
 #playerDetails-container #mid{
     position: relative;
-    width: 100%;
-    height: 25%;
+    width: 31vw;
+    height: 10vw;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -93,66 +101,67 @@
 
 #mid .mid-rows{
     position: relative;
-    width: 100%;
-    height: 35%;
+    width: 31vw;
+    height: 10vw;
     align-items: center;
     justify-content: left;
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 1vw;
     bottom: 3%;
 }
 
 .mid-rows .stat-name{
     position: relative;
-    width: 57%;
+    width: 20vw;
     text-align: right;
-    font-size: 2em;
+    font-size: 1.5vw;
     left: 5%;
     color: rgb(255, 238, 0);
-    text-shadow: 5px 5px 0px #000000;
+    text-shadow: 0.3vw 0.3vw 0vw #000000;
 }
 
 .mid-rows .stats-bar{
     position: relative;
-    height: 70%;
-    width: 90%;
-    border: 5px solid white;
-    border-radius: 50px;
+    height: 2.35vw;
+    width: 31vw;
+    border: 0.3vw solid white;
+    border-radius: 10vw;
     margin-left: 5%;
     margin-right: 5%;
     text-align: center;
     color: white;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 0px 5px 5px #00000073;
+    box-shadow: 0vw 0vw 0.3vw 0.3vw #00000073;
 }
 
 .stats-bar .progress-bar{
     position: relative;
-    height: 100%;
+    height: 2.35vw;
     background: rgb(255, 238, 0);
-    border-radius: 50px;
-    line-height: 3em;
+    border-radius: 10vw;
+    line-height: 2.5vw;
     color: black;
     font-weight: bold;
     z-index: -1;
+    font-size: 1vw;
 }
 
 #bottom {
     position: relative;
-    width: 90%;
-    height: 55%;
-    border-radius: 50px;
+    width: 28vw;
+    height: 18vw;
     align-items: center;
     justify-content: center;
-    margin: auto;
+    left: 6%;
+    bottom: 0%;
 }
 
 #bottom #description{
     color: white;
-    height: 60%;
-    width: 100%;
+    height: 18vh;
+    width: 28vw;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -160,21 +169,40 @@
 
 #description p{
     position: relative;
-    font-size: 1.2em;
+    font-size: 1.02vw;
 }
 
 #bottom #builds-img{
     position: relative;
-    height: 40%;
-    width: 100%;
+    height: 10vh;
+    width: 28vw;
     display: flex;
     flex-direction: row;
     object-fit: fill;
     background-position: center;
     background-size: cover;
-    border-radius: 90px;
-    border: 5px solid white;
-    bottom: 5%;
+    border-radius: 50vw;
+    border: 0.3vw solid white;
+    top: 20vh;
+}
+
+#builds-img p{
+    color: white;
+    cursor: pointer; 
+    line-height: 10.5vh;
+    position: relative; 
+    /*height: 100%; 
+    width: 50%; */
+    height: 10vh;
+    width: 14vw;
+    font-size: 4vw; 
+    text-align: left; 
+    text-shadow: 0vw 0.3vw 0vw #000000;
+}
+
+#builds-img p:hover{
+    transition: 0.5s;
+    color:rgb(255, 238, 0);
 }
 
 
