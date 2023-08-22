@@ -1,23 +1,22 @@
 /* use max-width and vh or vw for responsive design */
-body
-{
+body {
     position: fixed;
 }
 
-#contents-container{
+#contents-container {
     position: relative; 
     width: 100vw;
     height: 100vh;
     align-items: center;
     justify-content: center;
     display: flex;
-    left: 0%;
+    left: 0;
     top: 4vh;
     transform: translate(0%, 0%);
     text-align: center;
 }
 
-#playerDetails-container{
+#playerDetails-container {
     position: relative;
     background: rgba(0, 0, 0, 0.705);
     max-width: 31.5vw;
@@ -28,39 +27,39 @@ body
     flex-direction: column;
     border-radius: 3vw;
     border: 0.3vw solid rgb(255, 238, 0);
-    box-shadow: 0vw 0vw 0.5vw 0.5vw #00000073;
+    box-shadow: 0 0 0.5vw 0.5vw #00000073;
 }
 
-#playerDetails-container #top{
+#playerDetails-container #top {
     position: relative;
     width: 50vw;
     height: 10vh;
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
 }
 
-#channelName{
+#channelName {
     position: relative;
     width: 17vw;
-    height: 10vh;
+    /*height: 10vh;*/
     height: auto;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
     display: flex;
 }
 
-#channelName p{
+#channelName p {
     position: relative;
     font-size: 3rem;
     white-space: nowrap;
     margin-left: 10%;
     color: rgb(255, 238, 0);
-    text-shadow: 0.3vw 0.3vw 0vw #000000;
+    text-shadow: 4px 4px #000000;
 }
 
-#channelSocials{
+#channelSocials {
     position: relative;
     width: 15vw;
     display: flex;
@@ -70,17 +69,17 @@ body
     gap: 1vw;
 }
 
-#channelSocials a{
+#channelSocials a {
     text-decoration: none;
 }
 
-#channelSocials img{
+#channelSocials img {
     width: 1.1vw;
     height: 1vw;
     filter: saturate(500%);
 }
 
-#member-render{
+#member-render {
     position: relative; 
     height: 40vw; 
     width: 50vw;
@@ -88,7 +87,7 @@ body
     animation: breathing 5s ease-out infinite normal;
 }
 
-#playerDetails-container #mid{
+#playerDetails-container #mid {
     position: relative;
     width: 31vw;
     height: 10vw;
@@ -99,29 +98,29 @@ body
     justify-content: center;
 }
 
-#mid .mid-rows{
+#mid .mid-rows {
     position: relative;
     width: 31vw;
     height: 10vw;
     align-items: center;
-    justify-content: left;
+    justify-content: flex-start;
     display: flex;
     flex-direction: row;
     gap: 1vw;
     bottom: 3%;
 }
 
-.mid-rows .stat-name{
+.mid-rows .stat-name {
     position: relative;
     width: 20vw;
     text-align: right;
     font-size: 1.5vw;
     left: 5%;
     color: rgb(255, 238, 0);
-    text-shadow: 0.3vw 0.3vw 0vw #000000;
+    text-shadow: 0.3vw 0.3vw #000000;
 }
 
-.mid-rows .stats-bar{
+.mid-rows .stats-bar {
     position: relative;
     height: 2.35vw;
     width: 31vw;
@@ -133,10 +132,10 @@ body
     color: white;
     align-items: center;
     justify-content: center;
-    box-shadow: 0vw 0vw 0.3vw 0.3vw #00000073;
+    box-shadow: 0 0 0.3vw 0.3vw #00000073;
 }
 
-.stats-bar .progress-bar{
+.stats-bar .progress-bar {
     position: relative;
     height: 2.35vw;
     background: rgb(255, 238, 0);
@@ -155,10 +154,10 @@ body
     align-items: center;
     justify-content: center;
     left: 6%;
-    bottom: 0%;
+    bottom: 0;
 }
 
-#bottom #description{
+#bottom #description {
     color: white;
     height: 18vh;
     width: 28vw;
@@ -167,12 +166,12 @@ body
     text-align: center;
 }
 
-#description p{
+#description p {
     position: relative;
     font-size: 1.02vw;
 }
 
-#bottom #builds-img{
+#bottom #builds-img {
     position: relative;
     height: 10vh;
     width: 28vw;
@@ -186,7 +185,7 @@ body
     top: 20vh;
 }
 
-#builds-img p{
+#builds-img p {
     color: white;
     cursor: pointer; 
     line-height: 10.5vh;
@@ -197,10 +196,10 @@ body
     width: 14vw;
     font-size: 4vw; 
     text-align: left; 
-    text-shadow: 0vw 0.3vw 0vw #000000;
+    text-shadow: 0 0.3vw #000000;
 }
 
-#builds-img p:hover{
+#builds-img p:hover {
     transition: 0.5s;
     color:rgb(255, 238, 0);
 }
@@ -256,7 +255,7 @@ body
    }
  }
 
-.no-highlight{
+.no-highlight {
   user-select: none;
   -moz-user-select: none;
   -webkit-text-select: none;
