@@ -48,7 +48,7 @@ html {
     list-style: none;
     display: inline-block;
     position: relative;
-    right: 20%;
+    right: 30%;
 }
 
 .navbar ul li a {
@@ -200,7 +200,8 @@ html {
     left: 0;
     top: 0;
     z-index: 0;
-    border: 0.3vw solid #000;
+    border: 0.3vw solid #ffffff;
+    box-shadow: 0px 0px 0.5vw 0px rgba(0, 0, 0, 0.75);
     transition: border-color 0.3s ease-in-out, filter 0.2s ease-in-out;
 }
 
@@ -302,13 +303,26 @@ html {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("/image/season4.1/kadacraftS4.1_4.png");
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("/image/season4/kadacraftS4_2.png");
     background-size: cover;
     background-position: center;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     background-attachment: fixed;
+    
+}
+
+#members-list{
+    display: none;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 80vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    top: 13vh;
 }
 
 #members::-webkit-scrollbar {
@@ -334,17 +348,19 @@ html {
 }
 
 .content-members {
-    height: 70%;
+    height: 15vh;
     position: relative;
-    margin: 15px;
+    margin: auto;
     background-color: rgba(255, 238, 0, 0.863);
     border-radius: 40px;
     padding: 10px;
     text-align: center;
     color: #000;
-    width: 80%;
+    width: 50vw;
     transition: 0.5s;
     border: 3px solid #000;
+    margin-bottom: 10px;
+    
 }
 
 .content-members:hover {
@@ -358,13 +374,12 @@ html {
 }
 
 .content-members img {
-    width: 50%;
+    width: 15vw;
     border-radius: 50%;
     border: 3px solid #000;
 }
 
 .flex-container {
-    top: 15%;
     justify-content: center;
     position: relative;
     list-style: none;
@@ -384,16 +399,17 @@ html {
 
 button {
     color: #000;
-    width: 200px;
-    height: 50px;
-    border-radius: 25px;
+    width: 10vw;
+    height: 5vh;
+    border-radius: 10vw;
     font-weight: bold;
-    border: 2px solid rgba(255, 238, 0, 0.863);
+    border: 0.2vw solid rgba(255, 238, 0, 0.863);
     background: transparent;
     cursor: pointer;
     position: relative;
     overflow: hidden;
     transition: color 0.2s ease-in-out;
+    font-size: 1vw;
 }
 
 button span {
@@ -431,18 +447,24 @@ button:hover {
     transform: scale(1.2);
 }
 
+#tooltip #kadacraftLogo-nav{
+    left: 8.6em;
+    position: relative; 
+    width: 15vw; 
+    cursor: pointer;
+}
+
 #tooltip-text {
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform: translate(-37.5em, 5em);
-    width: 30%;
-    height: 160%;
+    position: fixed;
+    left: 3.5%;
+    top: 9%;
+    width: 5vw;
+    height: 10vh;
     background-color: rgba(255, 238, 0, 0.877);
-    border: 3px solid #000;
+    border: 0.3vw solid #000;
     color: #000;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 1vw;
 
     display: flex;
     align-items: center;
@@ -455,11 +477,12 @@ button:hover {
     left: 50%;
     bottom: 100%;
     transform: translateX(-50%);
-    border: 15px solid;
+    border: 1vw solid;
     border-color: #0000 #0000 #000 #0000;
 }
 
 #button-1, #button-2 {
+    font-size: 1vw;
     display: flex;
     align-items: center;
     justify-content: center;

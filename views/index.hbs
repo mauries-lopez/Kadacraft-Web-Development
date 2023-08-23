@@ -20,13 +20,13 @@
 
         <div class = "banner" id="top"> 
             <div class="navbar">
-                <a class="facebook-btn" style="position:relative; left: 5em; cursor: pointer;" title="Facebook Group"><img src="../image/facebook_logo.png" class="facebook-img" id="facebook-links"></a>
+                <a class="facebook-btn" style="position:relative; left: 5%; cursor: pointer;" title="Facebook Group"><img src="../image/facebook_logo.png" class="facebook-img" id="facebook-links"></a>
                 <div id="tooltip" style="position: relative; display: flex;">
                     <div id="tooltip-text" style="display: none"> 
                         <a href="https://www.facebook.com/groups/KadaCraft" id="button-1" target="_blank"> <button> </button> </a>
                         <a href="https://www.facebook.com/KadaCraftSMP" id="button-2" target="_blank">  <button> </button> </a>
                     </div>
-                    <a href="#"> <img src="../image/kadacraft_logo.png" style="position: relative; width: 15vw; left: 8.6em; cursor: pointer;"> </a>
+                    <a href="#"> <img id="kadacraftLogo-nav" src="../image/kadacraft_logo.png"> </a>
                 </div>        
                 <ul>
                     <li><a href="#about" style="color: black; font-family: Minecraft; letter-spacing: 0.05em;" > About Us </a></li>
@@ -40,8 +40,8 @@
                 <a href="#"> <img src="../image/kadacraft_logo.png" class="logo"> </a>
                 <p id="welcome-description" style="color: black; font-family: Lexend;">  Kadacraft is a roleplaying SMP that is considered the number 1 Minecraft server in the Philippines powered by Apex Hosting. Wherein Numerous Minecraft Enthusiasts are joined together to build, have fun and share stories. </p>
                 <div id="home-buttons">
-                    <a href="#about" style="text-decoration: none;"> <button type="button" style="font-family: Minecraft; letter-spacing: 0.05em; font-size: 1em; "> <span></span> About Us </button> </a>
-                    <a href="#members" style="text-decoration: none;"> <button type="button" style="font-family: Minecraft; letter-spacing: 0.05em; font-size: 1em; "> <span></span> Members </button> </a>
+                    <a href="#about" style="text-decoration: none;"> <button type="button" style="font-family: Minecraft; letter-spacing: 0.05em;  "> <span></span> About Us </button> </a>
+                    <a href="#members" style="text-decoration: none;"> <button type="button" style="font-family: Minecraft; letter-spacing: 0.05em;  "> <span></span> Members </button> </a>
                 </div>
             </div>
 
@@ -51,10 +51,7 @@
                     {{> home_card}}
                 {{/each}}
 
-
-
                 <!--
-
                 <div class="ytVideo" id="ytThumbnail">
                     <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
                     <div id="right-content"> 
@@ -67,59 +64,6 @@
                         </div>
                     </div> 
                 </div>
-
-                <div class="ytVideo" id="ytThumbnail">
-                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
-                    <div id="right-content"> 
-                        <div id="ytTitle"> <p > Video Title </p>  </div>
-                        <div id="ytAuthor"> <p > Video Author </p>  </div>
-                        <div id="ytIcons">
-                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
-                        </div>
-                    </div> 
-                </div>
-
-                <div class="ytVideo" id="ytThumbnail">
-                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
-                    <div id="right-content"> 
-                        <div id="ytTitle"> <p > Video Title </p>  </div>
-                        <div id="ytAuthor"> <p > Video Author </p>  </div>
-                        <div id="ytIcons">
-                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
-                        </div>
-                    </div> 
-                </div>
-
-                <div class="ytVideo" id="ytThumbnail">
-                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
-                    <div id="right-content"> 
-                        <div id="ytTitle"> <p > Video Title </p>  </div>
-                        <div id="ytAuthor"> <p > Video Author </p>  </div>
-                        <div id="ytIcons">
-                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
-                        </div>
-                    </div> 
-                </div>
-
-                <div class="ytVideo" id="ytThumbnail">
-                    <div  id="ytPic"> <img src="../image/atmospheric.png"> </div>
-                    <div id="right-content"> 
-                        <div id="ytTitle"> <p > Video Title </p>  </div>
-                        <div id="ytAuthor"> <p > Video Author </p>  </div>
-                        <div id="ytIcons">
-                            <img class="yt-icon" src="../image/small-icon/view-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/like-icon.png"> <p> 100 </p>
-                            <img class="yt-icon" src="../image/small-icon/comment-icon.png"> <p> 100 </p>
-                        </div>
-                    </div> 
-                </div>
-
                 -->
 
             </div>
@@ -139,212 +83,214 @@
             <div class="content-title">
                 <button style="border: 0; width: 100%; height: 3em;" id="member_button"> <h3 id="member_title"> Members ></h3> </button>
             </div>
-
-            
-            <ul class="flex-container wrap">
-                <li>
-                    <a href="/profile?name=AveryMcIvory" style="text-decoration: none;">
-                        <div class="content-members">
-                            <h3>Avery McIvory</h3>
-                            <img src="../image/avery.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UC8w7U97376AfqgbgChFQ0Rg" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>AZ1O1O</h3>
-                            <img src="../image/az1010.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UC3Ir6UQsfdG_5LAebS47tPw?sub_confirmation=1" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>BeeBuYog</h3>
-                            <img src="../image/beebuyog.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCBNqKk9NyzpW1sbRZ2Iqrag" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>ClariDori</h3>
-                            <img src="../image/claridori.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UC6tCdiWfn_fg69MM6xEJhlQ?sub_confirmation=1" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>Edicius 8-Bit</h3>
-                            <img src="../image/edicius.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/c/JadePh" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>Jade</h3>
-                            <img src="../image/jadeph.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/@JZGRIT" style="text-decoration: none;" target="_blank" >
-                        <div class="content-members">
-                            <h3>JZ Grit</h3>
-                            <img src="../image/jzgrit.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCY-2sNc980SBE4WirNsW5kQ" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>Ken Playz</h3>
-                            <img src="../image/kenplayz.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCY82vc2qc6OpJ2JIc84uwmw" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>King FB</h3>
-                            <img src="../image/kingfb.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCH1ePS4jaQ_pKjCV3ZoWTNQ" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>Klarens</h3>
-                            <img src="../image/klarens.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UC3Sz8yjiQbQE9_Xq3wUTTog" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>Kristian PH</h3>
-                            <img src="../image/kristianph.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCOp3dnFJVrEtTtgVF56OeSg" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>LadySue</h3>
-                            <img src="../image/ladysue.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCnPHLZXBAH42XVJlcwTCLlA" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>Maki Kun</h3>
-                            <img src="../image/makikun.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCmS4KnV7sX0l-VIyFhZ36yw?app=desktop&sub_confirmation=1" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>Mc Hero</h3>
-                            <img src="../image/mchero.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/c/MythDaRifferGaming" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>MythDaRiffer</h3>
-                            <img src="../image/mythdariffer.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCSHb6WyycptSag5u22KQdXA" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>Obri</h3>
-                            <img src="../image/obri.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/c/robraks" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>robraks</h3>
-                            <img src="../image/robraks.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UChMoFQr8tEisoGXOhw3cdHg?app=desktop&sub_confirmation=1" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>SlyTheMiner</h3>
-                            <img src="../image/slytheminer.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/c/StarserePlays" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>Starsere</h3>
-                            <img src="../image/starsere.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCj9AedTtoCwMUFUDAK_STPQ?app=desktop&sub_confirmation=1" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>Sthreed</h3>
-                            <img src="../image/sthreed.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UC2ukXRx1LNiGayO_HQ_bKmA" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>TenderJoncy</h3>
-                            <img src="../image/tenderjoncy.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCSWIKRQ3S3CW7c3S6VPe63Q?app=desktop&sub_confirmation=1" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>WetzkieGamer</h3>
-                            <img src="../image/wetzkie.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCng1BP8fhudP2WfI_JaJFZw" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>Witch Carnelian</h3>
-                            <img src="../image/witch.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCIHLEsaC8fCu9EWhKJzLNCQ?app=desktop&sub_confirmation=1" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>ZircMCGamer</h3>
-                            <img src="../image/zircmcgamer.jpg">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCaC6Exn0uANeUJNqd0QggNw" style="text-decoration: none;" target="_blank">
-                        <div class="content-members">
-                            <h3>Zeri Fae</h3>
-                            <img src="../image/zerifae.jpg">
-                        </div>
-                    </a>
-                </li>
-
-            </ul>
             -->
+            
+            <div id="members-list"> 
+                <ul class="flex-container wrap" >
+                    <li>
+                        <a href="/profile?channelName=AveryMcIvory&channelID=UCvYssWjD3EYiw02k9V2julg" style="text-decoration: none;">
+                            <div class="content-members">
+                                <h3>Avery McIvory</h3>
+                                <img src="../image/yt-profile/AveryMcIvory.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=AZ1O1O&channelID=UC8w7U97376AfqgbgChFQ0Rg" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>AZ1O1O</h3>
+                                <img src="../image/yt-profile/AZ1O1O.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=BeeBuYog&channelID=UC3Ir6UQsfdG_5LAebS47tPw" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>BeeBuYog</h3>
+                                <img src="../image/yt-profile/BeeBuYog.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=ClariDori&channelID=UCBNqKk9NyzpW1sbRZ2Iqrag" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>ClariDori</h3>
+                                <img src="../image/yt-profile/ClariDori.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=Edicius8-Bit&channelID=UC6tCdiWfn_fg69MM6xEJhlQ" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>Edicius 8-Bit</h3>
+                                <img src="../image/yt-profile/Edicius8-Bit.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=Jade&channelID=UC_ftwy-jI7VRv4BkbSsCnuA" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>Jade</h3>
+                                <img src="../image/yt-profile/Jade.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=JZGrit&channelID=UClx91ILccyc0IpzqGZjwhpg" style="text-decoration: none;"  >
+                            <div class="content-members">
+                                <h3>JZ Grit</h3>
+                                <img src="../image/yt-profile/JZGrit.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=KenPlayz&channelID=UCY-2sNc980SBE4WirNsW5kQ" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>Ken Playz</h3>
+                                <img src="../image/yt-profile/KenPlayz.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=KingFB&channelID=UCY82vc2qc6OpJ2JIc84uwmw" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>King FB</h3>
+                                <img src="../image/yt-profile/KingFB.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=Klarens&channelID=UCH1ePS4jaQ_pKjCV3ZoWTNQ" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>Klarens</h3>
+                                <img src="../image/yt-profile/Klarens.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=KristianPH&channelID=UC3Sz8yjiQbQE9_Xq3wUTTog" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>Kristian PH</h3>
+                                <img src="../image/yt-profile/KristianPH.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=LadySue&channelID=UCOp3dnFJVrEtTtgVF56OeSg" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>LadySue</h3>
+                                <img src="../image/yt-profile/LadySue.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=MakiKun&channelID=UCnPHLZXBAH42XVJlcwTCLlA" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>Maki Kun</h3>
+                                <img src="../image/yt-profile/MakiKun.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=McHero&channelID=UCmS4KnV7sX0l-VIyFhZ36yw" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>Mc Hero</h3>
+                                <img src="../image/yt-profile/McHero.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=MythDaRiffer&channelID=UCMjP3_mW1_uwgRiLHWj_DQg" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>MythDaRiffer</h3>
+                                <img src="../image/yt-profile/MythDaRiffer.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=Obri&channelID=UCSHb6WyycptSag5u22KQdXA" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>Obri</h3>
+                                <img src="../image/yt-profile/Obri.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=robraks&channelID=UCzW-TM_w4ntSKbzeT1lcwOQ" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>robraks</h3>
+                                <img src="../image/yt-profile/robraks.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=SlyTheMiner&channelID=UChMoFQr8tEisoGXOhw3cdHg" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>SlyTheMiner</h3>
+                                <img src="../image/yt-profile/SlyTheMiner.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=Starsere&channelID=UChDF2wRXgNq_RZX0UZrB7Mg" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>Starsere</h3>
+                                <img src="../image/yt-profile/Starsere.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=Sthreed&channelID=UCj9AedTtoCwMUFUDAK_STPQ" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>Sthreed</h3>
+                                <img src="../image/yt-profile/Sthreed.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=TenderJoncy&channelID=UC2ukXRx1LNiGayO_HQ_bKmA" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>TenderJoncy</h3>
+                                <img src="../image/yt-profile/TenderJoncy.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=WetzkieGamer&channelID=UCSWIKRQ3S3CW7c3S6VPe63Q" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>WetzkieGamer</h3>
+                                <img src="../image/yt-profile/WetzkieGamer.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=WitchCarnelian&channelID=UCng1BP8fhudP2WfI_JaJFZw" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>Witch Carnelian</h3>
+                                <img src="../image/yt-profile/WitchCarnelian.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=ZircMCGamer&channelID=UCIHLEsaC8fCu9EWhKJzLNCQ" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>ZircMCGamer</h3>
+                                <img src="../image/yt-profile/ZircMCGamer.jpg">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile?channelName=ZeriFae&channelID=UCaC6Exn0uANeUJNqd0QggNw" style="text-decoration: none;" >
+                            <div class="content-members">
+                                <h3>Zeri Fae</h3>
+                                <img src="../image/yt-profile/ZeriFae.jpg">
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            
 
             <div class="character-container">
                 

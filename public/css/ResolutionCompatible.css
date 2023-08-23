@@ -12,24 +12,179 @@
 /* Small screens, non-retina */
 @media only screen and (max-width: 699px) {
 
-    .navbar {
-        text-align: center;
-        justify-content: center;
-        padding: 2vh;
-    }
-
+    /* All Navbar Related */
     .navbar ul li {
-        text-align: center;
-        left: -5%;
-        margin: 1em;
+        display: inline-flex;
+        left: -10vw;
     }
 
     .navbar ul li a{
-        font-size: 2em;
+        font-size: 0.7rem;
+        margin: 0.2rem;
     }
 
-    .navbar img {
+    .navbar {
+        padding: 3vh;
+        border-bottom: 1.2vw solid #000000;
+    }
+
+    .facebook-btn{
         display: none;
+    }
+
+    #tooltip #kadacraftLogo-nav {
+        display: block;
+        left: 0;
+        right: 0;
+        width: 33vw;
+    }
+
+    /* All Background Images Related */
+    .banner{
+        background-image: url("../image/kadacraft_background1_m.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+    }
+
+    /* All related to first section */
+    .content{
+        left: 15vw;
+        top: 15vh;
+        height: 17vw;
+        width: 70vw;
+        text-align: center;
+    }
+
+    .content #welcome-text {
+        font-size: 5vw;
+        text-transform: uppercase;
+    }
+
+    .content .logo {
+        width: 50vw;
+    }
+
+    .content #welcome-description {
+        background: rgba(255, 255, 255, 0.527);
+        font-size: 3vw;
+        font-weight: lighter;
+        width: 70vw;
+    }
+
+    .content > #home-buttons{
+        display: block;
+    }
+
+    button { 
+        margin-top: 2vh;
+        width: 30vw;
+        height: 6vh;
+        border: 1vw solid rgba(255, 238, 0, 0.863);
+        background: rgba(255, 238, 0, 0.863);
+        font-size: 3vw;
+        font-weight: lighter;;
+    }
+
+    #ytVideo-container {
+        top: 50vh;
+        left: 10vw;
+        width: 80vw;
+        height: 40vh;
+    }
+
+    .ytVideo {
+        width: 70vw;
+        height: 20vh;
+    }
+
+    .ytVideo #ytPic {
+        width: 20vw;
+        height: 7vh;
+    }
+
+    .ytVideo #ytPic img {
+        left: 3vw;
+        top: 0.5vh;
+        width: 10vw;
+    }
+
+    #ytThumbnail {
+        border: 1vw solid #ffffff;
+    }
+
+    #right-content #ytTitle {
+        width: 45vw;
+        font-size: 0.6rem;
+    }
+
+    #right-content #ytAuthor {
+        font-size: 0.6rem;
+    }
+
+    #right-content #ytIcons {
+        gap: 3vw;
+    }
+
+    #ytIcons .yt-icon {
+        width: 3vw;
+        height: 1vh;
+    }
+
+    #ytIcons p{
+        font-size: 0.6rem;
+    }
+
+    
+    /* All related to About section */
+    #about{
+        background-image: url("../image/kadacraft_background0_m.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+    }
+
+    .content-about {
+        padding: 1.5rem;
+        width: 40vw;
+        height: 30vh;
+        border-radius: 1;
+    }
+    
+    .content-about h3 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #FFEE00;
+        text-shadow: 3px 3px #3F3F15;
+    }
+
+    .content-about p{
+        font-size: 0.8rem;
+    }
+    
+
+    /* All related to About section */
+    #members{
+        background-image: url("../image/kadacraft_background2_m.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+    }
+
+    .character-container{
+        display: none;
+    }
+
+    #philippines-island{
+        display: none;
+    }
+
+    .flex-container{
+        display: block;
+    }
+
+    #members-list{
+        display: block;
     }
 
 }
@@ -42,50 +197,12 @@
        only screen and (min-resolution: 192dpi) and (max-width: 699px),
        only screen and (min-resolution: 2dppx) and (max-width: 699px) {
 
-    .navbar {
-        text-align: center;
-        justify-content: center;
-        padding: 2vh;
-    }
 
-    .navbar ul li {
-        text-align: center;
-        left: -5%;
-        margin: 1em;
-    }
-
-    .navbar ul li a{
-        font-size: 2em;
-    }
-
-    .navbar img {
-        display: none;
-    }
 
 }
 
 /* Medium screens, non-retina */
 @media only screen and (min-width: 700px) and (max-width: 1299px) {
-
-    .navbar {
-        text-align: center;
-        justify-content: center;
-        padding: 2vh;
-    }
-
-    .navbar ul li {
-        text-align: center;
-        left: -5%;
-        margin: 1em;
-    }
-
-    .navbar ul li a{
-        font-size: 2em;
-    }
-
-    .navbar img {
-        display: none;
-    }
 
 }
 
@@ -96,26 +213,5 @@
        only screen and (min-device-pixel-ratio: 2) and (min-width: 700px) and (max-width: 1299px),
        only screen and (min-resolution: 192dpi) and (min-width: 700px) and (max-width: 1299px),
        only screen and (min-resolution: 2dppx) and (min-width: 700px) and (max-width: 1299px) {
-
-
-    .navbar {
-        text-align: center;
-        justify-content: center;
-        padding: 2vh;
-    }
-
-    .navbar ul li {
-        text-align: center;
-        left: -5%;
-        margin: 1em;
-    }
-
-    .navbar ul li a{
-        font-size: 2em;
-    }
-
-    .navbar img {
-        display: none;
-    }
 
 }
