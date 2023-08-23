@@ -1,3 +1,37 @@
+$(document).ready(function() {
+    let progressBars = document.querySelectorAll('.progress-bar');
+    progressBars.forEach(progressBar => {
+        let progress = progressBar.getAttribute('data-width');
+        let curWidth = 0;
+
+        let duration = 2; // 2 seconds
+        let time = 0;
+        let fps = 60; // Frames Per Second
+
+        let interval = setInterval(function() {
+            time += 1 / fps;
+            curWidth = easeInOutQuad(time * 100 / duration, time, 0, progress, duration);
+            console.log(curWidth);
+            progressBar.style.width = curWidth + '%';
+            progressBar.textContent = Math.round(curWidth) + '%';
+
+            if (curWidth >= progress) {
+                clearInterval(interval);
+                progressBar.style.width = progress + '%';
+                progressBar.textContent = progress + '%';
+            }
+        }, 1000 / fps);
+    });
+});
+
+function easeInOutQuad(x, t, b, c, d) {
+    if ((t /= d / 2) < 1) {
+        return (c / 2) * t * t + b;
+    } else {
+        return (-c / 2) * (--t * (t - 2) - 1) + b;
+    }
+}
+
 function checkStats(channelName){
 
     // Build - Redstone - Roleplaying
@@ -114,12 +148,9 @@ function processStats(firstStat, secondStat, thirdStat, build, redstone, rolepla
     $("#second-stat-name").text(secondStat);
     $("#third-stat-name").text(thirdStat);
 
-    $("#percentBar-1").css('width', build+'%');
-    $("#percentBar-1").text(build+'%');
-    $("#percentBar-2").css('width', redstone+'%');
-    $("#percentBar-2").text(redstone+'%');
-    $("#percentBar-3").css('width', roleplaying+'%');
-    $("#percentBar-3").text(roleplaying+'%');
+    $("#percentBar-1").attr('data-width', build);
+    $("#percentBar-2").attr('data-width', redstone);
+    $("#percentBar-3").attr('data-width', roleplaying);
 
 }
 
