@@ -27,7 +27,7 @@ body {
     flex-direction: column;
     border-radius: 3vw;
     border: 0.3vw solid rgb(255, 238, 0);
-    box-shadow: 0 0 0.5vw 0.5vw #00000073;
+    box-shadow: 0 0 16px 4px rgba(255, 238, 0, 0.5);
     padding: 1rem;
     gap: 1rem;
 }
