@@ -11,7 +11,6 @@ $(document).ready(function() {
         let interval = setInterval(function() {
             time += 1 / fps;
             curWidth = easeInOutQuad(time * 100 / duration, time, 0, progress, duration);
-            console.log(curWidth);
             progressBar.style.width = curWidth + '%';
             progressBar.textContent = Math.round(curWidth) + '%';
 
