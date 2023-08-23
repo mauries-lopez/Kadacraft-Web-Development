@@ -57,7 +57,7 @@
                 }else{
                     $("#member-render").attr("src", "../image/members/"+channelName+".png");
                 }
-                
+
 
             })
             
@@ -151,11 +151,16 @@
                             </p> 
                         </div>
 
-                        <div id="builds-img">
-                            <p class='no-highlight' id="previous-img" style="left: 5%; "> < </p>
-                            <p class='no-highlight' id="next-img" style="text-align: right; right: 3%; " > > </p>
-                        </div>
+                    </div>
 
+                    <div id="builds-img-container">
+                        <div id="builds-img"></div>
+                        <div id="builds-img-background">
+                            <div id="bg-prev"></div>
+                            <div id="bg-next"></div>
+                        </div>
+                        <div class='no-highlight' id="previous-img"> < </div>
+                        <div class='no-highlight' id="next-img"> > </div>
                     </div>
                     
                 </div>
