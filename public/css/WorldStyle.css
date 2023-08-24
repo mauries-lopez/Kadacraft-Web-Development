@@ -18,13 +18,20 @@
     height: 90%;
 }
 
+#tooltip #kadacraftLogo-nav{
+    left: 1em;
+    position: relative; 
+    width: 15vw; 
+    cursor: pointer;
+}
+
 #world .content-title {
     color: white;
     border: 3px solid white;
     background-color: transparent;
     display: block;
     z-index: 1;
-    padding: 0.5rem 3rem;
+    padding: 0.5vw;
     margin-top: 3vh;
     top: 6vh;
     left: 0;
@@ -173,3 +180,102 @@ video {
 }
 
 
+
+/* MEDIA QUERY */
+
+
+/* Default styles for larger screens */
+.navbar ul li {
+    display: inline-block;
+    text-align: center;
+    margin: 0 0.1em;
+}
+
+.navbar img {
+    display: block;
+}
+
+/* Small screens, non-retina */
+@media only screen and (max-width: 699px) {
+
+    /* All Navbar Related */
+    .navbar ul li {
+        display: inline-flex;
+        left: -10vw;
+    }
+
+    .navbar ul li a{
+        font-size: 0.7rem;
+        margin: 0.2rem;
+    }
+
+    .navbar {
+        padding: 3vh;
+        border-bottom: 1.2vw solid #000000;
+    }
+
+    .facebook-btn{
+        display: none;
+    }
+
+    #tooltip #kadacraftLogo-nav {
+        display: block;
+        left: 0;
+        right: 0;
+        width: 33vw;
+    }
+
+    #container{
+        flex-direction: column;
+    }
+
+    .world-box{
+        border: 7px solid white;
+    }
+
+    .world-box:first-child{
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .world-box:last-child{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 100px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 100px;
+    }
+
+    #container .world-box h1{
+        font-size: 2em;
+    }
+
+}
+
+/* Small screens, retina */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 699px),
+       only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 699px),
+       only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 699px),
+       only screen and (min-device-pixel-ratio: 2) and (max-width: 699px),
+       only screen and (min-resolution: 192dpi) and (max-width: 699px),
+       only screen and (min-resolution: 2dppx) and (max-width: 699px) {
+
+
+
+}
+
+/* Medium screens, non-retina */
+@media only screen and (min-width: 700px) and (max-width: 1299px) {
+
+}
+
+/* Medium screens, retina */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 700px) and (max-width: 1299px),
+       only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 700px) and (max-width: 1299px),
+       only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 700px) and (max-width: 1299px),
+       only screen and (min-device-pixel-ratio: 2) and (min-width: 700px) and (max-width: 1299px),
+       only screen and (min-resolution: 192dpi) and (min-width: 700px) and (max-width: 1299px),
+       only screen and (min-resolution: 2dppx) and (min-width: 700px) and (max-width: 1299px) {
+
+}
