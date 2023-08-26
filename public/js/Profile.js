@@ -55,7 +55,7 @@ function checkStats(channelName){
             $("#channelName-p").text('Edicius 8-bit');
             $("#description-content").text("So yep! Ako nga pala si Edicius 8-bit, isang sobrang 'Family Friendly na medyo bastos' sa Kadacraft. Kulay Pink ang aking brief at mahilig po ako kumanta at sumayaw, madalas nag iingay at laging galit! Pero nagbago na ako, mahirap na. Isa rin akong Pogi Hunter. Pero serious note! I'm still adopting things sa Minecraft. Learning things and discovering stuff! Doing the best that I can for the viewers! Hope you enjoy if nararamdaman mo rin ako hehe.");
             processLinks('https://www.facebook.com/edicius8bitofficial', 'https://www.youtube.com/channel/UC6tCdiWfn_fg69MM6xEJhlQ?view_as=subscriber', 'https://www.twitch.tv/edicius8bit', 'https://www.tiktok.com/@edicius_8bit');
-            processStats(null, 'Roleplaying', 'Bastos', 40, 80, 999);
+            processStats(null, 'Roleplaying', 'Bastos', 40, 80, 200);
             break;
         case "Jade":
             processStats(null, null, null, 30, 30, 30);
@@ -102,7 +102,7 @@ function checkStats(channelName){
             $("#channelName-p").text('Mc Hero');
             $("#description-content").text("Kamusta! ako nga pala si Mc Hero. And I am king of myself. Mahilig ako kumain ng Fried Chicken at Pusa ang pinaka paborito kong mobs sa Minecraft!.");
             processLinks('https://www.facebook.com/TheMcHero123', 'https://www.youtube.com/channel/UCmS4KnV7sX0l-VIyFhZ36yw?view_as=subscriber', 'https://www.twitch.tv/mchero_yt', 'https://www.tiktok.com/@mchero_11');
-            processStats(null, 'Roleplaying', 'Halimaw mag Selos', 60, 100, 999);
+            processStats(null, 'Roleplaying', 'Halimaw mag Selos', 60, 100, 200);
             break;
         case "MythDaRiffer":
             $("#description-content").text("I am the Top G HardCore Player of KadaCraft");
@@ -115,12 +115,12 @@ function checkStats(channelName){
         case "robraks":
             $("#description-content").text("He excels in the realm of Community Building, aiming to showcase his mastery of Structural Elegance to not only his followers but also the audience of Server Members. Robraks stands apart from others due to his remarkable expertise in understanding the intricacies of the game we all love. Whether it's constructing buildings, working with Redstone, optimizing farms, or delving into technical aspects, he possesses the ability to impart knowledge on all these fronts. There are numerous incentives to accompany him on his content creation journey, open to all of us, except for those who would obstruct the flow of content.");
             processLinks('https://www.facebook.com/roboraksu', 'https://www.youtube.com/channel/UCzW-TM_w4ntSKbzeT1lcwOQ?view_as=subscriber', 'https://www.twitch.tv/robraks', 'https://www.tiktok.com/@robraks');
-            processStats('Innovator', 'Structural Engineer', 'Gangster', 100, 100, 999);
+            processStats('Innovator', 'Structural Engineer', 'Gangster', 100, 100, 200);
             break;
         case "SlyTheMiner":
             $("#description-content").text("SlyTheMiner, the founder of KadaCraft, a Filipino Minecraft SMP. With a mesmerizing ability to persuade and an infectious personality that's fun, loud, enthusiastic, funny, and charismatic, SlyTheMiner brings a unique blend of entertainment to the gaming genre. But what truly sets him apart is his ability over Redstone in Minecraft, where he dazzles viewers with intricate contraptions, functional farms, clever traps, and mind-bending circuitry. Whether you're a seasoned Minecraft player or simply seeking a good time, SlyTheMiner's channel promises an unforgettable journey where persuasion 'Scamming' meets innovation, all within the pixelated landscapes of KadaCraft. Join him now and experience Minecraft like never before!");
             processLinks('https://www.facebook.com/KuyaSly', 'https://www.youtube.com/@SlyTheMiner?view_as=subscriber', 'https://www.twitch.tv/kuyasly', 'https://www.tiktok.com/@KuyaSly');
-            processStats(null, null, 'Scammer', 100, 100, 999);
+            processStats(null, null, 'Scammer', 100, 100, 200);
             break;
         case "Starsere":
             processStats(null, null, null, 30, 30, 30);

@@ -130,12 +130,14 @@ body {
 
 
 #ytVideo-container {
+    left: 0; 
+    top: 0; 
+    transform: translate(0%,0%);
+    width:40%; 
+    text-align: left; 
+    margin-left: 3%;
     position: relative;
-    top: -15%;
-    left: 65vw;
-    width: 30vw;
     height: 70vh;
-    /*transform: translate(65vw, 9vw);*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -148,7 +150,7 @@ body {
     position: relative;
     margin-top: 1.5vw;
     border-radius: 20vw;
-    width: 27vw;
+    width: 25vw;
     background: white;
     display: flex;
     flex-direction: row;
@@ -643,6 +645,126 @@ button:hover {
         font-size: 3vw;
         font-weight: lighter;
     }
+
+    #contents-container {
+        flex-direction: column;
+        height: 70vh;
+        position: absolute;
+        top: 11vh;
+    }
+
+    #ytVideo-container{
+        transform: translate(110%,15%);
+        position: absolute;
+        height: 30vh;
+        z-index: 100;
+        gap: 0.7vh;
+    }
+
+    .ytVideo{
+        width: 35vw;
+    }
+
+    #member-render{
+        width: 40vw;
+        height: 30vh;
+        position: absolute;
+        z-index: 100;
+        top: 5vh;
+        left: 5vh;
+    }
+
+    #playerDetails-container{
+        
+        height: 70vh;
+        width: 80vw;
+        left: 1.5vw;
+        flex-direction: row;
+        align-items: end;
+    }
+
+    #playerDetails-container #top{
+        top: 35vh;
+        width: 30vw;
+        height: 30vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        position: absolute;
+    }
+
+    #channelName{
+        width: 30vw;
+    }
+
+    #channelName p{
+        font-size: 5.5vw;
+        text-shadow: 2px 2px #3F3F15, 0 0 6px rgba(255, 238, 0, 0.8)
+    }
+
+    #channelSocials{
+        width: 30vw;
+        height: 10vh;
+        justify-content: left;
+        margin: 20px;
+        flex-direction: column;
+        left: 53vw;
+        bottom: 6vw;
+    }
+
+    #channelSocials img{
+        width: 30px;
+        height: 3vh;
+        margin: 10px;
+    }
+
+    #playerDetails-container #mid{
+        bottom: 19vh;
+        left: 3vw;
+        width: 35vw;
+        height: 10vh;
+        column-gap: 10vw;
+        grid-template-columns: none;
+
+    }
+
+    .stats-bar .progress-bar{
+        font-size: 2vw;
+        font-weight: lighter;
+    }
+
+    #mid .stat-name{
+        font-size: 3vw;
+        text-align: left;
+    }
+
+    #mid .stats-bar{
+        width: 20vw;
+    }
+
+    #playerDetails-container #bottom{
+        display: block;
+        height: 10vh;
+        width: 60vw;
+        left: -29vw;
+        top: -2vw;
+        overflow: scroll;
+    }
+
+    #bottom #description{
+        width: 60vw;
+    }
+
+    #description #description-content{
+        font-size: 3vw;
+        text-align: left;
+    }
+
+    #playerDetails-container #work-container{
+        display: none;
+    }
+
+    
 
 }
 
