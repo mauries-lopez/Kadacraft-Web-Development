@@ -48,7 +48,6 @@ const controller = {
 
         var channelID = req.query.channelID;
         var channelName = req.query.channelName;
-
         res.render('profile', {channelID: channelID, channelName: channelName});
     },
 
@@ -105,10 +104,9 @@ function fetchProfileChannelVideos(channelID){
                         var ytVideoDiv = document.createElement('div');
                         ytVideoDiv.onclick = (function(videoId) {
                             return function() {
-                                window.location.href = `https://www.youtube.com/watch?v=${videoId}`;
+                                window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
                             };
                         })(video.snippet.resourceId.videoId);
-
                         ytVideoDiv.style.cursor = 'pointer';
                         ytVideoDiv.className = 'ytVideo';
                         ytVideoDiv.id = 'ytThumbnail';

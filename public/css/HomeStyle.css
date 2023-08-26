@@ -32,7 +32,7 @@ html {
 
 .navbar {
     min-width: 100vw;
-    height: 2vw;
+    height: 3vh;
     margin: auto;
     padding: 0.7vw;
     display: flex;
@@ -224,8 +224,8 @@ html {
 }
 
 #right-content #ytTitle {
-    width: 18vw;
-    font-size: 1.5rem;
+    width: 16vw;
+    font-size: 1.2vw;
     position: relative;
     top: 0;
     left: 0;
@@ -242,7 +242,7 @@ html {
 
 #right-content #ytAuthor {
     width: 18vw;
-    font-size: 1rem;
+    font-size: 1vw;
     position: relative;
     top: 0;
     left: 0;
@@ -265,6 +265,10 @@ html {
     width: 1vw;
     height: 2vh;
     filter: invert(100%);
+}
+
+#ytIcons p{
+    font-size: 1vw;
 }
 
 #about {
@@ -365,7 +369,6 @@ html {
 }
 
 .content-members:hover {
-    transform: scale(1.1);
     background-color: rgba(0, 0, 0, 0.582);
     border-radius: 40px;
     text-align: center;

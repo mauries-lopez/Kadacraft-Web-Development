@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     let progressBars = document.querySelectorAll('.progress-bar');
     progressBars.forEach(progressBar => {
         let progress = progressBar.getAttribute('data-width');
@@ -21,6 +22,7 @@ $(document).ready(function() {
             }
         }, 1000 / fps);
     });
+    
 });
 
 function easeInOutQuad(x, t, b, c, d) {
@@ -50,22 +52,33 @@ function checkStats(channelName){
             processStats('ON THE BEAT', 'BUILDERIST', 'ACTRESS', 100, 60, 70);
             break;
         case "Edicius8-Bit":
-            processStats(null, null, null, 30, 30, 30);
+            $("#channelName-p").text('Edicius 8-bit');
+            $("#description-content").text("So yep! Ako nga pala si Edicius 8-bit, isang sobrang 'Family Friendly na medyo bastos' sa Kadacraft. Kulay Pink ang aking brief at mahilig po ako kumanta at sumayaw, madalas nag iingay at laging galit! Pero nagbago na ako, mahirap na. Isa rin akong Pogi Hunter. Pero serious note! I'm still adopting things sa Minecraft. Learning things and discovering stuff! Doing the best that I can for the viewers! Hope you enjoy if nararamdaman mo rin ako hehe.");
+            processLinks('https://www.facebook.com/edicius8bitofficial', 'https://www.youtube.com/channel/UC6tCdiWfn_fg69MM6xEJhlQ?view_as=subscriber', 'https://www.twitch.tv/edicius8bit', 'https://www.tiktok.com/@edicius_8bit');
+            processStats(null, 'Roleplaying', 'Bastos', 40, 80, 999);
             break;
         case "Jade":
             processStats(null, null, null, 30, 30, 30);
             break;
         case "JZGrit":
-            processStats(null, null, null, 30, 30, 30);
+            $("#channelName-p").text('JZ GRIT');
+            $("#description-content").text("JZ GRIT, The Grind father");
+            processLinks('https://www.facebook.com/JZGRITph', 'https://www.youtube.com/jzgrit?view_as=subscriber', 'https://www.twitch.tv/jzgrit_', 'https://www.tiktok.com/@jzgrlt');
+            processStats(null, null, null, 50, 20, 30);
             break;
         case "KenPlayz":
             processStats(null, null, null, 30, 30, 30);
             break;
         case "KingFB":
-            processStats(null, null, null, 30, 30, 30);
+            $("#channelName-p").text('King FB');
+            $("#description-content").text("Ako nga pala si KingFB! Ang inyong Stepbro-Content Creator on-the-go!");
+            processLinks('https://www.facebook.com/gaming/KingRSY', 'https://www.youtube.com/@KingFB?view_as=subscriber', 'https://www.twitch.tv/kingfb', 'https://www.tiktok.com/@_kingfb');
+            processStats(null, 'Roleplaying', 'Handsome', 100, 10, 100);
             break;
         case "Klarens":
-            processStats(null, null, null, 30, 30, 30);
+            $("#description-content").text("Hai. It is a pleasure to meet you. My role in the server is to stand somewhere, anywhere, or everywhere. Also, I have an empty bottle fetish, so if you ever come across one, kindly send it to my mailbox or through the trash can if you can't find it. Ah, 'yung sinaing, ok, bye, /afk.");
+            processLinks(null, 'https://www.youtube.com/@klrns_', 'https://www.twitch.tv/klarenso_o', null);
+            processStats(null, 'Farm', 'AFK', 50, 70, 100);
             break;
         case "KristianPH":
             $("#channelName-p").text('Kraftian PH');
@@ -77,7 +90,10 @@ function checkStats(channelName){
             processStats(null, null, null, 30, 30, 30);
             break;
         case "LadySue":
-            processStats(null, null, null, 30, 30, 30);
+            $("#channelName-p").text('Ladysue Alberto');
+            $("#description-content").text("Hello I am Ladysue! You can call me Ate Sue. Isa akong Rainbow Unicorn or Rainicorn :) Ang paborito kong gawin ay kumuha ng diamonds and ancient debris!  Kuha hindi nakaw ah! HAHA and mahilig din ako mag prank pero sometimes lang :D");
+            processLinks('https://www.facebook.com/ladysueeee', 'https://www.youtube.com/@LadysueAlberto07', 'https://m.twitch.tv/ladysue07', 'https://www.tiktok.com/@ladysue07');
+            processStats(null, 'Roleplaying', 'Diamonds & Ancient Debris', 60, 70, 100);
             break;
         case "MakiKun":
             processStats(null, null, null, 30, 30, 30);
@@ -89,13 +105,17 @@ function checkStats(channelName){
             processStats(null, 'Roleplaying', 'Halimaw mag Selos', 60, 100, 999);
             break;
         case "MythDaRiffer":
-            processStats(null, null, null, 30, 30, 30);
+            $("#description-content").text("I am the Top G HardCore Player of KadaCraft");
+            processLinks('https://www.facebook.com/mythdariffer', 'https://www.youtube.com/channel/UCMjP3_mW1_uwgRiLHWj_DQg?view_as=subscriber', 'https://www.twitch.tv/mythdariffer', null);
+            processStats(null, null, null, 70, 60, 50);
             break;
         case "Obri":
             processStats(null, null, null, 60, 10, 39);
             break;
         case "robraks":
-            processStats(null, null, null, 98, 78, 71);
+            $("#description-content").text("He excels in the realm of Community Building, aiming to showcase his mastery of Structural Elegance to not only his followers but also the audience of Server Members. Robraks stands apart from others due to his remarkable expertise in understanding the intricacies of the game we all love. Whether it's constructing buildings, working with Redstone, optimizing farms, or delving into technical aspects, he possesses the ability to impart knowledge on all these fronts. There are numerous incentives to accompany him on his content creation journey, open to all of us, except for those who would obstruct the flow of content.");
+            processLinks('https://www.facebook.com/roboraksu', 'https://www.youtube.com/channel/UCzW-TM_w4ntSKbzeT1lcwOQ?view_as=subscriber', 'https://www.twitch.tv/robraks', 'https://www.tiktok.com/@robraks');
+            processStats('Innovator', 'Structural Engineer', 'Gangster', 100, 100, 999);
             break;
         case "SlyTheMiner":
             $("#description-content").text("SlyTheMiner, the founder of KadaCraft, a Filipino Minecraft SMP. With a mesmerizing ability to persuade and an infectious personality that's fun, loud, enthusiastic, funny, and charismatic, SlyTheMiner brings a unique blend of entertainment to the gaming genre. But what truly sets him apart is his ability over Redstone in Minecraft, where he dazzles viewers with intricate contraptions, functional farms, clever traps, and mind-bending circuitry. Whether you're a seasoned Minecraft player or simply seeking a good time, SlyTheMiner's channel promises an unforgettable journey where persuasion 'Scamming' meets innovation, all within the pixelated landscapes of KadaCraft. Join him now and experience Minecraft like never before!");
@@ -106,11 +126,14 @@ function checkStats(channelName){
             processStats(null, null, null, 30, 30, 30);
             break;
         case "Sthreed":
-            processStats(null, null, null, 30, 30, 30);
+            $("#channelName-p").text('Sthreed YT');
+            $("#description-content").text("I am the smallest Enderman , I make manual farms");
+            processLinks('https://www.facebook.com/sthreed.sapno', 'https://youtube.com/@SthreedYT?view_as=subscriber', 'https://www.twitch.tv/sthreed', 'https://www.tiktok.com/@sthreed');
+            processStats(null, null, null, 70, 20, 10);
             break;
         case "TenderJoncy":
             $("#description-content").text("Not just tender and juicy but also a self proclaimed builder. Always ready for adventure and other fun activities within the server.");
-            processLinks('https://www.facebook.com/tenderjoncy', 'https://www.youtube.com/channel/UC2ukXRx1LNiGayO_HQ_bKmA?view_as=subscriber', 'https://www.twitch.tv/tenderjoncy_');
+            processLinks('https://www.facebook.com/tenderjoncy', 'https://www.youtube.com/channel/UC2ukXRx1LNiGayO_HQ_bKmA?view_as=subscriber', 'https://www.twitch.tv/tenderjoncy_', 'https://www.tiktok.com/@tenderjoncy');
             processStats('Build', 'Interior', 'Hotdog', 90, 60, 100);
             break;
         case "WetzkieGamer":
@@ -125,7 +148,9 @@ function checkStats(channelName){
             processStats(null, null, null, 80, 80, 80);
             break;
         case "ZircMCGamer":
-            processStats(null, null, null, 30, 30, 30);
+            $("#description-content").text("Ako Si Zirc Na Mahilig Mag Build.., Masipag Daw Sa Server.., Favorite Ko Sa Server Mag Grind Ng Kung Ano Ano.., Ang Ayaw Ko Lang Nakawin Nyo Pinto Ko.., Kung Ayaw Nyo Mawala Build Nyo Haha Charuuuttt..,");
+            processLinks('https://www.facebook.com/ZircMcGamer', 'https://www.youtube.com/@ZircMcGamer?view_as=subscriber', 'https://www.twitch.tv/zircmcgamer', null);
+            processStats(null, null, null, 100, 10, 50);
             break;
     }
             
@@ -183,3 +208,4 @@ function processLinks(facebookLink, youtubeLink, twitch, tiktok){
     $("#tiktok-link").attr('target', "_blank");
 
 }
+
