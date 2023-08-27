@@ -58,6 +58,14 @@
                     $("#member-render").attr("src", "../image/members/"+channelName+".png");
                 }
 
+                if ( channelName === "Edicius8-Bit"){
+                    $("#member-render").hover(function(){
+                        $("#member-render").attr("src", "../image/members/"+channelName+"2.png");
+                    }, function(){
+                        $("#member-render").attr("src", "../image/members/"+channelName+".png");
+                    })
+                }
+
                 $("#work-button").click(function(){
                     $("#blur-background").css("display", "block");
                     $("#image-container").css("display", "block");

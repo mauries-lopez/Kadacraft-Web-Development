@@ -3,6 +3,7 @@
     padding: 0;
     font-family: "Minecraft", sans-serif;
     font-weight: bold;
+    
 }
 
 body::-webkit-scrollbar {
@@ -196,7 +197,7 @@ body {
 
 .ytVideo #right-content {
     position: relative;
-    width: 18vw;
+    width: 16vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -211,7 +212,7 @@ body {
 }
 
 #right-content #ytTitle {
-    width: 16vw;
+    width: 15vw;
     font-size: 1.2vw;
     position: relative;
     top: 0;
@@ -375,7 +376,6 @@ button:hover {
     -webkit-animation: breathing 5s cubic-bezier(0.4, 0, 0.2, 1) infinite normal;
     animation: breathing 5s cubic-bezier(0.4, 0, 0.2, 1) infinite normal;
     filter: drop-shadow(2px 2px 16px rgba(255, 238, 0, 0.5));
-    pointer-events: none;
 }
 
 #playerDetails-container #mid {
@@ -503,6 +503,7 @@ button:hover {
     background: rgb(255, 255, 255);
     object-fit: cover;
     pointer-events: none;
+    z-index: 100;
 }
 
 #image-container h1{
@@ -515,6 +516,7 @@ button:hover {
     color: white;
     text-shadow: 5px 5px rgb(0, 0, 0);
     transition: 0.5s;
+    z-index: 101;
 }
 
 #image-container h1:hover{
@@ -636,14 +638,44 @@ button:hover {
         width: 33vw;
     }
 
-    button { 
+    #blur-background{
+        background: rgba(0,0,0,0.8);
+        z-index: 102;
+    }
+
+    #work-container{
+        top: 2%;
+        left: 35%;
+    }
+
+    #work-container #work-button { 
         margin-top: 2vh;
-        width: 30vw;
+        width: 10vw;
         height: 6vh;
         border: 1vw solid rgba(255, 238, 0, 0.863);
         background: rgba(255, 238, 0, 0.863);
-        font-size: 3vw;
         font-weight: lighter;
+        font-size: 1.2vw;
+        color: black;
+    }
+
+    #image-container{
+        z-index: 103;
+    }
+    
+
+    #image-container h1{
+        font-size: 9vw;
+    }
+
+    #image-container #img-exit{
+        left: 35vw;
+        top: -4vh;
+    }
+
+    #builds-img{
+        object-fit: contain;
+        background: black;
     }
 
     #contents-container {
@@ -663,6 +695,28 @@ button:hover {
 
     .ytVideo{
         width: 35vw;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .ytVideo #ytPic{
+        width: 10vw;
+    }
+
+    .ytVideo #right-content{
+        width: 22vw;
+    }
+
+    #right-content #ytTitle{
+        width: 22vw;
+    }
+
+    #right-content #ytIcons{
+        width: 22vw;
+    }
+
+    #ytIcons .yt-icon{
+        height: 0.5vh;
     }
 
     #member-render{
@@ -688,13 +742,14 @@ button:hover {
         width: 30vw;
         height: 30vh;
         flex-direction: column;
-        align-items: center;
+        align-items: left;
         justify-content: start;
         position: absolute;
     }
 
     #channelName{
         width: 30vw;
+        text-align: left;
     }
 
     #channelName p{
@@ -709,7 +764,7 @@ button:hover {
         margin: 20px;
         flex-direction: column;
         left: 53vw;
-        bottom: 6vw;
+        bottom: 15vw;
     }
 
     #channelSocials img{
@@ -725,7 +780,7 @@ button:hover {
         height: 10vh;
         column-gap: 10vw;
         grid-template-columns: none;
-
+        justify-content: left;
     }
 
     .stats-bar .progress-bar{
@@ -744,11 +799,11 @@ button:hover {
 
     #playerDetails-container #bottom{
         display: block;
-        height: 10vh;
+        height: 13vh;
         width: 60vw;
-        left: -29vw;
-        top: -2vw;
-        overflow: scroll;
+        left: 6vw;
+        top: 55vh;
+        position: absolute;
     }
 
     #bottom #description{
@@ -757,11 +812,11 @@ button:hover {
 
     #description #description-content{
         font-size: 3vw;
-        text-align: left;
+        text-align: justify;
     }
 
     #playerDetails-container #work-container{
-        display: none;
+        display: block;
     }
 
     

@@ -368,15 +368,6 @@ html {
     
 }
 
-.content-members:hover {
-    background-color: rgba(0, 0, 0, 0.582);
-    border-radius: 40px;
-    text-align: center;
-    color: rgba(255, 238, 0, 0.863);
-    transition: 0.5s;
-    border: 3px solid rgba(255, 238, 0, 0.863);
-}
-
 .content-members img {
     width: 15vw;
     border-radius: 50%;
