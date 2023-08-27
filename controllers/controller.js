@@ -48,7 +48,46 @@ const controller = {
 
         var channelID = req.query.channelID;
         var channelName = req.query.channelName;
-        res.render('profile', {channelID: channelID, channelName: channelName});
+
+        let details = {
+            videos: [],
+            channelID: channelID,
+            channelName: channelName
+        };
+
+        runProfileFetch(channelID).then(async videosArray => {
+
+            for (const videos of videosArray) {
+                for (const video of videos.items) {  // Iterate through each video in items
+                    let channelName = checkChannelName(video.snippet.channelTitle);
+                    let videoId = video.snippet.resourceId.videoId;
+        
+                    let viewsCount;
+                    let likesCount;
+                    let commentsCount;
+        
+                    let videoStats = await fetchVideoStats(videoId);
+                    videoStats.items.forEach(video => {
+                        viewsCount = video.statistics.viewCount;
+                        likesCount = video.statistics.likeCount;
+                        commentsCount = video.statistics.commentCount;
+                    });
+        
+                    details.videos.push({
+                        videoId: videoId,
+                        videoThumbnail: video.snippet.thumbnails.high.url,
+                        channelName: channelName,
+                        videoTitle: video.snippet.title,
+                        viewsCount: viewsCount,
+                        likesCount: likesCount,
+                        commentsCount: commentsCount
+                    });
+                }
+            }
+            res.render('profile', details);
+        });
+
+        
     },
 
     getError: function (req, res) {
@@ -64,9 +103,35 @@ const controller = {
 */
 
 // For Profile Page (For all related to Profile, it uses 13 QUOTAS per person) (Call Steps: checkCache -> fetchProfileChannelVideos)
-function fetchProfileChannelVideos(channelID){
+async function fetchProfileChannelVideos(channelID){
 
-    var url = "https://youtube.googleapis.com/youtube/v3/channels?part=contentDetails&id="+channelID+"&maxResults=10&key=AIzaSyBZ0Cw4kmHvDBCE58v-pvsKy4jNe2uQAYY"
+    const filePath = 'caches/channelProfileVideos'+channelID+'.json';
+    return await new Promise((resolve, reject) => {
+        checkCache(CACHE_LIFESPAN, filePath, async function (isCacheExpired) {
+            if (isCacheExpired || !fs.existsSync(filePath)) {
+                let url = "https://youtube.googleapis.com/youtube/v3/channels?part=contentDetails&id="+channelID+"&maxResults=10&key=AIzaSyBZ0Cw4kmHvDBCE58v-pvsKy4jNe2uQAYY";
+                let response = await fetch(url);
+                let data = await response.json();
+
+                let cache = {
+                    timestamp: Date.now() / 1000,
+                    data: data
+                };
+                fs.writeFile(filePath, JSON.stringify(cache), (err) => {
+                    if (err) throw err;
+                });
+
+                resolve(data);
+            } else {
+                fs.readFile(filePath, (err, data) => {
+                    resolve(JSON.parse(data).data);
+                });
+            }
+        });
+    });
+
+    /*
+    var url = 
     fetch(url)
     .then((result) => {
         return result.json();
@@ -197,6 +262,8 @@ function fetchProfileChannelVideos(channelID){
 
     })
 
+    */
+
 }
 
 // For Home Page (For all related to Home, it uses 53 QUOTAS per page load) (Call Steps: checkCache -> fetchChannelVideos -> fetchPlaylistVideos -> fetchVideoStats )
@@ -283,10 +350,38 @@ async function runFetch(){
     return videosArray;
 }
 
+async function runProfileFetch(channelID){
+    let channelVideos = await fetchProfileChannelVideos(channelID);
+    let videosArray = [];
+    let fetchPromises = [];
+    for (let i = 0; i < channelVideos.items.length; i++) {
+        let playlistId = channelVideos.items[i].contentDetails.relatedPlaylists.uploads;
+        let fetchPromise = fetchPlaylistVideos(playlistId,10);
+        fetchPromises.push(fetchPromise);
+    }
+
+    videosArray = await Promise.all(fetchPromises);
+    //Sort the videosArray by latest date
+    videosArray.sort(function(a, b) {
+        var dateA = new Date(a.items[0].snippet.publishedAt);
+        var dateB = new Date(b.items[0].snippet.publishedAt);
+        //If the dates are equal, sort by time
+        if(dateA.getTime() == dateB.getTime()) {
+            var timeA = new Date(a.items[0].snippet.publishedAt);
+            var timeB = new Date(b.items[0].snippet.publishedAt);
+            return timeB - timeA;
+        }
+        return dateB - dateA;
+    });
+
+    return videosArray;
+
+}
+
 // Checking for caches
 function checkCache(cacheLifespan, filePath, isCacheExpired) {
     // Convert from seconds to hours (1 hour = 3600 seconds)
-    cacheLifespan *= 3600;
+    cacheLifespan *= 1800;
 
     // Check if 'caches' folder exists
     if (!fs.existsSync('caches')) {
@@ -303,10 +398,10 @@ function checkCache(cacheLifespan, filePath, isCacheExpired) {
     fs.readFile(filePath, function(err, data) {
         // Get saved timestamp from cache file
         let cacheTimestamp = JSON.parse(data).timestamp;
-
         let difference = Date.now() / 1000 - cacheTimestamp;
         isCacheExpired(difference >= cacheLifespan);
     });
+
 }
 
 // HELPER FUNCTIONS
