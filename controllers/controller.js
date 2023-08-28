@@ -187,7 +187,7 @@ async function fetchPlaylistVideos(dataID, vidCount, callFromProfile){
 
                 resolve(video);
 
-            } else if ( fs.existsSync(filePath) ) {
+            } else {
                 console.log("Cache Found. Don't need to fetch again.");
                 fs.readFile(filePath, (err, data) => {
                     resolve(JSON.parse(data).data);
