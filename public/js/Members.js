@@ -10,8 +10,7 @@ $(document).ready(function() {
 
         if ( nameMobile == "Avery McIvory" || nameMobile == "AZ1O1O" || nameMobile == "BeeBuYog" || 
              nameMobile == "Jade" || nameMobile == "Ken Playz" || nameMobile == "KyahRye" || 
-             nameMobile == "Maki Kun" || nameMobile == "Starsere" || nameMobile == "WetzkieGamer" ||
-             nameMobile == "Witch Carnelian" ){
+             nameMobile == "Maki Kun" || nameMobile == "Starsere" || nameMobile == "WetzkieGamer" ){
               
               alert("Viewing of this channel is not yet available.")
               anchorElement.attr('href', '#members');
@@ -28,8 +27,7 @@ $(document).ready(function() {
 
         if ( name == "AveryMcIvory" || name == "AZ1O1O" || name == "BeeBuYog" || 
              name == "Jade" || name == "KenPlayz" || name == "KyahRye" || 
-             name == "MakiKun" || name == "Starsere" || name == "WetzkieGamer" ||
-             name == "WitchCarnelian" ){
+             name == "MakiKun" || name == "Starsere" || name == "WetzkieGamer" ){
 
               alert("Viewing of this channel is not yet available.")
             

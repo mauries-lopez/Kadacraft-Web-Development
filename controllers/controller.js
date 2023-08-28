@@ -84,6 +84,7 @@ const controller = {
                     });
                 }
             }
+
             res.render('profile', details);
         });
 
@@ -129,141 +130,6 @@ async function fetchProfileChannelVideos(channelID){
             }
         });
     });
-
-    /*
-    var url = 
-    fetch(url)
-    .then((result) => {
-        return result.json();
-    }).then((data) => {
-        var fetchPromises = [];
-        for (var i = 0; i < data.items.length; i++) {
-            var playlistId = data.items[i].contentDetails.relatedPlaylists.uploads;
-            var fetchPromise = fetchPlaylistVideos(playlistId, 10);
-            fetchPromises.push(fetchPromise);
-        }
-
-        Promise.all(fetchPromises)
-            .then(videosArray => {
-                //Sort the videosArray by latest date
-                videosArray.sort(function(a, b){
-                    var dateA = new Date(a.items[0].snippet.publishedAt);
-                    var dateB = new Date(b.items[0].snippet.publishedAt);
-                    //If the dates are equal, sort by time
-                    if(dateA.getTime() == dateB.getTime()){
-                        var timeA = new Date(a.items[0].snippet.publishedAt);
-                        var timeB = new Date(b.items[0].snippet.publishedAt);
-                        return timeB - timeA;
-                    }
-                    return dateB - dateA;
-                });
-      
-                //Display the videos
-                videosArray.forEach(function(videos){
-
-                    videos.items.forEach( async function(video) {
-                        
-                        channelName = checkChannelName(video.snippet.channelTitle);
-
-                        // Create the main container div
-                        var ytVideoDiv = document.createElement('div');
-                        ytVideoDiv.onclick = (function(videoId) {
-                            return function() {
-                                window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
-                            };
-                        })(video.snippet.resourceId.videoId);
-                        ytVideoDiv.style.cursor = 'pointer';
-                        ytVideoDiv.className = 'ytVideo';
-                        ytVideoDiv.id = 'ytThumbnail';
-                        ytVideoDiv.style.backgroundImage = `linear-gradient(rgba(0,0,0,0),rgba(0, 0, 0, 0.8)),url(${video.snippet.thumbnails.high.url})`;
-
-                        // Create the inner div for the image
-                        var ytPicDiv = document.createElement('div');
-                        ytPicDiv.id = 'ytPic';
-
-                        var ytImage = document.createElement('img');
-                        ytImage.src = '../image/yt-profile/'+channelName+'.jpg'; //CHANGE PROFILE PICTURE
-                        ytPicDiv.appendChild(ytImage);
-
-                        // Create the inner div for the right content
-                        var rightContentDiv = document.createElement('div');
-                        rightContentDiv.id = 'right-content';
-
-                        // Create the div for the video title
-                        var ytTitleDiv = document.createElement('div');
-                        ytTitleDiv.id = 'ytTitle';
-
-                        var ytTitle = document.createElement('p');
-                        ytTitle.textContent = video.snippet.title; // CHANGE VIDEO TITLE
-                        ytTitleDiv.appendChild(ytTitle);
-
-                        // Create the div for the video author
-                        var ytAuthorDiv = document.createElement('div');
-                        ytAuthorDiv.id = 'ytAuthor';
-
-                        var ytAuthor = document.createElement('p');
-                        ytAuthor.textContent = video.snippet.channelTitle; // CHANGE VIDEO AUTHOR
-                        ytAuthorDiv.appendChild(ytAuthor);
-
-                        var ytIconsDiv = document.createElement('div');
-                        ytIconsDiv.id = 'ytIcons';
-
-                        var viewsImg = document.createElement('img');
-                        viewsImg.className = 'yt-icon';
-                        viewsImg.src = '../image/small-icon/view-icon.png';
-                        var views = document.createElement('p');
-
-                        var likesImg = document.createElement('img');
-                        likesImg.className = 'yt-icon';
-                        likesImg.src = '../image/small-icon/like-icon.png';
-                        var likes = document.createElement('p');
-
-                        var commentsImg = document.createElement('img');
-                        commentsImg.className = 'yt-icon';
-                        commentsImg.src = '../image/small-icon/comment-icon.png';
-                        var comments = document.createElement('p');
-                        
-                        await fetchVideoStats(video.snippet.resourceId.videoId).then((data) => {
-                            var videos = data.items;
-                            videos.forEach((video) => {
-                                views.textContent = video.statistics.viewCount;
-                                likes.textContent = video.statistics.likeCount;
-                                comments.textContent = video.statistics.commentCount;
-                            });
-                        });
-
-                        ytIconsDiv.appendChild(viewsImg);
-                        ytIconsDiv.appendChild(views);
-                        ytIconsDiv.appendChild(likesImg);
-                        ytIconsDiv.appendChild(likes);
-                        ytIconsDiv.appendChild(commentsImg);
-                        ytIconsDiv.appendChild(comments);
-
-                        
-                        // Append elements to their respective parent elements
-                        rightContentDiv.appendChild(ytTitleDiv);
-                        rightContentDiv.appendChild(ytAuthorDiv);
-                        rightContentDiv.appendChild(ytIconsDiv);
-                        ytVideoDiv.appendChild(rightContentDiv);
-                        ytVideoDiv.appendChild(ytPicDiv);
-                        ytVideoDiv.appendChild(rightContentDiv);
-
-                        // Append the main container to a parent element in the DOM
-                        var parentElement = document.getElementById('ytVideo-container'); // Replace 'parent' with the actual parent element's ID
-                        parentElement.appendChild(ytVideoDiv);
-                    });
-
-                });
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                res.status(500).send("An error occurred");
-            });
-
-    })
-
-    */
-
 }
 
 // For Home Page (For all related to Home, it uses 53 QUOTAS per page load) (Call Steps: checkCache -> fetchChannelVideos -> fetchPlaylistVideos -> fetchVideoStats )
@@ -295,11 +161,18 @@ async function fetchChannelVideos(){
 }
 
 // For Getting all videos from the upload playlist of each YouTube Channel
-async function fetchPlaylistVideos(dataID, vidCount){
-    const filePath = 'caches/playlistVideos-' + dataID + '.json';
+async function fetchPlaylistVideos(dataID, vidCount, callFromProfile){
+
+    var filePath;
+    if ( callFromProfile == true ) 
+        filePath = 'caches/playlistVideosProfile-' + dataID + '.json';
+    else
+        filePath = 'caches/playlistVideos-' + dataID + '.json';
+
     return await new Promise((resolve, reject) => {
         checkCache(CACHE_LIFESPAN, filePath, async function (isCacheExpired) {
-            if (isCacheExpired || !fs.existsSync(filePath)) {
+            if ( isCacheExpired || !fs.existsSync(filePath) ) {
+                
                 let url = "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=" + vidCount + "&playlistId=" + dataID + "&key=AIzaSyBZ0Cw4kmHvDBCE58v-pvsKy4jNe2uQAYY";
                 let response = await fetch(url);
                 let video = await response.json();
@@ -313,7 +186,9 @@ async function fetchPlaylistVideos(dataID, vidCount){
                 });
 
                 resolve(video);
-            } else {
+
+            } else if ( fs.existsSync(filePath) ) {
+                console.log("Cache Found. Don't need to fetch again.");
                 fs.readFile(filePath, (err, data) => {
                     resolve(JSON.parse(data).data);
                 });
@@ -329,7 +204,7 @@ async function runFetch(){
     let fetchPromises = [];
     for (let i = 0; i < channelVideos.items.length; i++) {
         let playlistId = channelVideos.items[i].contentDetails.relatedPlaylists.uploads;
-        let fetchPromise = fetchPlaylistVideos(playlistId,1);
+        let fetchPromise = fetchPlaylistVideos(playlistId,1, false);
         fetchPromises.push(fetchPromise);
     }
 
@@ -356,7 +231,7 @@ async function runProfileFetch(channelID){
     let fetchPromises = [];
     for (let i = 0; i < channelVideos.items.length; i++) {
         let playlistId = channelVideos.items[i].contentDetails.relatedPlaylists.uploads;
-        let fetchPromise = fetchPlaylistVideos(playlistId,10);
+        let fetchPromise = fetchPlaylistVideos(playlistId,10, true);
         fetchPromises.push(fetchPromise);
     }
 

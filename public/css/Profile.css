@@ -779,7 +779,6 @@ button:hover {
         width: 35vw;
         height: 10vh;
         column-gap: 10vw;
-        grid-template-columns: none;
         justify-content: left;
     }
 
@@ -799,10 +798,10 @@ button:hover {
 
     #playerDetails-container #bottom{
         display: block;
-        height: 13vh;
+        height: 16vh;
         width: 60vw;
         left: 6vw;
-        top: 55vh;
+        top: 51vh;
         position: absolute;
     }
 

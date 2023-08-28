@@ -110,7 +110,10 @@ function checkStats(channelName){
             processStats(null, null, null, 70, 60, 50);
             break;
         case "Obri":
-            processStats(null, null, null, 60, 10, 39);
+            $("#description-content").text("Hello ako si Obri, laging mataray role ko diko alam kung bakit. Hindi ako nageexplore kasi takot ako sa mga mobs, magbubuild nalang ako.");
+            processLinks('https://www.facebook.com/profile.php?id=100078689359622&mibextid=ZbWKwLr', 'https://youtube.com/@Obriii?view_as=subscriber', 'https://www.twitch.tv/obriiiiiii', 'https://www.tiktok.com/@aubreeyph?_t=8f37fhBn1Yw&_r=1');
+            processStats(null, null, null, 60, 1, 39);
+            createExtraElements('Sigaw', 200);
             break;
         case "robraks":
             $("#description-content").text("He excels in the realm of Community Building, aiming to showcase his mastery of Structural Elegance to not only his followers but also the audience of Server Members. Robraks stands apart from others due to his remarkable expertise in understanding the intricacies of the game we all love. Whether it's constructing buildings, working with Redstone, optimizing farms, or delving into technical aspects, he possesses the ability to impart knowledge on all these fronts. There are numerous incentives to accompany him on his content creation journey, open to all of us, except for those who would obstruct the flow of content.");
@@ -120,7 +123,8 @@ function checkStats(channelName){
         case "SlyTheMiner":
             $("#description-content").text("SlyTheMiner, the founder of KadaCraft, a Filipino Minecraft SMP. With a mesmerizing ability to persuade and an infectious personality that's fun, loud, enthusiastic, funny, and charismatic, SlyTheMiner brings a unique blend of entertainment to the gaming genre. But what truly sets him apart is his ability over Redstone in Minecraft, where he dazzles viewers with intricate contraptions, functional farms, clever traps, and mind-bending circuitry. Whether you're a seasoned Minecraft player or simply seeking a good time, SlyTheMiner's channel promises an unforgettable journey where persuasion 'Scamming' meets innovation, all within the pixelated landscapes of KadaCraft. Join him now and experience Minecraft like never before!");
             processLinks('https://www.facebook.com/KuyaSly', 'https://www.youtube.com/@SlyTheMiner?view_as=subscriber', 'https://www.twitch.tv/kuyasly', 'https://www.tiktok.com/@KuyaSly');
-            processStats(null, null, 'Scammer', 100, 100, 200);
+            processStats(null, null, null, 70, 20, 10);
+            createExtraElements('Scammer', 200);
             break;
         case "Starsere":
             processStats(null, null, null, 30, 30, 30);
@@ -140,7 +144,10 @@ function checkStats(channelName){
             processStats(null, null, null, 30, 30, 30);
             break;
         case "WitchCarnelian":
-            processStats(null, 'Witchcraft', 'Beauty', 50, 100, 90);
+            $("#channelName-p").text('WITCH CARNELIAN');
+            $("#description-content").text("Witch Carnelian also known as  ' Nelian '. An eclectic witch. On her 18th birthday she wish to become the greatest magical witch. To enhance her magical power even more her parents gave her a gift called the endless book that will guide her through her journey while she's looking for her familiar named ' Midnight ' a magical black cat who went missing. She meet a wonderful people who lived on B5 island. After a while living in a peaceful island there's a tree of light magically sprouted. By their curiosity they went to investigate and manage to enter the tree of light. The enchanted portal brought them into the world of Kadacraft.");
+            processLinks('https://www.facebook.com/junelyn.dacay', 'https://www.youtube.com/channel/UCng1BP8fhudP2WfI_JaJFZw?view_as=subscriber', 'https://www.twitch.tv/witch_carnelian', 'https://www.tiktok.com/@witch_carnelian?lang=en');
+            processStats('Build', 'Witchcraft', 'Beauty', 80, 99.99, 100);
             break;
         case "ZeriFae":
             $("#description-content").text("Bili ka na baboy...");
@@ -209,3 +216,26 @@ function processLinks(facebookLink, youtubeLink, twitch, tiktok){
 
 }
 
+function createExtraElements(extraStatName, extraStatValue){
+
+    var statsContainer = document.getElementById('mid');            
+
+    var statName = document.createElement('div');
+    statName.classList.add('stat-name');
+    statName.setAttribute('id', 'first-stat-name');
+    statName.textContent = extraStatName;
+
+    var statsBar = document.createElement('div');
+    statsBar.classList.add('stats-bar');
+
+    var progressBar = document.createElement('div');
+    progressBar.classList.add('progress-bar');
+    progressBar.setAttribute('id', 'percentBar-1');
+    progressBar.setAttribute('data-width', extraStatValue);
+
+    statsBar.appendChild(progressBar);
+    
+    statsContainer.appendChild(statName);
+    statsContainer.appendChild(statsBar);
+
+}
