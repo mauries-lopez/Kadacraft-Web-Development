@@ -130,6 +130,26 @@ body {
 }
 
 
+#button-1, #button-2 {
+    font-size: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 3em;
+    width: 90%;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+#button-1:hover, #button-2:hover {
+    background-color: #FFF;
+}
+
+
 #ytVideo-container {
     left: 0; 
     top: 0; 
