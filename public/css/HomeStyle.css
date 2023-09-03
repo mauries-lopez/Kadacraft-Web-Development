@@ -174,26 +174,6 @@ html {
     text-decoration: none;
 }
 
-
-.ytVideo #ytPic {
-    position: relative;
-    align-items: center;
-    width: 35vw;
-    height: 7vw;
-    left: 0;
-    top: 0;
-    transform: translate(1vw, 0.2vw);
-}
-
-.ytVideo #ytPic img {
-    width: 6vw;
-    border-radius: 200vw;
-    position: relative;
-    z-index: 1;
-    border: 0.3vw solid rgb(255, 255, 255);
-    box-shadow: 0px 0px 0.5vw 0px rgba(0, 0, 0, 0.75);
-}
-
 #ytThumbnail {
     background-size: cover;
     background-position: center;
@@ -213,10 +193,12 @@ html {
 
 .ytVideo #right-content {
     position: relative;
-    width: 18vw;
+    width: 23vw;
+    height: 7vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: auto;
 }
 
 #right-content > * {
@@ -224,7 +206,7 @@ html {
 }
 
 #right-content #ytTitle {
-    width: 16vw;
+    width: 23vw;
     font-size: 1.2vw;
     position: relative;
     top: 0;
@@ -692,24 +674,18 @@ button:hover {
         height: 20vh;
     }
 
-    .ytVideo #ytPic {
-        width: 20vw;
-        height: 7vh;
-    }
-
-    .ytVideo #ytPic img {
-        left: 3vw;
-        top: 0.5vh;
-        width: 10vw;
-        height: 5vh;
-    }
-
     #ytThumbnail {
         border: 1vw solid #ffffff;
     }
 
+    .ytVideo #right-content{
+        width: 60vw;
+        height: 15vw;
+        margin: auto;
+    }
+
     #right-content #ytTitle {
-        width: 45vw;
+        width: 60vw;
         font-size: 0.6rem;
     }
 

@@ -167,36 +167,17 @@ body {
 }
 
 .ytVideo {
-    background: black;
     position: relative;
     margin-top: 1.5vw;
     border-radius: 20vw;
     width: 25vw;
+    height: 10vw;
     background: white;
     display: flex;
     flex-direction: row;
     text-decoration: none;
 }
 
-
-.ytVideo #ytPic {
-    position: relative;
-    align-items: center;
-    width: 35vw;
-    height: 7vw;
-    left: 0;
-    top: 0;
-    transform: translate(1vw, 0.2vw);
-}
-
-.ytVideo #ytPic img {
-    width: 6vw;
-    border-radius: 200vw;
-    position: relative;
-    z-index: 1;
-    border: 0.3vw solid rgb(255, 255, 255);
-    box-shadow: 0px 0px 0.5vw 0px rgba(0, 0, 0, 0.75);
-}
 
 #ytThumbnail {
     background-size: cover;
@@ -217,10 +198,12 @@ body {
 
 .ytVideo #right-content {
     position: relative;
-    width: 16vw;
+    width: 21vw;
+    height: 6vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: auto;
 }
 
 #ytIcons p{
@@ -232,7 +215,7 @@ body {
 }
 
 #right-content #ytTitle {
-    width: 15vw;
+    width: 21vw;
     font-size: 1.2vw;
     position: relative;
     top: 0;
@@ -665,9 +648,11 @@ button:hover {
         z-index: 102;
     }
 
-    #work-container{
-        top: 2%;
-        left: 35%;
+    #playerDetails-container #work-container{
+        position: absolute;
+        display: block;
+        top: 86%;
+        left: 79%;
     }
 
     #work-container #work-button { 
@@ -721,24 +706,35 @@ button:hover {
         padding-bottom: 8px;
     }
 
-    .ytVideo #ytPic{
-        width: 10vw;
-    }
-
     .ytVideo #right-content{
-        width: 22vw;
+        width: 60vw;
+        height: auto;
+        left: 3vw;
     }
 
     #right-content #ytTitle{
-        width: 22vw;
+        width: 30vw;
+        font-size: 2vw;
+    }
+
+    #right-content #ytAuthor{
+        width: 30vw;
+        font-size: 1.5vw;
     }
 
     #right-content #ytIcons{
-        width: 22vw;
+        top: 0.3vw;
+        width: 27vw;
+    }
+
+    #ytIcons p{
+        font-size: 1.5vw;
     }
 
     #ytIcons .yt-icon{
-        height: 0.5vh;
+
+        height: 1vh;
+        width: 2vw;
     }
 
     #member-render{
@@ -796,11 +792,10 @@ button:hover {
     }
 
     #playerDetails-container #mid{
-        bottom: 19vh;
+        bottom: 17vh;
         left: 3vw;
-        width: 35vw;
         height: 10vh;
-        column-gap: 10vw;
+        column-gap: 6vw;
         justify-content: left;
     }
 
@@ -820,10 +815,10 @@ button:hover {
 
     #playerDetails-container #bottom{
         display: block;
-        height: 16vh;
+        height: 14vh;
         width: 60vw;
         left: 6vw;
-        top: 51vh;
+        top: 53vh;
         position: absolute;
     }
 
@@ -836,9 +831,6 @@ button:hover {
         text-align: justify;
     }
 
-    #playerDetails-container #work-container{
-        display: block;
-    }
 
     
 
