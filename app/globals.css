@@ -27,50 +27,120 @@
   }
 }
 
+@font-face {
+  font-family: "Minecraft";
+  font-style: normal;
+  src: url("/fonts/Minecraft.otf") format("opentype");
+  font-weight: 400;
+}
+
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.slide-in-elliptic-top-fwd {
-	-webkit-animation: slide-in-elliptic-top-fwd 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.1s both;
-	        animation: slide-in-elliptic-top-fwd 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.1s both;
+.slide-in-top {
+	-webkit-animation: slide-in-top 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-top 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 /**
  * ----------------------------------------
- * animation slide-in-elliptic-top-fwd
+ * animation slide-in-top
  * ----------------------------------------
  */
-@-webkit-keyframes slide-in-elliptic-top-fwd {
+@-webkit-keyframes slide-in-top {
   0% {
-    -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
-            transform: translateY(-600px) rotateX(-30deg) scale(0);
-    -webkit-transform-origin: 50% 100%;
-            transform-origin: 50% 100%;
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0) rotateX(0) scale(1);
-            transform: translateY(0) rotateX(0) scale(1);
-    -webkit-transform-origin: 50% 1400px;
-            transform-origin: 50% 1400px;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
     opacity: 1;
   }
 }
-@keyframes slide-in-elliptic-top-fwd {
+@keyframes slide-in-top {
   0% {
-    -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
-            transform: translateY(-600px) rotateX(-30deg) scale(0);
-    -webkit-transform-origin: 50% 100%;
-            transform-origin: 50% 100%;
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0) rotateX(0) scale(1);
-            transform: translateY(0) rotateX(0) scale(1);
-    -webkit-transform-origin: 50% 1400px;
-            transform-origin: 50% 1400px;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
     opacity: 1;
   }
 }
+
+.slide-in-right {
+	-webkit-animation: slide-in-right 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-right 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-in-right
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-out-right {
+	-webkit-animation: slide-out-right 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: slide-out-right 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+/**
+ * ----------------------------------------
+ * animation slide-out-right
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+@keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+

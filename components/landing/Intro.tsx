@@ -1,18 +1,11 @@
+import Background from "../Background";
+
 export default function Intro() {
   return (
     <>
     <section className="w-full h-svh">
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0"
-        style={{
-          backgroundImage: `url('/image/kadacraft_background1.png')`,
-          backgroundPosition: '47% 0px',
-        }}
-      />
-
-      {/* White overlay */}
-      <div className="absolute inset-0 bg-white/50 dark:bg-black/70 z-0" />
+      
+      <Background srcLight="/image/kadacraft_background1_light.png" srcDark="/image/kadacraft_background1_dark.png"/>
 
       {/* Foreground content */}
       <div className="relative w-full h-full flex flex-col justify-center items-center gap-y-3">
