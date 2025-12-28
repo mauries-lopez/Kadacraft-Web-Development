@@ -8,7 +8,7 @@ export default function NavigationBar(){
     const {theme, setTheme} = useThemeToggle();
 
     return (
-        <header className="w-full fixed p-5 z-100 slide-in-elliptic-top-fwd">
+        <header className="w-full fixed top-0 p-5 z-100 slide-in-elliptic-top-fwd">
             <div className="flex w-full items-center rounded-xl bg-neutral-100 dark:bg-neutral-800 backdrop-blur-sm px-5 py-3 transition duration-300 drop-shadow-xl">
                 <div className="w-auto">
                     <img 

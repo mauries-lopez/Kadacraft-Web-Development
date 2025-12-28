@@ -1,9 +1,17 @@
-import Landing from "@/components/landing/Landing";
+import Footer from "@/components/Footer";
+import About from "@/components/landing/About";
+import Intro from "@/components/landing/Intro";
+import RecentVideos from "@/components/landing/RecentVideos";
+
 
 export default function Main() {
   return (
-    <main className="w-full h-dvh bg-white dark:bg-neutral-800/40 transition duration-300">
-      <Landing/>
-    </main>
+    <>
+      <main className="w-full transition duration-300">
+        <Intro />
+        <About />
+        <RecentVideos />
+      </main>
+    </>
   );
 }
