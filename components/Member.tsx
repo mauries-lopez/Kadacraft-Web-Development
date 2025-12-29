@@ -6,10 +6,10 @@ export default function Member({name}: MemberProps){
 
     return(
         <>
-            <div className="bg-gradient-to-t from-yellow-500 to-neutral-100 dark:to-black rounded-lg border-4 border-yellow-500 dark:border-neutral-800 shadow-xl overflow-hidden flex flex-col items-center hover:scale-105 transition duration-300 cursor-pointer">
+            <div className="snap-center w-full md:ml-0 max-w-300 min-w-70 drop-shadow-xl flex flex-col hover:scale-105 transition duration-300 bg-gradient-to-t from-yellow-300 dark:from-neutral-500 rounded-lg overflow-hidden items-center cursor-pointer slide-in-top">
                 {/* Image */}
                 <div
-                    className="w-full h-64 bg-cover"
+                    className="w-full h-100 bg-cover"
                     style={{
                         backgroundImage: `url('/image/members/${name}.png')`,
                     }}

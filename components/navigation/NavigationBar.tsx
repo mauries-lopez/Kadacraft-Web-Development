@@ -20,10 +20,10 @@ export default function NavigationBar(){
                         className="w-full max-w-50 object-contain"
                     />
                 </div>
-                <div className="hidden md:flex w-full items-center justify-evenly text-black dark:text-white font-semibold text-lg">
+                <div className="hidden md:flex w-full items-center justify-evenly text-black dark:text-white font-semibold text-sm uppercase">
                     <a href="/" className=" hover:text-yellow-400">Home</a>
                     <a href="/members" className=" hover:text-yellow-400">Members</a>
-                    <a href="/" className=" hover:text-yellow-400">Worlds</a>
+                    <a href="/worlds" className=" hover:text-yellow-400">Worlds</a>
                     <a href="/" className=" hover:text-yellow-400">FAQs</a>
                 </div>
                 <div className="w-full md:w-auto flex items-center justify-end mr-3 ">
@@ -41,7 +41,7 @@ export default function NavigationBar(){
                     </svg>
                 </button>
             </div>
-
+            
             <MobileNavBar setMobile={setMobile} mobile={mobile}/>
         </header>
     )

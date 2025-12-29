@@ -7,16 +7,36 @@ export default function Members(){
 
     return(
         <>
-            <div className="w-full">
-                
+            <div className="relative w-full min-h-svh md:p-10 overflow-hidden flex justify-center items-center">
 
-                <div className="relative w-full flex justify-center items-start p-3 md:p-10 ">
-                    <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-5 md:gap-10 p-4 z-10 mt-15 drop-shadow-md">
-                        {members.map((name) => (
-                            <Member key={name} name={name} />
-                        ))}
-                    </div>
-                    <Background srcLight="/image/kadacraft_background0_light.png" srcDark="/image/kadacraft_background0_dark.png"/>
+                {/* Background layer */}
+                <div className="absolute inset-0">
+                    <Background
+                        srcLight="/image/kadacraft_background0_light.png"
+                        srcDark="/image/kadacraft_background0_dark.png"
+                    />
+                </div>
+
+                {/* Content layer */}
+                <div
+                    className="
+                        relative z-10
+                        w-full
+                        flex flex-row
+                        gap-10
+                        mt-10
+                        overflow-x-auto
+                        snap-x snap-mandatory
+                        
+                        md:grid
+                        md:grid-cols-2
+                        lg:grid-cols-3
+                        md:overflow-hidden
+                    "
+                >
+                    {members.map((name) => (
+                        <Member key={name} name={name} />
+                    ))}
                 </div>
             </div>
         </>

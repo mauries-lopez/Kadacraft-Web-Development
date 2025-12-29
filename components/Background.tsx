@@ -8,7 +8,7 @@ export default function Background({ srcLight, srcDark }: BackgroundProps) {
         <>
             {/* Background image for light mode */}
             <div
-                className="absolute inset-0 bg-cover bg-center z-0 dark:hidden transition duration-300 bg-fixed"
+                className="absolute inset-0 bg-cover bg-center z-0 dark:hidden transition duration-300"
                 style={{
                     backgroundImage: `url('${srcLight}')`,
                 }}
@@ -16,7 +16,7 @@ export default function Background({ srcLight, srcDark }: BackgroundProps) {
 
             {/* Background image for dark mode */}
             <div
-                className="hidden absolute inset-0 bg-cover bg-center z-0 dark:flex transition duration-300 bg-fixed"
+                className="hidden absolute inset-0 bg-cover bg-center z-0 dark:flex transition duration-300"
                 style={{
                     backgroundImage: `url('${srcDark}')`,
                 }}

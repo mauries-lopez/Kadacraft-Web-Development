@@ -8,7 +8,7 @@ export default function Intro() {
       <Background srcLight="/image/kadacraft_background1_light.png" srcDark="/image/kadacraft_background1_dark.png"/>
 
       {/* Foreground content */}
-      <div className="relative w-full h-full flex flex-col justify-center items-center gap-y-3">
+      <div className="relative w-full h-full flex flex-col justify-center items-center gap-y-3 scale-in-center">
         <div className="w-full flex justify-center items-center">
           <h1 className="text-black dark:text-white text-3xl md:text-5xl font-bold transition duration-300">
             Welcome to
