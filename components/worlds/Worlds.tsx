@@ -20,6 +20,18 @@ export default function Worlds(){
             season: "Season 2",
             gallery: ["/image/season2/kadacraftS2_1.png", "/image/season2/kadacraftS2_2.png", "/image/season2/kadacraftS2_3.png", "/image/season2/kadacraftS2_4.png", "/image/season2/kadacraftS2_5.png", "/image/season2/kadacraftS2_6.png", "/image/season2/kadacraftS2-best.png"]
         },
+        {
+            season: "Season 3",
+            gallery: ["/image/season3/kadacraftS3_1.png", "/image/season3/kadacraftS3_2.png", "/image/season3/kadacraftS3_3.png", "/image/season3/kadacraftS3_4.png", "/image/season3/kadacraftS3_5.png", "/image/season3/kadacraftS3_6.png", "/image/season3/kadacraftS3-best.png"]
+        },
+        {
+            season: "Season 4",
+            gallery: ["/image/season4/kadacraftS4_1.png", "/image/season4/kadacraftS4_2.png", "/image/season4/kadacraftS4_3.png", "/image/season4/kadacraftS4_4.png", "/image/season4/kadacraftS4_5.png", "/image/season4/kadacraftS4_6.png", "/image/season4/kadacraftS4-best.png"]
+        },
+        {
+            season: "Season 4.1",
+            gallery: ["/image/season4.1/kadacraftS4.1_1.png", "/image/season4.1/kadacraftS4.1_2.png", "/image/season4.1/kadacraftS4.1_3.png", "/image/season4.1/kadacraftS4.1_4.png", "/image/season4.1/kadacraftS4.1_5.png", "/image/season4.1/kadacraftS4.1_6.png", "/image/season4.1/kadacraftS4.1-best.png"]
+        },
     ]
 
     const [seasonName, setSeasonName] = useState("undefined");
@@ -62,7 +74,7 @@ export default function Worlds(){
         <>
             <div className="w-full h-svh flex flex-col justify-center items-center bg-neutral-100 ">
                 <Background srcLight="/image/temp-background_light.png" srcDark="/image/temp-background_dark.png "/>
-                <div className="w-full h-130 md:h-full flex flex-row md:grid lg:grid-cols-3 justify-start items-center gap-10 mt-10 p-10 md:p-20 overflow-x-scroll z-10 snap-x snap-mandatory md:overflow-hidden slide-in-top">
+                <div className="w-full h-130 md:h-full flex flex-row md:grid md:grid-cols-2 lg:grid-cols-3 justify-start items-center gap-10 mt-10 p-10 md:p-20 overflow-x-scroll z-10 snap-x snap-mandatory md:overflow-hidden slide-in-top">
                     <World title="Season 1" href="https://www.mediafire.com/file/s2b7j3ckj9dkgvx/KadaCraft_S1.mcworld/file" srcImage="/image/season1/kadacraftS1-best.png" edition="bedrock" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
                     <World title="Season 2" href="https://www.mediafire.com/file/d6akwu2lvm2xz6f/KadaCraft_Season_2.mcworld/file" srcImage="/image/season2/kadacraftS2-best.png" edition="bedrock" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
                     <World title="Season 3" href="https://www.mediafire.com/file/rdnv4o2enbjabrh/KadaCraft_Season_3_%2528Pruned_Java_World%2529.rar/file" srcImage="/image/season3/kadacraftS3-best.png" edition="java" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
@@ -77,31 +89,38 @@ export default function Worlds(){
                     className="w-full h-svh flex items-center justify-center bg-neutral-700/80 px-10 md:px-70"
                     onClick={() => endViewGallery()}
                 >
-                    <div onClick={e => e.stopPropagation()} className="flex flex-col-reverse slide-in-top">
-                        {/* Left Arrow */}
-                        <button
-                            className=" p-2 bg-black/50"
-                            onClick={() => prevImage()}
-                        >
-                            ‹
-                        </button>
+                    <div onClick={e => e.stopPropagation()} className="w-full flex flex-col slide-in-top justify-center">
+                        
+                        <div className="absolute inset-0 w-full z-10 flex flex-row">
+                            <div className="w-full ">
+                                {/* Left Arrow */}
+                                <button
+                                    className="absolute h-full p-3 md:p-10 bg-black/50 rounded-l-2xl text-4xl md:text-7xl hover:bg-black/70 transition duration-300"
+                                    onClick={() => prevImage()}
+                                >
+                                    ‹
+                                </button>
+                            </div>
 
+                            <div className="w-full flex justify-end items-center">
+                                {/* Right Arrow */}
+                                <button
+                                    className="absolute h-full p-3 md:p-10 bg-black/50 rounded-r-2xl text-4xl md:text-7xl hover:bg-black/70 transition duration-300"
+                                    onClick={() => nextImage()}
+                                >
+                                    ›
+                                </button>
+                            </div>
+                        </div>
+                        
                         {/* Image */}
                         {worldImages[seasonIndex].gallery && (
                             <img
                                 src={worldImages[seasonIndex].gallery[imageIndex]}
                                 alt="World preview"
-                                className="object-contain rounded-2xl drop-shadow-2xl max-h-[80vh]"
+                                className="object-contain rounded-2xl drop-shadow-2xl max-h-[80vh] order-1"
                             />
                         )}
-
-                        {/* Right Arrow */}
-                        <button
-                            className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4 py-2 bg-black/30 rounded-full hover:bg-black/50 transition"
-                            onClick={() => nextImage()}
-                        >
-                            ›
-                        </button>
                     </div>
                 </div>
             </div>
