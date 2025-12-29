@@ -1,7 +1,7 @@
 import Background from "@/components/Background";
 import Member from "@/components/Member";
 
-export default function Members(){
+export default function Page(){
 
     let members: string[] = ["AveryMcIvory", "AZ1O1O", "BeeBuYog", "ClariDori", "Jade", "JZGrit", "KenPlayz", "KingFB", "Klarens", "KristianPH", "KyahRye", "LadySue", "MakiKun", "McHero2", "MythDaRiffer", "Obri", "Robraks", "SlyTheMiner", "Starsere", "Sthreed", "TenderJoncy", "WetzkieGamer", "WitchCarnelian", "ZeriFae", "ZircMCGamer"];
 
@@ -27,6 +27,7 @@ export default function Members(){
                         mt-10
                         overflow-x-auto
                         snap-x snap-mandatory
+                        p-20
                         
                         md:grid
                         md:grid-cols-2

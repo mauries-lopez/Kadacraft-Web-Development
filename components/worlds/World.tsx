@@ -3,10 +3,13 @@ interface WorldProps{
     title: string,
     href: string,
     srcImage: string,
-    edition: string
+    edition: string,
+    setSeasonName: React.Dispatch<React.SetStateAction<string>>
+    setIsViewGalleryBool: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function World({title, href, srcImage, edition}: WorldProps){
+export default function World({title, href, srcImage, edition, setSeasonName, setIsViewGalleryBool}: WorldProps){
+
     return(
         <>
             <div className="w-full h-full max-w-300 min-w-70 drop-shadow-xl flex flex-col hover:scale-105 transition duration-300 snap-center">
@@ -21,12 +24,15 @@ export default function World({title, href, srcImage, edition}: WorldProps){
                         )}
                     </h1>
 
-
                     <button
                         className="p-1 md:p-2 rounded-full bg-black/10 dark:bg-white/10 
                                 hover:bg-black/20 dark:hover:bg-white/20 
                                 transition duration-300 cursor-pointer"
                         aria-label="View"
+                        onClick={() => {
+                            setSeasonName(title)
+                            setIsViewGalleryBool(true)
+                        }}
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
