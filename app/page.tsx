@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer";
 import About from "@/components/landing/About";
 import Intro from "@/components/landing/Intro";
 import RecentVideos from "@/components/landing/RecentVideos";

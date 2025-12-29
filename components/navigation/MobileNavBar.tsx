@@ -58,7 +58,6 @@ export default function MobileNavBar({mobile, setMobile}: MobileNavBarProps){
                     <a href="/" className=" hover:text-yellow-400">Home</a>
                     <a href="/members" className=" hover:text-yellow-400">Members</a>
                     <a href="/worlds" className=" hover:text-yellow-400">Worlds</a>
-                    <a href="/" className=" hover:text-yellow-400">FAQs</a>
                 </div>
             </div>
         </>
