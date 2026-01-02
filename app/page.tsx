@@ -2,8 +2,8 @@ import About from "@/components/landing/About";
 import Intro from "@/components/landing/Intro";
 import RecentVideos from "@/components/landing/RecentVideos";
 
+export default async function Main() {
 
-export default function Main() {
   return (
     <>
       <main className="w-full transition duration-300">

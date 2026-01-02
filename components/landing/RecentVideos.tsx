@@ -1,6 +1,19 @@
+"use client"
+
 import Background from "@/components/Background";
+import { fetchChannelVideos } from "@/utils/youtube/YoutubeAPI";
+import { useEffect, useState } from "react";
 
 export default function RecentVideos(){
+
+    const [videos, setVideos] = useState<any>(null);
+
+    useEffect (() => {
+        fetchChannelVideos("Atmospheric").then(setVideos)
+    }, []);
+
+    console.log("Videos:", videos);
+
     return (
         <>
             <div className="hidden relative w-full min-h-svh md:p-10 overflow-hidden flex justify-center items-center">
