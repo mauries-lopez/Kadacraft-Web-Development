@@ -4,6 +4,8 @@ import RecentVideos from "@/components/landing/RecentVideos";
 
 export default async function Main() {
 
+  await fetch(`${process.env.NEXT_PUBLIC_FUNCTION_URL_YT_FETCHER}`);
+
   return (
     <>
       <main className="w-full transition duration-300">
