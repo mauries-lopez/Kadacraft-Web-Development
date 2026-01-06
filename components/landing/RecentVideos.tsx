@@ -19,8 +19,6 @@ export default function RecentVideos() {
                 .select("*")
                 .order("publishedAt", { ascending: false });
 
-            console.log(data);
-
             if (error) {
                 console.error("Error fetching videos:", error);
             } else {
