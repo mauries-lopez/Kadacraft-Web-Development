@@ -4,7 +4,14 @@ import RecentVideos from "@/components/landing/RecentVideos";
 
 export default async function Main() {
 
-  await fetch(`${process.env.NEXT_PUBLIC_FUNCTION_URL_YT_FETCHER}`);
+  // Only fetch during runtime, not during build
+  if (process.env.NEXT_PUBLIC_FUNCTION_URL_YT_FETCHER && !process.env.NEXT_PUBLIC_FUNCTION_URL_YT_FETCHER.includes('localhost')) {
+    try {
+      await fetch(`${process.env.NEXT_PUBLIC_FUNCTION_URL_YT_FETCHER}`);
+    } catch (error) {
+      console.error('Failed to trigger video sync:', error);
+    }
+  }
 
   return (
     <>
