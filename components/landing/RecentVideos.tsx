@@ -27,7 +27,20 @@ export default function RecentVideos() {
             setLoading(false);
         };
 
+        const triggerSync = async () => {
+            if (process.env.NEXT_PUBLIC_FUNCTION_URL_YT_FETCHER) {
+                try {
+                    await fetch(process.env.NEXT_PUBLIC_FUNCTION_URL_YT_FETCHER);
+                    // Optionally re-fetch if sync might have added new videos
+                    // fetchVideos(); 
+                } catch (error) {
+                    console.error('Failed to trigger video sync:', error);
+                }
+            }
+        };
+
         fetchVideos();
+        triggerSync();
     }, []);
 
 
