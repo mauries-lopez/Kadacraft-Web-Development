@@ -1,14 +1,15 @@
 import Link from "next/link"
 
-interface MemberProps{
+interface MemberProps {
     name: string
 }
 
-export default function Member({name}: MemberProps){
+export default function Member({ name }: MemberProps) {
 
-    return(
+    return (
         <>
-            <Link href={`/members/${encodeURIComponent(name)}`}>
+            {/*<Link href={`/members/${encodeURIComponent(name)}`}>*/}
+            <Link href={`#`}>
                 <div className="snap-center w-full md:ml-0 max-w-300 min-w-70 drop-shadow-xl flex flex-col hover:scale-105 transition duration-300 bg-gradient-to-t from-yellow-300 dark:from-neutral-500 rounded-lg overflow-hidden items-center cursor-pointer slide-in-top">
                     {/* Image */}
                     <div
