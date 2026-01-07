@@ -103,9 +103,11 @@ export default function MembersPage(){
                             <div className="text-gray-600 dark:text-gray-300">No active members yet.</div>
                         </div>
                     ) : (
-                        members.map(({ name, channelIconUrl }) => (
-                            <Member key={name} name={name} channelIconUrl={channelIconUrl} />
-                        ))
+                        members
+                            .filter(member => member.name && member.channelIconUrl)
+                            .map(({ name, channelIconUrl }) => (
+                                <Member key={name} name={name!} channelIconUrl={channelIconUrl!} />
+                            ))
                     )}
                 </div>
             </div>
