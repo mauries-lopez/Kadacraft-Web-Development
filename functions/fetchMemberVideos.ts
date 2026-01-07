@@ -1,5 +1,5 @@
-// netlify/functions/fetchAllVideos.ts
-import { fetchChannelVideos } from "@/utils/youtube/YoutubeAPI";
+// netlify/functions/fetchMemberVideos.ts
+import { fetchMemberVideos } from "@/utils/youtube/YoutubeAPI";
 import { createClient } from "@supabase/supabase-js";
 import { Context } from "@netlify/functions";
 
@@ -14,16 +14,16 @@ export const handler = async (req: Request, context: Context) => {
     const { data } = await supabase
         .from("sync_table")
         .select("sync_status")
-        .eq("id", 1)
+        .eq("id", 2)
         .single();
 
     if (data?.sync_status == false) {
 
         // Update sync status
-        await supabase.from("sync_table").update({ sync_status: true, sync_time: new Date() }).eq("table_name", "channel_yt_videos");
+        await supabase.from("sync_table").update({ sync_status: true, sync_time: new Date() }).eq("table_name", "member_yt_videos");
 
         // Clear all existing videos from previous hour
-        await supabase.from("channel_yt_videos").delete().neq("id", 0);
+        await supabase.from("member_yt_videos").delete().neq("id", 0);
 
         const youtubeHandles: string[] = ["AceDhaniel", "BeeBuYog", "curiouscattttt", "GleiiZie", "its_jhiggssee", "KeetMichael",
             "KenPlayzTM", "KingFB", "Klaud9ne", "McHeroYT", "mythdariffer", "PashneaGaming",
@@ -44,32 +44,37 @@ export const handler = async (req: Request, context: Context) => {
             const chunk = youtubeHandles.slice(i, i + concurrency);
             const promises = chunk.map(async (name) => {
                 try {
-                    const videos = await fetchChannelVideos(name);
+                    const data = await fetchMemberVideos(name);
+                    const videos = data.videos;
+                    const channelIconUrl = data.channelIconUrl;
+                    const channelHandle = data.channelHandle;
+
                     if (!videos || videos.length === 0) {
                         console.log(`No videos found for channel: ${name}`);
                         return [];
                     }
 
-                    const filteredVideos = videos.filter((item: any) => {
-                        if (!item.snippet.title.toLowerCase().includes("kadacraft")) return false;
-                        const publishedDate = new Date(item.snippet.publishedAt);
-                        const publishedMonth = publishedDate.getMonth();
-                        const publishedYear = publishedDate.getFullYear();
-                        return (
-                            (publishedMonth === currentMonth && publishedYear === currentYear) ||
-                            (publishedMonth === lastMonth && publishedYear === lastMonthYear)
-                        );
+                    // Filter to only include videos with "kadacraft" in the title (case-insensitive)
+                    const filtered = videos.filter((item: any) => {
+                        const title = (item?.snippet?.title || "").toString().toLowerCase();
+                        return title.includes("kadacraft");
                     });
 
-                    if (filteredVideos.length === 0) return [];
+                    if (filtered.length === 0) {
+                        console.log(`No Kadacraft videos for channel: ${name}`);
+                        return [];
+                    }
 
-                    return filteredVideos.map((item: any) => ({
+                    return filtered.map((item: any) => ({
+                        channelIconUrl: channelIconUrl,
+                        channelHandle: channelHandle,
                         channelId: item.snippet.videoOwnerChannelId,
                         title: item.snippet.title,
                         videoId: item.snippet.resourceId.videoId,
                         publishedAt: item.snippet.publishedAt,
                         thumbnailUrl: item.snippet.thumbnails.maxres?.url ?? item.snippet.thumbnails.high.url,
                     }));
+                    
                 } catch (err) {
                     console.error(`Failed fetching videos for ${name}:`, err);
                     return [];
@@ -83,7 +88,7 @@ export const handler = async (req: Request, context: Context) => {
         }
 
         if (allInserts.length > 0) {
-            const { error } = await supabase.from("channel_yt_videos").insert(allInserts);
+            const { error } = await supabase.from("member_yt_videos").insert(allInserts);
             if (error) {
                 console.error("Error inserting batched videos:", error);
             }
@@ -98,7 +103,7 @@ export const handler = async (req: Request, context: Context) => {
     } else {
 
         // Reset sync status if 60 minutes have passed
-        const { data } = await supabase.from("sync_table").select("sync_time").eq("id", 1).single();
+        const { data } = await supabase.from("sync_table").select("sync_time").eq("id", 2).single();
 
         if (!data || !data.sync_time) {
             // Handle missing data case safely
@@ -113,7 +118,7 @@ export const handler = async (req: Request, context: Context) => {
         const timeDiff = curTime.getTime() - lastSyncTime.getTime();
         const minutesDiff = Math.floor(timeDiff / (1000 * 60));
         if (minutesDiff >= 60) { // 60 minutes have passed, then update sync status to allow new sync
-            await supabase.from("sync_table").update({ sync_status: true, sync_time: new Date() }).eq("table_name", "channel_yt_videos");
+            await supabase.from("sync_table").update({ sync_status: true, sync_time: new Date() }).eq("table_name", "member_yt_videos");
 
             return {
                 statusCode: 200,
