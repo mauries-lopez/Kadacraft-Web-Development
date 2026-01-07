@@ -30,6 +30,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <NavigationBar/>
+        <script
+          src="https://app.rybbit.io/api/script.js"
+          data-site-id="b0fe3904e389"
+          defer
+        ></script>
         {children}
         <Footer/>
       </body>
