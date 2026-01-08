@@ -24,6 +24,7 @@ export default function NavigationBar(){
                     <a href="/" className=" hover:text-yellow-400">Home</a>
                     <a href="/members" className=" hover:text-yellow-400">Members</a>
                     <a href="/worlds" className=" hover:text-yellow-400">Worlds</a>
+                    <a href="https://drive.google.com/file/d/1ctGg5PuSHL7Nf-1OgsTWfQNjWX57uLXY/view" target="_blank" className=" hover:text-yellow-400">Mods</a>
                 </div>
                 <div className="w-full md:w-auto flex items-center justify-end mr-3 ">
                     <ThemeToggle theme={theme} setTheme={setTheme}/>
