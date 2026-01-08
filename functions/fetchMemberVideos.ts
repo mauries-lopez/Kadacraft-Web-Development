@@ -9,9 +9,16 @@ const supabaseKey = process.env.SUPABASE_SECRET_KEY;
 // SERVER-ONLY Supabase client
 const supabase = createClient(supabaseUrl!, supabaseKey!);
 
+// Return a Date rounded down to the top of the current hour (minutes, seconds, ms = 0)
+const getHourOnlyDate = () => {
+    const d = new Date();
+    d.setMinutes(0, 0, 0);
+    return d;
+};
+
 const runSync = async () => {
     // Update sync status
-    await supabase.from("sync_table").update({ sync_status: true, sync_time: new Date() }).eq("table_name", "member_yt_videos");
+    await supabase.from("sync_table").update({ sync_status: true, sync_time: getHourOnlyDate() }).eq("table_name", "member_yt_videos");
 
     // Clear all existing videos from previous hour
     await supabase.from("member_yt_videos").delete().neq("id", 0);
@@ -117,7 +124,7 @@ export const handler = async (req: Request, context: Context) => {
         const minutesDiff = Math.floor(timeDiff / (1000 * 60));
         console.log("Minutes since last sync:", minutesDiff);
         if (minutesDiff >= 60) { // 60 minutes have passed, then update sync status to allow new sync
-            await supabase.from("sync_table").update({ sync_status: false, sync_time: new Date() }).eq("table_name", "member_yt_videos");
+            await supabase.from("sync_table").update({ sync_status: false, sync_time: getHourOnlyDate() }).eq("table_name", "member_yt_videos");
 
             // Immediately start sync now that status is reset
             return await runSync();
