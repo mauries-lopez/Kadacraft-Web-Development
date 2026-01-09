@@ -10,7 +10,7 @@ export default function Member({ name, channelIconUrl }: MemberProps) {
     return (
         <>
             <Link href={`/members/${encodeURIComponent(name)}`}>
-                <div className="snap-center w-full md:ml-0 max-w-300 min-w-70 drop-shadow-xl flex flex-col hover:scale-105 transition duration-300 bg-gradient-to-t from-yellow-300 dark:from-neutral-500 rounded-lg overflow-hidden items-center cursor-pointer slide-in-top">
+                <div className="snap-center w-full md:ml-0 max-w-300 min-w-70 drop-shadow-xl flex flex-col hover:scale-105 transition duration-300 bg-linear-to-t from-yellow-300 dark:from-neutral-500 rounded-lg overflow-hidden items-center cursor-pointer slide-in-top">
                     {/* Image */}
                     <div
                         className="w-full h-100 bg-cover bg-center"

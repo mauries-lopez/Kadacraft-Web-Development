@@ -64,12 +64,12 @@ export default function RecentVideos() {
                     {/* Content layer */}
                     <div className="relative w-full md:h-svh md:overflow-x-hidden overflow-auto z-20 flex flex-col items-center mt-10">
                         {loading ? (
-                            <div className="flex w-full h-full justify-center items-center">
-                                <p className="text-xl font-semibold">Loading videos...</p>
+                            <div className="w-full col-span-full text-center p-8">
+                                <div className="inline-block animate-pulse md:mt-4 mb-4 p-4 shadow dark:bg-gray-200 dark:text-gray-900 bg-stone-800 text-gray-100 hover:scale-105 active:scale-95 justify-center items-center rounded-full font-bold">Loading videos…</div>
                             </div>
                         ) : videos.length === 0 ? (
-                            <div className="flex w-full h-full justify-center items-center">
-                                <p className="text-xl font-semibold">Fetching videos... Retry after some time</p>
+                            <div className="w-full col-span-full text-center p-8">
+                                <div className="text-gray-600 dark:text-gray-300">Updating... Retry again</div>
                             </div>
                         ) : (
                             <div className="
