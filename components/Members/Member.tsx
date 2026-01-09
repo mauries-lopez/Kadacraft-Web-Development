@@ -13,7 +13,7 @@ export default function Member({ name, channelIconUrl }: MemberProps) {
                 <div className="snap-center w-full md:ml-0 max-w-300 min-w-70 drop-shadow-xl flex flex-col hover:scale-105 transition duration-300 bg-gradient-to-t from-yellow-300 dark:from-neutral-500 rounded-lg overflow-hidden items-center cursor-pointer slide-in-top">
                     {/* Image */}
                     <div
-                        className="w-full h-100 bg-cover"
+                        className="w-full h-100 bg-cover bg-center"
                         style={{
                             backgroundImage: `url('${channelIconUrl}')`,
                         }}
