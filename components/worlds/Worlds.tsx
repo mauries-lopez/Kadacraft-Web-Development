@@ -2,6 +2,7 @@
 
 import Background from "@/components/Background";
 import World from "@/components/worlds/World";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Worlds(){
@@ -80,67 +81,144 @@ export default function Worlds(){
 
     return(
         <>
-            <div className="relative w-full min-h-svh md:p-10 overflow-hidden flex flex-col justify-center items-center">
+            <div className="relative w-full min-h-svh overflow-hidden flex flex-col items-center">
                 {/* Background layer */}
                 <div className="absolute inset-0">
                     <Background
                         srcLight="/image/temp-background_light.png"
-                        srcDark="/image/temp-background_dark.png "
+                        srcDark="/image/temp-background_dark.png"
                     />
                 </div>
-                
-                <div className="w-full h-130 md:h-full flex flex-row md:grid md:grid-cols-2 lg:grid-cols-3 justify-start items-center gap-10 mt-10 p-10 md:p-20 overflow-x-scroll z-10 snap-x snap-mandatory md:overflow-hidden slide-in-top">
-                    <World title="Season 1" href="https://www.mediafire.com/file/s2b7j3ckj9dkgvx/KadaCraft_S1.mcworld/file" srcImage="/image/season1/kadacraftS1-best.png" edition="bedrock" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
-                    <World title="Season 2" href="https://www.mediafire.com/file/d6akwu2lvm2xz6f/KadaCraft_Season_2.mcworld/file" srcImage="/image/season2/kadacraftS2-best.png" edition="bedrock" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
-                    <World title="Season 3" href="https://www.mediafire.com/file/rdnv4o2enbjabrh/KadaCraft_Season_3_%2528Pruned_Java_World%2529.rar/file" srcImage="/image/season3/kadacraftS3-best.png" edition="java" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
-                    <World title="Season 4" href="https://www.mediafire.com/file/9u1k34wta8a3z14/KadaCraft_Season_Four.rar/file" srcImage="/image/season4/kadacraftS4-best.png" edition="java" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
-                    <World title="Season 4.1" href="https://drive.google.com/file/d/1UuIYC5o4mUoje6wnNLpfUD1s9MOM0r64/view" srcImage="/image/season4.1/kadacraftS4.1-best.png" edition="java" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
-                    <World title="Season 5" href="https://drive.google.com/file/d/1ygwXV1d_y9Aq3ErrZhYVOt6DbKg1c_1i/view" srcImage="/image/season5/kadacraftS5-best.png" edition="java" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
-                    <World title="Season 6" href="https://drive.google.com/file/d/1XDviVUyZ1VZ2TiGEq0AqDITL5lJvyf4b/view" srcImage="/image/season6/kadacraftS6-best.png" edition="java" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
+
+                {/* Hero header */}
+                <div className="relative z-10 w-full flex flex-col items-center pt-28 pb-4 px-6 text-center">
+                    <div className="inline-flex items-center gap-2 mb-3 px-4 py-1.5 rounded-full
+                        bg-yellow-400/20 dark:bg-yellow-500/10
+                        border border-yellow-400/40 dark:border-yellow-500/30
+                        backdrop-blur-sm">
+                        <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
+                        <span className="text-xs font-semibold tracking-widest uppercase text-yellow-600 dark:text-yellow-300">
+                            World Archive
+                        </span>
+                    </div>
+                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white drop-shadow-lg font-['Minecraft']">
+                        Worlds
+                    </h1>
+                    <p className="mt-2 text-sm md:text-base text-gray-600 dark:text-gray-300 max-w-md">
+                        Download any KadaCraft season world or browse its gallery screenshots.
+                    </p>
                 </div>
-            </div>
 
-            {/* Pictures */}
-            <div className={`${viewGalleryBool ? "flex " : "hidden"} fixed inset-0 justify-center items-center z-50 overflow-auto`}>
-                <div
-                    className="w-full min-h-screen flex items-center justify-center bg-neutral-700/80 px-10 md:px-70"
-                    onClick={() => endViewGallery()}
-                >
-                    <div onClick={e => e.stopPropagation()} className="w-full flex flex-col slide-in-top justify-center">
-                        
-                        <div className="absolute inset-0 w-full z-10 flex flex-row">
-                            <div className="w-full ">
-                                {/* Left Arrow */}
-                                <button
-                                    className="absolute h-full p-3 md:p-10 bg-black/50 rounded-l-2xl text-4xl md:text-7xl hover:bg-black/70 transition duration-300"
-                                    onClick={() => prevImage()}
-                                >
-                                    ‹
-                                </button>
-                            </div>
-
-                            <div className="w-full flex justify-end items-center">
-                                {/* Right Arrow */}
-                                <button
-                                    className="absolute h-full p-3 md:p-10 bg-black/50 rounded-r-2xl text-4xl md:text-7xl hover:bg-black/70 transition duration-300"
-                                    onClick={() => nextImage()}
-                                >
-                                    ›
-                                </button>
-                            </div>
-                        </div>
-                        
-                        {/* Image */}
-                        {worldImages[seasonIndex].gallery && (
-                            <img
-                                src={worldImages[seasonIndex].gallery[imageIndex]}
-                                alt="World preview"
-                                className="object-contain rounded-2xl drop-shadow-2xl max-h-[80vh] order-1"
-                            />
-                        )}
+                {/* World cards grid */}
+                <div className="relative z-10 w-full px-6 md:px-12 pb-16 pt-4">
+                    {/* Mobile: horizontal scroll | Desktop: grid */}
+                    <div className="
+                        flex flex-row gap-5 overflow-x-auto snap-x snap-mandatory pb-4
+                        md:grid md:grid-cols-2 lg:grid-cols-3
+                        md:overflow-visible md:snap-none md:pb-0 md:gap-6
+                    ">
+                        <World index={0} title="Season 1" href="https://www.mediafire.com/file/s2b7j3ckj9dkgvx/KadaCraft_S1.mcworld/file" srcImage="/image/season1/kadacraftS1-best.png" edition="bedrock" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
+                        <World index={1} title="Season 2" href="https://www.mediafire.com/file/d6akwu2lvm2xz6f/KadaCraft_Season_2.mcworld/file" srcImage="/image/season2/kadacraftS2-best.png" edition="bedrock" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
+                        <World index={2} title="Season 3" href="https://www.mediafire.com/file/rdnv4o2enbjabrh/KadaCraft_Season_3_%2528Pruned_Java_World%2529.rar/file" srcImage="/image/season3/kadacraftS3-best.png" edition="java" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
+                        <World index={3} title="Season 4" href="https://www.mediafire.com/file/9u1k34wta8a3z14/KadaCraft_Season_Four.rar/file" srcImage="/image/season4/kadacraftS4-best.png" edition="java" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
+                        <World index={4} title="Season 4.1" href="https://drive.google.com/file/d/1UuIYC5o4mUoje6wnNLpfUD1s9MOM0r64/view" srcImage="/image/season4.1/kadacraftS4.1-best.png" edition="java" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
+                        <World index={5} title="Season 5" href="https://drive.google.com/file/d/1ygwXV1d_y9Aq3ErrZhYVOt6DbKg1c_1i/view" srcImage="/image/season5/kadacraftS5-best.png" edition="java" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
+                        <World index={6} title="Season 6" href="https://drive.google.com/file/d/1XDviVUyZ1VZ2TiGEq0AqDITL5lJvyf4b/view" srcImage="/image/season6/kadacraftS6-best.png" edition="java" setSeasonName={setSeasonName} setIsViewGalleryBool={setIsViewGalleryBool}/>
                     </div>
                 </div>
             </div>
+
+            {/* Lightbox modal */}
+            {viewGalleryBool && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center">
+                    {/* Backdrop */}
+                    <div
+                        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                        onClick={() => endViewGallery()}
+                    />
+
+                    {/* Modal content */}
+                    <div className="relative z-10 w-full max-w-5xl mx-4 flex flex-col items-center gap-4 slide-in-top">
+
+                        {/* Top bar: season name + close */}
+                        <div className="w-full flex items-center justify-between px-2">
+                            <span className="text-white font-bold text-lg font-['Minecraft'] drop-shadow">
+                                {seasonName}
+                            </span>
+                            <div className="flex items-center gap-3">
+                                <span className="text-sm text-white/60">
+                                    {imageIndex + 1} / {worldImages[seasonIndex].gallery?.length ?? 0}
+                                </span>
+                                <button
+                                    className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200"
+                                    onClick={() => endViewGallery()}
+                                    aria-label="Close gallery"
+                                >
+                                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Image + arrows */}
+                        <div className="relative w-full flex items-center justify-center">
+                            {/* Left arrow */}
+                            <button
+                                className="absolute left-0 z-10 p-3
+                                    bg-black/50 hover:bg-black/70
+                                    text-white rounded-l-xl
+                                    transition-colors duration-200"
+                                onClick={() => prevImage()}
+                                aria-label="Previous image"
+                            >
+                                <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+
+                            {/* Image */}
+                            {worldImages[seasonIndex].gallery && (
+                                <div className="relative w-full" style={{ height: "70vh" }}>
+                                    <Image
+                                        src={worldImages[seasonIndex].gallery[imageIndex]}
+                                        alt="World preview"
+                                        fill
+                                        sizes="100vw"
+                                        className="object-contain rounded-xl drop-shadow-2xl"
+                                    />
+                                </div>
+                            )}
+
+                            {/* Right arrow */}
+                            <button
+                                className="absolute right-0 z-10 p-3
+                                    bg-black/50 hover:bg-black/70
+                                    text-white rounded-r-xl
+                                    transition-colors duration-200"
+                                onClick={() => nextImage()}
+                                aria-label="Next image"
+                            >
+                                <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        {/* Dot indicators */}
+                        <div className="flex gap-1.5">
+                            {worldImages[seasonIndex].gallery?.map((_, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => setImageIndex(i)}
+                                    className={`rounded-full transition-all duration-200 ${i === imageIndex ? "w-5 h-2 bg-yellow-400" : "w-2 h-2 bg-white/30 hover:bg-white/60"}`}
+                                    aria-label={`Go to image ${i + 1}`}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
     )
 }

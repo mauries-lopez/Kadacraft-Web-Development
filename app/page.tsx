@@ -3,34 +3,19 @@
 import About from "@/components/landing/About";
 import Intro from "@/components/landing/Intro";
 import RecentVideos from "@/components/landing/RecentVideos";
-import { useState, useEffect } from 'react'
+import { useRef } from 'react';
+import Image from "next/image";
 import '@khmyznikov/pwa-install';
 
 function InstallPrompt() {
-  const [isIOS, setIsIOS] = useState(false)
-  const [isAndroid, setIsAndroid] = useState(false)
-  const [isStandalone, setIsStandalone] = useState(false)
 
-  let pwaInstallElement: any = null;
+  const pwaInstallRef = useRef<any>(null);
 
   const handleShowDialog = () => {
-      if (pwaInstallElement) {
-          pwaInstallElement.showDialog(true);
+      if (pwaInstallRef.current) {
+          pwaInstallRef.current.showDialog(true);
       }
   };
-
-  useEffect(() => {
-    setIsIOS(
-      /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream
-    )
-
-    setIsStandalone(
-      window.matchMedia && window.matchMedia('(display-mode: standalone)').matches
-    )
-    setIsAndroid(/Android/.test(navigator.userAgent))
-  }, [])
-
-  if (isStandalone) return null
 
   return (
     <>
@@ -41,14 +26,18 @@ function InstallPrompt() {
           aria-label="Download"
         >
           <p className="font-['Minecraft'] text-black dark:text-white mb-2"> Install App! </p>
-          <img src="/kadacraft_weblogo.png" alt="Kadacraft logo" className="h-15 w-15 rounded-full" />
+          <Image
+            src="/kadacraft_weblogo.png"
+            alt="Kadacraft logo"
+            width={60}
+            height={60}
+            className="rounded-full"
+          />
         </button>
       </div>
 
       <pwa-install
-          ref={(el) => {
-            pwaInstallElement = el;
-          }}
+          ref={pwaInstallRef}
           name="KadaCraft"
           description="Kadacraft — Minecraft SMP and videos by Kadacraft."
           manifest-url="/manifest.json"
