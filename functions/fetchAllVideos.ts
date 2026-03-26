@@ -22,11 +22,12 @@ const runSync = async () => {
 
     // Clear all existing videos from previous hour
     await supabase.from("channel_yt_videos").delete().neq("id", 0);
-
+    
+    // Just add new members here and directly commit it to the main branch
     const youtubeHandles: string[] = ["AceDhaniel", "BeeBuYog", "curiouscattttt", "GleiiZie", "its_jhiggssee", "KeetMichael",
         "KenPlayzTM", "KingFB", "Klaud9ne", "McHeroYT", "mythdariffer", "PashneaGaming",
         "Obriii", "robraks", "Sashwie", "sirzedric", "SlyTheMiner", "sorokiru", "SthreedYT", "tenderjoncy",
-        "WITCHCARNELIAN", "xzenzrmc", "ZircMcGamer"];
+        "WITCHCARNELIAN", "xzenzrmc", "ZircMcGamer", "teachmeplsbud"];
 
     // Process handles with limited concurrency and batch inserts to avoid long sequential waits
     const concurrency = 5;
