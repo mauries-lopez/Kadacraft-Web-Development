@@ -3,81 +3,74 @@
 import Background from "@/components/Background";
 import World from "@/components/worlds/World";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
+
+interface WorldImages {
+    season: string,
+    gallery: string[]
+}
+
+const worldImages: WorldImages[] = [
+    {
+        season: "Season 1",
+        gallery: ["/image/season1/kadacraftS1_1.png", "/image/season1/kadacraftS1_2.png", "/image/season1/kadacraftS1_3.png", "/image/season1/kadacraftS1_4.png", "/image/season1/kadacraftS1_5.png", "/image/season1/kadacraftS1_6.png", "/image/season1/kadacraftS1-best.png"]
+    },
+    {
+        season: "Season 2",
+        gallery: ["/image/season2/kadacraftS2_1.png", "/image/season2/kadacraftS2_2.png", "/image/season2/kadacraftS2_3.png", "/image/season2/kadacraftS2_4.png", "/image/season2/kadacraftS2_5.png", "/image/season2/kadacraftS2_6.png", "/image/season2/kadacraftS2-best.png"]
+    },
+    {
+        season: "Season 3",
+        gallery: ["/image/season3/kadacraftS3_1.png", "/image/season3/kadacraftS3_2.png", "/image/season3/kadacraftS3_3.png", "/image/season3/kadacraftS3_4.png", "/image/season3/kadacraftS3_5.png", "/image/season3/kadacraftS3_6.png", "/image/season3/kadacraftS3-best.png"]
+    },
+    {
+        season: "Season 4",
+        gallery: ["/image/season4/kadacraftS4_1.png", "/image/season4/kadacraftS4_2.png", "/image/season4/kadacraftS4_3.png", "/image/season4/kadacraftS4_4.png", "/image/season4/kadacraftS4_5.png", "/image/season4/kadacraftS4_6.png", "/image/season4/kadacraftS4-best.png"]
+    },
+    {
+        season: "Season 4.1",
+        gallery: ["/image/season4.1/kadacraftS4.1_1.png", "/image/season4.1/kadacraftS4.1_2.png", "/image/season4.1/kadacraftS4.1_3.png", "/image/season4.1/kadacraftS4.1_4.png", "/image/season4.1/kadacraftS4.1_5.png", "/image/season4.1/kadacraftS4.1_6.png", "/image/season4.1/kadacraftS4.1-best.png"]
+    },
+    {
+        season: "Season 5",
+        gallery: ["/image/season5/kadacraftS5_1.png", "/image/season5/kadacraftS5_2.png", "/image/season5/kadacraftS5_3.png", "/image/season5/kadacraftS5_4.png", "/image/season5/kadacraftS5_5.png", "/image/season5/kadacraftS5_6.png", "/image/season5/kadacraftS5-best.png"]
+    },
+    {
+        season: "Season 6",
+        gallery: ["/image/season6/kadacraftS6_1.png", "/image/season6/kadacraftS6_2.png", "/image/season6/kadacraftS6_3.png", "/image/season6/kadacraftS6_4.png", "/image/season6/kadacraftS6_5.png", "/image/season6/kadacraftS6_6.png", "/image/season6/kadacraftS6-best.png"]
+    }
+]
 
 export default function Worlds(){
 
-    interface WorldImages {
-        season: string,
-        gallery: string[]
-    }
-
-    const worldImages: WorldImages[] = [
-        {
-            season: "Season 1",
-            gallery: ["/image/season1/kadacraftS1_1.png", "/image/season1/kadacraftS1_2.png", "/image/season1/kadacraftS1_3.png", "/image/season1/kadacraftS1_4.png", "/image/season1/kadacraftS1_5.png", "/image/season1/kadacraftS1_6.png", "/image/season1/kadacraftS1-best.png"]
-        },
-        {
-            season: "Season 2",
-            gallery: ["/image/season2/kadacraftS2_1.png", "/image/season2/kadacraftS2_2.png", "/image/season2/kadacraftS2_3.png", "/image/season2/kadacraftS2_4.png", "/image/season2/kadacraftS2_5.png", "/image/season2/kadacraftS2_6.png", "/image/season2/kadacraftS2-best.png"]
-        },
-        {
-            season: "Season 3",
-            gallery: ["/image/season3/kadacraftS3_1.png", "/image/season3/kadacraftS3_2.png", "/image/season3/kadacraftS3_3.png", "/image/season3/kadacraftS3_4.png", "/image/season3/kadacraftS3_5.png", "/image/season3/kadacraftS3_6.png", "/image/season3/kadacraftS3-best.png"]
-        },
-        {
-            season: "Season 4",
-            gallery: ["/image/season4/kadacraftS4_1.png", "/image/season4/kadacraftS4_2.png", "/image/season4/kadacraftS4_3.png", "/image/season4/kadacraftS4_4.png", "/image/season4/kadacraftS4_5.png", "/image/season4/kadacraftS4_6.png", "/image/season4/kadacraftS4-best.png"]
-        },
-        {
-            season: "Season 4.1",
-            gallery: ["/image/season4.1/kadacraftS4.1_1.png", "/image/season4.1/kadacraftS4.1_2.png", "/image/season4.1/kadacraftS4.1_3.png", "/image/season4.1/kadacraftS4.1_4.png", "/image/season4.1/kadacraftS4.1_5.png", "/image/season4.1/kadacraftS4.1_6.png", "/image/season4.1/kadacraftS4.1-best.png"]
-        },
-        {
-            season: "Season 5",
-            gallery: ["/image/season5/kadacraftS5_1.png", "/image/season5/kadacraftS5_2.png", "/image/season5/kadacraftS5_3.png", "/image/season5/kadacraftS5_4.png", "/image/season5/kadacraftS5_5.png", "/image/season5/kadacraftS5_6.png", "/image/season5/kadacraftS5-best.png"]
-        },
-        {
-            season: "Season 6",
-            gallery: ["/image/season6/kadacraftS6_1.png", "/image/season6/kadacraftS6_2.png", "/image/season6/kadacraftS6_3.png", "/image/season6/kadacraftS6_4.png", "/image/season6/kadacraftS6_5.png", "/image/season6/kadacraftS6_6.png", "/image/season6/kadacraftS6-best.png"]
-        }
-    ]
 
     const [seasonName, setSeasonName] = useState("undefined");
-    const [seasonIndex, setSeasonIndex] = useState(0)
     const [viewGalleryBool, setIsViewGalleryBool] = useState(false)
     const [imageIndex, setImageIndex] = useState(0)
 
-    function endViewGallery(){
-        setIsViewGalleryBool(!viewGalleryBool)
+    const seasonIndex = useMemo(
+        () => worldImages.findIndex((w) => w.season === seasonName),
+        [seasonName]
+    )
+
+    const endViewGallery = useCallback(() => {
+        setIsViewGalleryBool(false)
         setImageIndex(0)
-    }
+    }, [])
 
-    function prevImage(){
-        if (imageIndex == 0 ){
-            setImageIndex(worldImages[seasonIndex].gallery.length - 2)
-        } else {
-            setImageIndex(imageIndex - 1)
-        }
-    }
+    const prevImage = useCallback(() => {
+        setImageIndex((i) => {
+            const len = worldImages[seasonIndex]?.gallery.length ?? 1
+            return i === 0 ? len - 2 : i - 1
+        })
+    }, [seasonIndex])
 
-    function nextImage(){
-        if (imageIndex == worldImages[seasonIndex].gallery.length - 1){
-            setImageIndex(1)
-        } else {
-            setImageIndex(imageIndex + 1)
-        }
-    }
-
-    useEffect(() =>{
-        if (viewGalleryBool){
-            for (let index = 0; index < worldImages.length; index++) {
-                if (seasonName === worldImages[index].season) {
-                    setSeasonIndex(index)
-                }
-            }
-        }
-    }, [viewGalleryBool, seasonName])
+    const nextImage = useCallback(() => {
+        setImageIndex((i) => {
+            const len = worldImages[seasonIndex]?.gallery.length ?? 1
+            return i === len - 1 ? 1 : i + 1
+        })
+    }, [seasonIndex])
 
     return(
         <>
@@ -130,7 +123,7 @@ export default function Worlds(){
 
             {/* Lightbox modal */}
             {viewGalleryBool && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center">
+                <div className="fixed inset-0 z-[200] flex items-center justify-center">
                     {/* Backdrop */}
                     <div
                         className="absolute inset-0 bg-black/80 backdrop-blur-sm"
@@ -178,15 +171,30 @@ export default function Worlds(){
                             </button>
 
                             {/* Image */}
-                            {worldImages[seasonIndex].gallery && (
+                            {worldImages[seasonIndex]?.gallery && (
                                 <div className="relative w-full" style={{ height: "70vh" }}>
                                     <Image
                                         src={worldImages[seasonIndex].gallery[imageIndex]}
                                         alt="World preview"
                                         fill
                                         sizes="100vw"
+                                        priority
                                         className="object-contain rounded-xl drop-shadow-2xl"
                                     />
+
+                                    {/* Preload adjacent images for instant navigation */}
+                                    {(() => {
+                                        const gallery = worldImages[seasonIndex].gallery
+                                        const len = gallery.length
+                                        const prevIdx = imageIndex === 0 ? len - 2 : imageIndex - 1
+                                        const nextIdx = imageIndex === len - 1 ? 1 : imageIndex + 1
+                                        return (
+                                            <>
+                                                <Image key={`pre-${prevIdx}`} src={gallery[prevIdx]} alt="" fill sizes="1px" className="opacity-0 pointer-events-none" aria-hidden />
+                                                <Image key={`pre-${nextIdx}`} src={gallery[nextIdx]} alt="" fill sizes="1px" className="opacity-0 pointer-events-none" aria-hidden />
+                                            </>
+                                        )
+                                    })()}
                                 </div>
                             )}
 
